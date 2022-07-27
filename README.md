@@ -41,9 +41,9 @@ pip install -r requirements.txt
 pip install -r requirements.txt
 ```
 
-\*\* If you have ran the above command successfully without errors then you have `django-environ` installed.
+### If you have ran the above command successfully without errors then you have `django-environ` installed.
 
-Inside your `/extractMetadata/` folder
+#### Inside your `/extractMetadata/` folder
 
 - create a `.env` file
 - go to your `extractMetadata/settings.py` and copy your Django `SECRET_KEY` and past it on your `.env` file
