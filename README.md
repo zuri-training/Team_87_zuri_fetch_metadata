@@ -21,7 +21,7 @@ python3 -m venv env
 source env/bin/activate
 
 # Windows users
-> py -3 -m env env
+> py -3 -m venv env
 > env\Scripts\activate
 
 # Windows git bash users
