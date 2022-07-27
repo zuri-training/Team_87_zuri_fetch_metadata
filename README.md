@@ -46,7 +46,7 @@ pip install -r requirements.txt
 #### Inside your `/extractMetadata/` folder
 
 - create a `.env` file
-- go to your `extractMetadata/settings.py` and copy your Django `SECRET_KEY` and past it on your `.env` file
+- go to your `extractMetadata/settings.py` and copy your Django `SECRET_KEY` and paste it on your `.env` file
 - see example below:
 - Take note not to add spaces inbetween the `=`
 
@@ -67,8 +67,12 @@ env = environ.Env()
 # read the data from the .env file
 environ.Env.read_env()
 
-# change your SECRET_KEY to read the SECRET_KEY from .env file
+#update your SECRET_KEY to read from .env file
 
+# change your SECRET_KEY from this below:
+SECRET_KEY='django-insecure-^4joa&mspske00-oaeoa-ei28ial-eej4h1m0b-@tldx9xq4va'
+
+# To this
 SECRET_KEY = env("SECRET_KEY")
 
 ```
