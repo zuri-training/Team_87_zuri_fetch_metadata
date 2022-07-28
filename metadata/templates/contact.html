@@ -1,0 +1,16 @@
+{% extends "base.html" %} {% block content %}
+
+<h1>Contact Page</h1>
+
+<form action="contact" , method="POST">
+	{% csrf_token %}
+	<label for="name">Name</label><br />
+	<input type="text" name="name" required /><br />
+	<label for="email">Email</label><br />
+	<input type="email" name="email" required /><br />
+	<label for="message">Message</label><br />
+	<input type="textarea" name="message" required /><br />
+	<input type="submit" />
+</form>
+
+{% endblock %}
