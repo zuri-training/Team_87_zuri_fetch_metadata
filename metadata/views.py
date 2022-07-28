@@ -1,7 +1,10 @@
-from django.shortcuts import render, redirect
+from django.shortcuts import render, redirect, get_object_or_404
 from django.contrib.auth.models import User, auth
 from django.contrib import messages
 from django.contrib.messages.views import SuccessMessageMixin
+from django.contrib.auth.mixins import LoginRequiredMixin
+from django.views import View
+from django.urls import reverse_lazy
 # Create your views here.
 
 
@@ -60,5 +63,16 @@ def signup(request):
     return render(request, "signup.html")
 
 
-def profile(request):
-    return render(request, "profile.html")
+# def profile(request, pk):
+#     return render(request, "profile.html")
+
+
+class profile(LoginRequiredMixin, View):
+    login_url = '/login'
+    success_url = reverse_lazy('metadata:profile')
+    model = User
+    template_name = 'profile.html'
+
+    def get(self, request, pk):
+        user = get_object_or_404(User, id=pk)
+        return render(request, self.template_name)
