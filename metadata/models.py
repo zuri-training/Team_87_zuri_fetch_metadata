@@ -13,6 +13,6 @@ class Contact(models.Model):
     created_at = models.DateTimeField(auto_now_add=True)
 
     def __str__(self):
-        if len(self.text) < 15:
-            return self.text
+        if len(self.message) < 15:
+            return self.message
         return self.text[:11] + ' ...'
