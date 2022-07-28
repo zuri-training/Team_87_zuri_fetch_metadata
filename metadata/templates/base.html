@@ -12,7 +12,7 @@
 				<li>Home</li>
 				{% if user.is_authenticated %}
 				<li><a href="logout">Logout</a></li>
-				<li><a href="{% url 'profile' user.id %}">Profile</li>
+				<li><a href="{% url '/profile' user.id %}">Profile</li>
 				{% else %}
 				<li><a href="/login">Log in</a></li>
 				<li><a href="/signup">Sign Up</a></li>
