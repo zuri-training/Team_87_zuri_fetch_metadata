@@ -12,7 +12,7 @@ class ProfilePage(DetailView):
     template_name = 'user_profile.html'
     
     def get_context_data(self, *args, **kwargs):
-        users = user.objects.all()
+        users = User.objects.all()
         context = super(ProfilePage, self).get_context_data(*args, **kwargs)
         page_user = get_object_or_404(User, id=self.kwargs['pk'])
         context["page_user"] = page_user
