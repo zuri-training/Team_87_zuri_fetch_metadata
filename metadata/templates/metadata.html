@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+
+{% block content %} 
+
+<form action="/metadata" method="post">
+    {% csrf_token %}
+    <p>Upload your file</p>
+    {{form}} <br>
+    <input type="submit" value="Submit">
+</form>
+
+{% endblock %}

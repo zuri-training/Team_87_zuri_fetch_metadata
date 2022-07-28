@@ -5,6 +5,9 @@ from django.contrib.messages.views import SuccessMessageMixin
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.views import View
 from django.urls import reverse_lazy
+from .forms import FileUpload
+from django.http import HttpResponseRedirect
+
 # Create your views here.
 
 
@@ -76,3 +79,20 @@ class profile(LoginRequiredMixin, View):
     def get(self, request, pk):
         user = get_object_or_404(User, id=pk)
         return render(request, self.template_name)
+
+
+def get_metadata(request):
+    # if request.method == "POST":
+    #     form = FileUpload(request.POST, request.FILES)
+    #     if form.is_valid():
+    #         return HttpResponseRedirect("File u")
+    # else:
+    form = FileUpload()
+
+    return render(request, 'metadata.html', {'form': form})
+
+
+# def handle_uploaded_file(f):
+#     with open('some/file/name.txt', 'wb+') as destination:
+#         for chunk in f.chunks():
+#             destination.write(chunk)
