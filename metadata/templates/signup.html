@@ -4,5 +4,20 @@
 {% block content %}
 
 <h1>Signup Page</h1>
-
+{% for message in messages %}
+<h5>{{message}}</h5>
+{% endfor %}
+<form action="signup" method="POST" id="form">
+	{% csrf_token %}
+	<label for="username">Username</label><br />
+	<input type="text" name="username" required /><br />
+	<label for="email">Email address</label><br />
+	<input type="email" name="email" required /><br />
+	<label for="password">Password</label><br />
+	<input type="password" name="password" required /><br />
+	<label for="pass2">Confirm password</label><br />
+	<input type="password" name="pass2" required /><br />
+	<input type="submit" value="Create Account" />
+</form>
+<h3>Already have an account? <a href="login">Login</a> now</h3>
 {% endblock %}
