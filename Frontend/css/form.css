@@ -1,1 +1,145 @@
 @import url("style.css");
+
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;   
+}
+
+/* Main Section */
+.autentication-form{
+    display: flex;
+    width: 100%;
+    height: 100vh;
+    display: flex; 
+}
+
+
+/* Sections */
+.left-column{
+    background-color: #3a86ff;
+    width: 40%;
+}
+
+.right-column{
+    background-color: white;
+    width: 60%;
+    padding: 100px 50px;
+    font-family: sans-serif;
+}
+
+/* Other Sign up */
+.google{
+    border-color: #3a86ff;
+    border-style: solid;
+    border-radius: 20px;
+}
+
+h1 {
+    font-size: 2rem;
+    padding-bottom: 1.5rem;
+}
+
+.right-column button {
+    padding: 0.6rem 10.1rem;
+    background-color:   rgb(51, 131, 235);
+    border:   rgb(51, 131, 235);
+    width: 100%;
+    border-radius: 4px;
+    color: #fff ;
+    margin-top: 2rem;
+}
+
+/* Line Separator */
+#line{
+    padding: 2rem 0;
+    overflow: hidden;
+    text-align: center;
+}
+
+#line::before, 
+#line::after{
+    text-decoration: line-through;
+    margin: auto 0.5em;
+    background-color: #000;
+    content: "";
+    display: inline-block;
+    height: 1px;
+    position: relative;
+    vertical-align: middle;
+    width: 50%;
+}
+
+#line::before {
+    right: 0.5rem;
+    margin-left: -50%;
+}
+
+#line::after {
+    left: 0.5rem;
+    margin-right: -50%;
+}
+
+
+/* Form */
+input::placeholder {
+    text-align: left;
+    color: #666;
+    font-weight: 100;
+}
+
+.account-form input {
+    text-align: left; 
+    padding: 0.6rem 11.5rem 0.6rem 0.6rem;
+    margin-bottom: 1rem;
+    width: 100%;
+    border:  1px solid  #666;
+    border-radius: 4px;
+}
+
+.other-sign-up button {
+    width: 100%;
+    padding: 0.6rem 6rem;
+    margin-bottom: 1rem;
+    border:  1px solid  rgb(51, 131, 235);
+    border-radius: 4px;
+}
+
+button:hover{
+    cursor: pointer;
+    background-color: blue;
+}
+
+#one{
+    border: 1px solid #3a86ff;
+    background-color: white;
+    color: #000;
+    width: 532px;
+}
+
+.one{
+    width: 532px;
+}
+
+#login{
+    width: 532px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
