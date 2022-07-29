@@ -2,9 +2,9 @@
 
 {% block content %} 
 
-<form action="/metadata" method="post">
+<form enctype="multipart/form-data" action="/viewMetadata" method="POST">
     {% csrf_token %}
-    <p>Upload your file</p>
+    <p>Upload your file</p><br>
     {{form}} <br>
     <input type="submit" value="Submit">
 </form>

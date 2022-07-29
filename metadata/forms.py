@@ -2,5 +2,5 @@ from django import forms
 
 
 class FileUpload(forms.Form):
-    title = forms.CharField(max_length=50)
-    file = forms.FileField()
+    name = forms.CharField(max_length=80)
+    upload_file = forms.FileField()

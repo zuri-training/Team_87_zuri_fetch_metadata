@@ -1,3 +1,4 @@
+import re
 from django.shortcuts import render, redirect, get_object_or_404
 from django.contrib.auth.models import User, auth
 from django.contrib import messages
@@ -7,6 +8,8 @@ from django.views import View
 from django.urls import reverse_lazy
 from .forms import FileUpload
 from django.http import HttpResponseRedirect
+from hachoir.parser import createParser
+from hachoir.metadata import extractMetadata
 
 # Create your views here.
 
@@ -44,7 +47,6 @@ def signup(request):
         username = request.POST['username']
         email = request.POST['email']
         password = request.POST['password']
-        password2 = request.POST['pass2']
         pass2 = request.POST['pass2']
         if password == pass2:
             if User.objects.filter(email=email).exists():
@@ -58,16 +60,12 @@ def signup(request):
                     username=username, email=email, password=password)
                 user.save()
                 messages.info(request, "Account created")
-                return redirect('login')
+                return HttpResponseRedirect("login")
         else:
             messages.info(request, "Password didnt match")
             return redirect('signup')
 
     return render(request, "signup.html")
-
-
-# def profile(request, pk):
-#     return render(request, "profile.html")
 
 
 class profile(LoginRequiredMixin, View):
@@ -81,18 +79,26 @@ class profile(LoginRequiredMixin, View):
         return render(request, self.template_name)
 
 
-def get_metadata(request):
-    # if request.method == "POST":
-    #     form = FileUpload(request.POST, request.FILES)
-    #     if form.is_valid():
-    #         return HttpResponseRedirect("File u")
-    # else:
-    form = FileUpload()
+def handle_uploaded_file(f):
+    with open('metadata / upload/'+f.name, 'wb+') as destination:
+        for chunk in f.chunks():
+            destination.write(chunk)
+
+
+def view_metadata(request):
+    if request.method == "POST":
+        form = FileUpload(request.POST, request.FILES)
+        # print(request.FILES["upload_file"])
+        if form.is_valid():
+            # handle_uploaded_file(request.FILES["upload_file"])
+            print(request.FILES['upload_file'].content_type)
+            print(request.FILES['upload_file'].name)
+            print(request.FILES['upload_file'].size)
+            parser = createParser(request.FILES['upload_file'])
+            print(extractMetadata(parser))
+            HttpResponseRedirect("/")
+
+    else:
+        form = FileUpload()
 
     return render(request, 'metadata.html', {'form': form})
-
-
-# def handle_uploaded_file(f):
-#     with open('some/file/name.txt', 'wb+') as destination:
-#         for chunk in f.chunks():
-#             destination.write(chunk)
