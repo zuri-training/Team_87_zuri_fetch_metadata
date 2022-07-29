@@ -7,6 +7,7 @@
     <title>Login</title>
     <link rel="stylesheet" href="css\style.css">
     <link rel="stylesheet" href="css\form.css">
+    <link rel="stylesheet" href="'https://fonts.googleapis.com/icon?family=Material+Icons">
 </head>
 <body>
 
@@ -23,22 +24,29 @@
         <div class="right-column">
 
             <div class="other-sign-up">
-
+                <h1><b>Login</b></h1>
+                <button type="submit" id="one">Sign in with Google</button>
+                <br>
+                <button type="submit" id="one">Sign in with Facebook</button>
             </div>
+
+                <p id="line">Or</p>
 
             <div class="account-form">
                  <!-- Login Form -->
                 <form class="meta-form" action="">
                     <div class="meta-form-field">
-                        <input type="email" name="email" id="">
+                        <p>Email Address</p>
+                        <input type="email" name="email" placeholder="Email" class="one">
                     </div>
 
                     <div class="meta-form-field">
-                        <input type="password" name="" id="">
+                        <p>Password</p>
+                        <input type="password" name="password" placeholder="Password" class="one">
                     </div>
 
                     <div class="meta-form-field">
-                        <input type="button" value="Login">
+                        <button type="submit" id="login">Login</button> 
                     </div>
                 </form>
             </div>
@@ -51,3 +59,4 @@
     </footer>
 </body>
 </html>
+
