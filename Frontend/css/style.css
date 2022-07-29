@@ -1,3 +1,65 @@
+@import url(font.css);
+
+/* Global styling */
 :root {
-    --blue:
+    --blue: #3a86ff;
+    --white: #ffffff;
+}
+
+* {
+    font-family: 'CabinetGrotesk-Bold';
+}
+
+a {
+    text-decoration: none;
+}
+
+button {
+    padding: 18px 35px;
+    background-color: var(--blue);
+    border: 0;
+    border-radius: 5px;
+    color: var(--white);
+}
+
+
+/* Nav */
+
+header {
+    display: flex;
+    justify-content: space-between;
+    vertical-align: middle;
+    align-items: center;
+    padding: 20px 40px;
+}
+
+.site-logo {
+    width: 100px;
+}
+
+/* Hero Section */
+.hero {
+    display: flex;
+    justify-content: space-between;
+    vertical-align: middle;
+    align-items: center;
+    padding: 20px 40px;
+}
+
+.left-hero, .right-hero {
+    width: 50%;
+}
+
+.hero-img {
+    width: 600px;
+}
+
+.hero-head {
+    font-size: 70px;
+}
+
+.hero-text {
+    font-size: 25px;
+    line-height: 1.3em;
+    padding-right: 70px;
 }
