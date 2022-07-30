@@ -1,11 +1,27 @@
-from django.shortcuts import render, redirect, get_object_or_404
-from django.contrib.auth.models import User, auth
-from django.contrib import messages
-from django.contrib.messages.views import SuccessMessageMixin
-from django.contrib.auth.mixins import LoginRequiredMixin
-from django.views import View
-from django.urls import reverse_lazy
+from django.http import HttpResponse
+from django.utils.encoding import smart_str
 from metadata.models import Contact
+from django.http import HttpResponseRedirect
+from .forms import FileUpload
+from django.urls import reverse_lazy
+from django.views import View
+from django.contrib.auth.mixins import LoginRequiredMixin
+from django.contrib.messages.views import SuccessMessageMixin
+from django.contrib import messages
+from django.contrib.auth.models import User, auth
+from django.shortcuts import render, redirect, get_object_or_404
+
+
+# ================
+# import packages for extracting metadata
+from hachoir.metadata import extractMetadata
+from hachoir.parser import createParser
+from tinytag import TinyTag
+
+# ================
+# import for csv
+import csv
+
 # Create your views here.
 
 
@@ -15,6 +31,10 @@ def index(request):
         username = request.POST['username']
         context = {'username': username}
     return render(request, "index.html", context)
+
+
+# ==============================================
+# =============================================
 
 
 def login(request):
@@ -28,8 +48,11 @@ def login(request):
         else:
             messages.info(request, 'Invalid username or password')
             return redirect('/login')
-        return render(request, 'login.html')
     return render(request, "login.html")
+
+
+# ============================================
+# ============================================
 
 
 def logout(request):
@@ -37,12 +60,15 @@ def logout(request):
     return redirect('/')
 
 
+# =============================================
+# =============================================
+
+
 def signup(request):
     if request.method == 'POST':
         username = request.POST['username']
         email = request.POST['email']
         password = request.POST['password']
-        password2 = request.POST['pass2']
         pass2 = request.POST['pass2']
         if password == pass2:
             if User.objects.filter(email=email).exists():
@@ -56,7 +82,7 @@ def signup(request):
                     username=username, email=email, password=password)
                 user.save()
                 messages.info(request, "Account created")
-                return redirect('login')
+                return HttpResponseRedirect("login")
         else:
             messages.info(request, "Password didnt match")
             return redirect('signup')
@@ -64,8 +90,8 @@ def signup(request):
     return render(request, "signup.html")
 
 
-# def profile(request, pk):
-#     return render(request, "profile.html")
+# ============================================
+# ============================================
 
 
 class profile(LoginRequiredMixin, View):
@@ -79,6 +105,9 @@ class profile(LoginRequiredMixin, View):
         return render(request, self.template_name)
 
 
+# ===========================================
+# ==========================================
+
 def contact(request):
     if request.method == 'POST':
         contact = Contact(
@@ -87,3 +116,99 @@ def contact(request):
         messages.info(request, "Message sent")
         return redirect('/contact')
     return render(request, "contact.html")
+
+
+# ==========================================
+# ==========================================
+
+def view_metadata(request):
+    context = {"metadata": []}
+
+    if request.method == "POST":
+        form = FileUpload(request.POST, request.FILES)
+
+        if form.is_valid():
+
+            uploaded_file = request.FILES['upload_file']
+            file_type = uploaded_file.content_type.split("/")
+
+            context["metadata"].append(
+                {"label_name": "file name", "label_value": uploaded_file.name})
+            context["metadata"].append(
+                {"label_name": "file size", "label_value": uploaded_file.size})
+            context["metadata"].append(
+                {"label_name": "file type", "label_value": file_type[0].capitalize()})
+            context["metadata"].append(
+                {"label_name": "mime type", "label_value": uploaded_file.content_type})
+
+            if file_type[0] == "video" or file_type[0] == "image" or file_type[0] == "audio":
+
+                parser = createParser(uploaded_file)
+                metadata = extractMetadata(parser)
+
+                context["file_name"] = uploaded_file.name
+                context["file_size"] = uploaded_file.size
+                context["file_type"] = file_type[0].capitalize()
+                context["mime_type"] = uploaded_file.content_type
+
+                for line in enumerate(metadata.exportPlaintext()):
+                    if line[0] != 0:
+                        label = line[1].split(":")
+                        label_name = label[0][1:].split()
+                        label_value = label[1][:]
+
+                        if len(label_name) > 1:
+                            label_name = f"{label_name[0]}_{label_name[1]}"
+                        else:
+                            label_name = label_name[0]
+
+                        context["metadata"].append(
+                            {"label_name": label_name, "label_value": label_value})
+
+            request.session["metadata"] = context
+            return redirect("/result")
+
+    else:
+        form = FileUpload()
+
+    return render(request, 'metadata.html', {'form': form})
+
+# ================================================
+# ================================================
+
+
+def result(request):
+    metadata = request.session.get("metadata")
+    context = metadata
+    return render(request, "result.html", context)
+
+
+# ============================================
+# ============================================
+
+
+def download_csv_data(request):
+    # response content type
+    metadata = request.session.get("metadata")
+    metadata_label = list(metadata.keys())[1:]
+
+    response = HttpResponse(content_type='text/csv')
+    # decide the file name
+    response['Content-Disposition'] = 'attachment; filename="ThePythonDjango.csv"'
+
+    writer = csv.writer(response, csv.excel)
+    response.write(u'\ufeff'.encode('utf8'))
+
+    # writer.writerow(metadata_label)
+
+    metadata_label_name = []
+    metadata_label_value = []
+
+    for metadata_val in metadata["metadata"]:
+        metadata_label_name.append(smart_str(metadata_val["label_name"]))
+        metadata_label_value.append(smart_str(metadata_val["label_value"]))
+
+    writer.writerow(metadata_label_name)
+    writer.writerow(metadata_label_value)
+
+    return response
