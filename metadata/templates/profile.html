@@ -2,23 +2,17 @@
 {% block title %}Profile Page{% endblock%}
 
 {% block content %}
+
+
 <div class="head">
-    <h1>Welcome to your profile {{user.username}}</h1
-    <p>You can check your profile details below</p>
-    <ul>
-    <li>
-        Username {{user.username}}
-    </li>
-    <li>
-        Email {{user.email}}
-    </li>
-    <li>
-        First Name /*{{user.first_name}}*/
-    </li>
-    <li>
-        Last Name /*{{user.last_name}}*/
-    </li>
-    </ul>
+{% for message in messages %}
+<h5>{{message}}</h5>
+{% endfor %}
+    <h1>Account</h1>
+        Email address <br>
+        {{user.email}}
+        <a href="{% url 'metadata:change_email' user.id %}">change</a>
+
     
 </div>
 

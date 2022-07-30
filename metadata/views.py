@@ -47,7 +47,7 @@ def login(request):
             return redirect('/')
         else:
             messages.info(request, 'Invalid username or password')
-            return redirect('/login')
+            return redirect('metadata:login')
     return render(request, "login.html")
 
 
@@ -73,19 +73,19 @@ def signup(request):
         if password == pass2:
             if User.objects.filter(email=email).exists():
                 messages.info(request, "Email already exist")
-                return redirect('signup')
+                return redirect('metadata:signup')
             elif User.objects.filter(username=username).exists():
                 messages.info(request, "Username already exist")
-                return redirect('signup')
+                return redirect('metadata:signup')
             else:
                 user = User.objects.create_user(
                     username=username, email=email, password=password)
                 user.save()
                 messages.info(request, "Account created")
-                return HttpResponseRedirect("login")
+                return redirect("metadata:login")
         else:
             messages.info(request, "Password didnt match")
-            return redirect('signup')
+            return redirect('metadata:signup')
 
     return render(request, "signup.html")
 
@@ -114,13 +114,13 @@ def contact(request):
             name=request.POST['name'], email=request.POST['email'], message=request.POST['message'])
         contact.save()
         messages.info(request, "Message sent")
-        return redirect('/contact')
+        return redirect('metadata:contact')
     return render(request, "contact.html")
-
-
 
     # ==========================================
 # ==========================================
+
+
 class view_metadata(LoginRequiredMixin, View):
     success_url = reverse_lazy('metadata:viewMetadata')
     template_name = 'metadata.html'
@@ -169,7 +169,7 @@ class view_metadata(LoginRequiredMixin, View):
                             {"label_name": label_name, "label_value": label_value})
 
             request.session["metadata"] = context
-            return redirect("/result")
+            return redirect("metadata:result")
         return render(request, self.template_name, {'form': form})
 
     def get(self, request):
@@ -215,3 +215,21 @@ def download_csv_data(request):
     writer.writerow(metadata_label_value)
 
     return response
+
+
+class change_email(LoginRequiredMixin, View):
+    success_url = reverse_lazy('metadata:profile')
+    template = 'change_email.html'
+
+    def get(self, request, pk):
+        return render(request, self.template)
+
+    def post(self, request, pk):
+        email = request.POST['new_email']
+        if User.objects.filter(email=email).exists():
+            messages.info(request, "Email already exist choose another one")
+            return redirect('metadata:change_email', pk=pk)
+        else:
+            User.objects.filter(id=pk).update(email=email)
+            messages.info(request, "Email succesfully updated")
+        return redirect('metadata:profile', pk=pk)

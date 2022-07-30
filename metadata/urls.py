@@ -12,5 +12,6 @@ urlpatterns = [
     path("viewMetadata", views.view_metadata.as_view(), name="viewMetadata"),
     path("contact", views.contact, name="contact"),
     path("download", views.download_csv_data, name="download"),
-    path("result", views.result, name="result")
+    path("result", views.result, name="result"),
+    path("change_email/<int:pk>", views.change_email.as_view(), name="change_email")
 ]
