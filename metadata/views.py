@@ -118,15 +118,18 @@ def contact(request):
     return render(request, "contact.html")
 
 
-# ==========================================
-# ==========================================
 
-def view_metadata(request):
-    context = {"metadata": []}
+    # ==========================================
+# ==========================================
+class view_metadata(LoginRequiredMixin, View):
+    success_url = reverse_lazy('metadata:viewMetadata')
+    template_name = 'metadata.html'
+    login_url = '/login'
+    REDIRECT_FIELD_NAME = 'next'
 
-    if request.method == "POST":
+    def post(self, request):
         form = FileUpload(request.POST, request.FILES)
-
+        context = {"metadata": []}
         if form.is_valid():
 
             uploaded_file = request.FILES['upload_file']
@@ -167,11 +170,11 @@ def view_metadata(request):
 
             request.session["metadata"] = context
             return redirect("/result")
+        return render(request, self.template_name, {'form': form})
 
-    else:
+    def get(self, request):
         form = FileUpload()
-
-    return render(request, 'metadata.html', {'form': form})
+        return render(request, self.template_name, {'form': form})
 
 # ================================================
 # ================================================
