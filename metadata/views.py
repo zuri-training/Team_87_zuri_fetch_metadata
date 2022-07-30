@@ -5,6 +5,7 @@ from django.contrib.messages.views import SuccessMessageMixin
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.views import View
 from django.urls import reverse_lazy
+from metadata.models import Contact
 # Create your views here.
 
 
@@ -76,3 +77,13 @@ class profile(LoginRequiredMixin, View):
     def get(self, request, pk):
         user = get_object_or_404(User, id=pk)
         return render(request, self.template_name)
+
+
+def contact(request):
+    if request.method == 'POST':
+        contact = Contact(
+            name=request.POST['name'], email=request.POST['email'], message=request.POST['message'])
+        contact.save()
+        messages.info(request, "Message sent")
+        return redirect('/contact')
+    return render(request, "contact.html")
