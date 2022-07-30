@@ -46,7 +46,7 @@ def login(request):
             auth.login(request, user)
             return redirect('/')
         else:
-            messages.info(request, 'Invalid username or password')
+            messages.info(request, 'Invalid email or password')
             return redirect('metadata:login')
     return render(request, "login.html")
 
@@ -67,6 +67,8 @@ def logout(request):
 def signup(request):
     if request.method == 'POST':
         username = request.POST['username']
+        first_name = request.POST['first_name']
+        last_name = request.POST['last_name']
         email = request.POST['email']
         password = request.POST['password']
         pass2 = request.POST['pass2']
@@ -79,7 +81,7 @@ def signup(request):
                 return redirect('metadata:signup')
             else:
                 user = User.objects.create_user(
-                    username=username, email=email, password=password)
+                    username=username, first_name=first_name, last_name=last_name, email=email, password=password)
                 user.save()
                 messages.info(request, "Account created")
                 return redirect("metadata:login")
@@ -103,6 +105,24 @@ class profile(LoginRequiredMixin, View):
     def get(self, request, pk):
         user = get_object_or_404(User, id=pk)
         return render(request, self.template_name)
+
+    def post(self, request, pk):
+        if request.POST['type'] == '1':
+            first_name = request.POST['first_name']
+            last_name = request.POST['last_name']
+            User.objects.filter(id=pk).update(
+                first_name=first_name, last_name=last_name)
+            messages.info(request, "Update Succcessful")
+            return redirect('metadata:profile', pk=pk)
+        else:
+            password1 = request.POST['pass1']
+            password2 = request.POST['pass2']
+            if password1 == password2:
+                User.objects.filter(id=pk).update(password=password1)
+                return redirect('metadata:profile', pk=pk)
+            else:
+                messages.info(request, "Password did not match!!")
+                return redirect('metadata:profile', pk=pk)
 
 
 # ===========================================

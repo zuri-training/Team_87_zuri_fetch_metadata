@@ -1,19 +1,46 @@
-{% extends "base.html" %}
-{% block title %}Profile Page{% endblock%}
-
+{% extends "base.html" %} {% block title %}Profile Page{% endblock%} 
 {% block content %}
 
-
 <div class="head">
-{% for message in messages %}
-<h5>{{message}}</h5>
-{% endfor %}
-    <h1>Account</h1>
-        Email address <br>
-        {{user.email}}
-        <a href="{% url 'metadata:change_email' user.id %}">change</a>
-
-    
+	{% for message in messages %}
+	<h5>{{message}}</h5>
+	{% endfor %}
+	<h1>Account</h1>
+	Email address <br />
+	{{user.email}} <br />
+	<a href="{% url 'metadata:change_email' user.id %}">change</a>
+</div>
+<div>
+	<form action="{% url 'metadata:profile' user.id %}" method="POST">
+		{% csrf_token %}
+		<h3>Profile</h3>
+		<p>First Name</p>
+		<input
+			type="text"
+			placeholder="{{ user.first_name }}"
+			name="first_name"
+		/><br />
+		<p>Last Name</p>
+		<input
+			type="text"
+			placeholder="{{ user.last_name }}"
+			name="last_name"
+		/><br />
+		<input type="submit" value="Save Changes" />
+		<input type="hidden" name="type" value="1" />
+	</form>
 </div>
 
+<div>
+	<form action="{% url 'metadata:profile' user.id %}" method="POST">
+		{% csrf_token %}
+		<h3>Password</h3>
+		<p>Enter Password</p>
+		<input type="password" name="pass1" /><br />
+		<p>Confirm Password</p>
+		<input type="password" name="pass2" /><br />
+		<input type="submit" value="Save Changes" />
+		<input type="hidden" name="type" value="2" />
+	</form>
+</div>
 {% endblock %}
