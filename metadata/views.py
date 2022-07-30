@@ -115,11 +115,19 @@ class profile(LoginRequiredMixin, View):
             messages.info(request, "Update Succcessful")
             return redirect('metadata:profile', pk=pk)
         else:
+            username = request.POST['username']
             password1 = request.POST['pass1']
             password2 = request.POST['pass2']
             if password1 == password2:
-                User.objects.filter(id=pk).update(password=password1)
-                return redirect('metadata:profile', pk=pk)
+                u = User.objects.get(username=username)
+                u.set_password(password1)
+                u.save()
+                messages.info(request, "Password updated!!")
+                user = auth.authenticate(username=username, password=password1)
+                if user is not None:
+                    auth.login(request, user)
+                    return redirect('metadata:profile', pk=pk)
+
             else:
                 messages.info(request, "Password did not match!!")
                 return redirect('metadata:profile', pk=pk)
