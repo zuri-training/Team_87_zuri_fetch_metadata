@@ -1,113 +1,65 @@
-*{
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;   
+@import url(font.css);
+
+/* Global styling */
+:root {
+    --blue: #3a86ff;
+    --white: #ffffff;
 }
-body {
-    background: linear-gradient(236deg, #3a86ff 0%, #fff 70% );
+
+* {
+    font-family: 'CabinetGrotesk-Bold';
 }
-.left-column{
-    background-color: #3a86ff;
-    width:620px;
+
+a {
+    text-decoration: none;
 }
-.autentication-form{
+
+button {
+    padding: 18px 35px;
+    background-color: var(--blue);
+    border: 0;
+    border-radius: 5px;
+    color: var(--white);
+}
+
+
+/* Nav */
+
+header {
     display: flex;
-    background-color: #BADBE3;
-    height:1024px;
-    width:1440px;
-    display: flex;
-    padding: 1rem 5rem 0rem 9rem; 
-}
-.right-column{
-    background-color: white;
-    width: 820px;
-    padding: 2rem 8rem 0 5rem;
-    font-family: sans-serif;
-    
-}
-#line{
-    padding: 2rem 0;
-    overflow: hidden;
-    text-align: center;
-}
-#line::before, 
-#line::after{
-    text-decoration: line-through;
-    margin: auto 0.5em;
-    background-color: #000;
-    content: "";
-    display: inline-block;
-    height: 1px;
-    position: relative;
+    justify-content: space-between;
     vertical-align: middle;
+    align-items: center;
+    padding: 20px 40px;
+}
+
+.site-logo {
+    width: 100px;
+}
+
+/* Hero Section */
+.hero {
+    display: flex;
+    justify-content: space-between;
+    vertical-align: middle;
+    align-items: center;
+    padding: 20px 40px;
+}
+
+.left-hero, .right-hero {
     width: 50%;
 }
-#line::before {
-    right: 0.5rem;
-    margin-left: -50%;
+
+.hero-img {
+    width: 600px;
 }
 
-#line::after {
-    left: 0.5rem;
-    margin-right: -50%;
-}
-.google{
-    border-color: #3a86ff;
-    border-style: solid;
-    border-radius: 20px;
-}
-h1 {
-    font-size: 2rem;
-    padding-bottom: 1.5rem;
-}
-.right-column button {
-    padding: 0.6rem 10.1rem;
-    background-color:   rgb(51, 131, 235);
-    border:   rgb(51, 131, 235);
-    border-radius: 4px;
-    color: #fff ;
-    margin-top: 2rem;
-}
-input::placeholder {
-    font-weight: 600;
-    color: #000;
-}
-.account-form input::placeholder {
-    text-align: left;
-    color: #666;
-    font-weight: 100;
+.hero-head {
+    font-size: 70px;
 }
 
-.account-form input {
-     text-align: left; 
-    padding: 0.6rem 11.5rem 0.6rem 0.6rem;
-    margin-bottom: 1rem;
-    border:  1px solid  #666;
-    border-radius: 4px;
+.hero-text {
+    font-size: 25px;
+    line-height: 1.3em;
+    padding-right: 70px;
 }
-.other-sign-up input {
-    padding: 0.6rem 6rem;
-    margin-bottom: 1rem;
-    border:  1px solid  rgb(51, 131, 235);
-    border-radius: 4px;
-}
-button:hover{
-    cursor: pointer;
-    background-color: blue;
-}
-#one{
-    border: 1px solid #3a86ff;
-    background-color: white;
-    color: #000;
-    width: 532px;
-}
-.one{
-    width: 532px;
-}
-#login{
-    width: 532px;
-}
-.other-sign-up{
-    margin-top: 149px;
-}
-
