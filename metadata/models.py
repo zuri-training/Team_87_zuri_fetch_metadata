@@ -1,5 +1,6 @@
 from django.db import models
 from django.core.validators import MinLengthValidator
+from django.contrib.auth.models import User
 
 
 class Contact(models.Model):
@@ -16,3 +17,11 @@ class Contact(models.Model):
         if len(self.message) < 15:
             return self.message
         return self.text[:11] + ' ...'
+
+
+class Profile(models.Model):
+    user = models.OneToOneField(User, on_delete=models.CASCADE) # Delete profile when user is deleted
+    image = models.ImageField(default='default.jpg', upload_to='profile_pics')
+
+    def __str__(self):
+        return f'{self.user.username} Profile' #show how we want it to be displayed
