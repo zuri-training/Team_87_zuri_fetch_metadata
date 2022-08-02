@@ -14,7 +14,7 @@
 
     <main class="autentication-form">
         
-        <div class="left-column">
+        <div class="left-column" id="login-left">
 
         </div>
 
@@ -22,9 +22,15 @@
 
             <div class="other-sign-up">
                 <h1><b>Login</b></h1>
-                <button type="submit" id="one">Sign in with Google</button>
+                <button type="submit" id="one">
+                    <img src="css/img/google 1.png" alt="" class="google">
+                    Sign in with Google
+                </button>
                 <br>
-                <button type="submit" id="one">Sign in with Facebook</button>
+                <button type="submit" id="one">
+                    <img src="css/img/Vector.png" alt="" class="fb">
+                    Sign in with Facebook
+                </button>
             </div>
 
                 <p id="line">Or</p>
@@ -33,8 +39,9 @@
                  <!-- Login Form -->
                 <form class="meta-form" action="">
                     <div class="meta-form-field">
-                        <p>Email Address</p>
-                        <input type="email" name="email" placeholder="Email" class="one">
+                        <label for="text" class="field-label">Username</label>
+                        <img src="css/img/user.png" alt="" class="form-img">
+                        <input type="text" placeholder="username">
                     </div>
 
                     <div class="meta-form-field">
