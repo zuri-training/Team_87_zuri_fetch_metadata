@@ -3,7 +3,7 @@ from django.http import HttpResponse
 from django.utils.encoding import smart_str
 from metadata.models import Contact
 from django.http import HttpResponseRedirect
-from .forms import FileUpload
+from .forms import FileUpload, ProfileForm
 from django.urls import reverse_lazy
 from django.views import View
 from django.contrib.auth.mixins import LoginRequiredMixin
@@ -251,3 +251,17 @@ class change_email(LoginRequiredMixin, View):
             User.objects.filter(id=pk).update(email=email)
             messages.info(request, "Email succesfully updated")
         return redirect('metadata:profile', pk=pk)
+
+
+def accountSettings(request):
+    profile= request.user.profile
+    form= ProfileForm(instance=profile)
+
+    if request.method == 'POST':
+        form = ProfileForm(request.POST, request.FILES, instance=profile)
+        if form.is_valid():
+            form.save()
+            messages.info(request, "Picture Updated succesfully!")
+            return redirect('metadata:index')
+    context = {'form': form}
+    return render(request, 'update_picture.html', context)

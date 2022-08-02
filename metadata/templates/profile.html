@@ -4,12 +4,13 @@
 {% block content %}
  <div class="content-section">
       <div class="media">
-		{% if user.profile.image %}
-			<img class="rounded-circle account-img" src="{{ user.profile.image.url }}" width="200" height="200">
+		{% if user.profile.profile_pic %}
+			<img class="rounded-circle account-img" src="{{ user.profile.profile_pic.url }}" width="200" height="200">
 		{% else %}
 		<img class="rounded-circle account-img" src="{% static 'metadata/images/default.jpg'%}" width="200" height="200">
 		{% endif %}
       </div>
+	  <a href="/update_picture">Update Picture</a>
     </div>
 
 <div class="head">
