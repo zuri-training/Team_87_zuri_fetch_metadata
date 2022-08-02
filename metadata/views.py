@@ -1,3 +1,4 @@
+import json
 from django.http import HttpResponse
 from django.utils.encoding import smart_str
 from metadata.models import Contact
@@ -11,6 +12,12 @@ from django.contrib import messages
 from django.contrib.auth.models import User, auth
 from django.shortcuts import render, redirect, get_object_or_404
 
+# =================
+# import helper function defined in helper_functions.py
+from .helperFuncs.pillow import extract_image_metadata_with_pillow
+from .helperFuncs.hachoir import extract_metadata_with_hachoir
+from .helperFuncs.extractImage import extract_image_metadata
+# from helperFuncs.pillow import extract_image_metadata_with_pillow
 
 # ================
 # import packages for extracting metadata
@@ -158,43 +165,26 @@ class view_metadata(LoginRequiredMixin, View):
     def post(self, request):
         form = FileUpload(request.POST, request.FILES)
         context = {"metadata": []}
+
         if form.is_valid():
 
             uploaded_file = request.FILES['upload_file']
             file_type = uploaded_file.content_type.split("/")
 
-            context["metadata"].append(
-                {"label_name": "file name", "label_value": uploaded_file.name})
-            context["metadata"].append(
-                {"label_name": "file size", "label_value": uploaded_file.size})
-            context["metadata"].append(
-                {"label_name": "file type", "label_value": file_type[0].capitalize()})
-            context["metadata"].append(
-                {"label_name": "mime type", "label_value": uploaded_file.content_type})
+            # context["metadata"].append(
+            #     {"tag_name": "File name", "tag_value": uploaded_file.name.capitalize()})
+            # context["metadata"].append(
+            #     {"tag_name": "File size", "tag_value": uploaded_file.size})
+            # context["metadata"].append(
+            #     {"tag_name": "File type", "tag_value": file_type[1].capitalize()})
+            # context["metadata"].append(
+            #     {"tag_name": "Mime type", "tag_value": uploaded_file.content_type.capitalize()})
 
             if file_type[0] == "video" or file_type[0] == "image" or file_type[0] == "audio":
 
-                parser = createParser(uploaded_file)
-                metadata = extractMetadata(parser)
-
-                context["file_name"] = uploaded_file.name
-                context["file_size"] = uploaded_file.size
-                context["file_type"] = file_type[0].capitalize()
-                context["mime_type"] = uploaded_file.content_type
-
-                for line in enumerate(metadata.exportPlaintext()):
-                    if line[0] != 0:
-                        label = line[1].split(":")
-                        label_name = label[0][1:].split()
-                        label_value = label[1][:]
-
-                        if len(label_name) > 1:
-                            label_name = f"{label_name[0]}_{label_name[1]}"
-                        else:
-                            label_name = label_name[0]
-
-                        context["metadata"].append(
-                            {"label_name": label_name, "label_value": label_value})
+                extracted_metadata = extract_image_metadata(
+                    file_type[0], uploaded_file)
+                context['metadata'] += extracted_metadata
 
             request.session["metadata"] = context
             return redirect("metadata:result")
