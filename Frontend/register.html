@@ -7,6 +7,7 @@
     <title>Sign Up</title>
     <link rel="stylesheet" href="css\style.css">
     <link rel="stylesheet" href="css\form.css">
+    <link href='https://fonts.googleapis.com/css?family=Space Grotesk' rel='stylesheet'>
 </head>
 <body>
      
@@ -20,9 +21,14 @@
         <div class="right-column">
 
             <div class="other-sign-up">
-
+                <h1><b>Create Account</b></h1>
+                <button type="submit" id="one">Sign Up with Google</button>
+                <br>
+                <button type="submit" id="one">Sign Up with Facebook</button>
             </div>
 
+            <p id="line">Or</p>
+            
             <div class="account-form">
                 <!-- Register Form -->
                 <form class="meta-form" action="">
@@ -47,8 +53,19 @@
                         <input type="password" name="" id="">
                     </div>
 
+                    
                     <div class="meta-form-field">
-                        <input type="button" value="Login">
+                        <label for="password" class="field-label">Confirm Password</label>
+                        <input type="password" name="" id="">
+                    </div>
+
+                    <div class="meta-form-field">
+                        <input type="button" value="Login" id="register">
+                    </div>
+
+                    
+                    <div>
+                        <p class="login-text">Already have an account?  <a href="login.html"> Login</a></p>
                     </div>
                 </form>
 

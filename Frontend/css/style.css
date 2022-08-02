@@ -1,4 +1,5 @@
-@import url(font.css);
+@import url("font.css");
+@import url('fonts/cabinetgrotesk-bold.woff2');
 
 /* Global styling */
 :root {
@@ -6,7 +7,7 @@
     --white: #ffffff;
 }
 
-* {
+body {
     font-family: 'CabinetGrotesk-Bold';
 }
 
