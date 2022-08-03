@@ -1,18 +1,23 @@
+import re
+from django.shortcuts import render, redirect, get_object_or_404
+from django.contrib.auth.models import User, auth
+from django.contrib import messages
+from django.contrib.messages.views import SuccessMessageMixin
+from django.contrib.auth.mixins import LoginRequiredMixin
+from django.views import View
+from django.urls import reverse_lazy
+import os
+
+from hachoir.parser import createParser
+from hachoir.metadata import extractMetadata
 import json
 from django.http import HttpResponse
 from django.utils.encoding import smart_str
 from metadata.models import Contact
 from django.http import HttpResponseRedirect
-from .forms import FileUpload
-from django.urls import reverse_lazy
-from django.views import View
-from django.contrib.auth.mixins import LoginRequiredMixin
-from django.contrib.messages.views import SuccessMessageMixin
-from django.contrib import messages
-from django.contrib.auth.models import User, auth
-from django.shortcuts import render, redirect, get_object_or_404
+from .forms import FileUpload, ProfileForm
 
-# =================
+
 # import helper function defined in helper_functions.py
 from .helperFuncs.pillow import extract_image_metadata_with_pillow
 from .helperFuncs.hachoir import extract_metadata_with_hachoir
@@ -91,16 +96,12 @@ def signup(request):
                     username=username, first_name=first_name, last_name=last_name, email=email, password=password)
                 user.save()
                 messages.info(request, "Account created")
-                return redirect("metadata:login")
+                return HttpResponseRedirect("login")
         else:
             messages.info(request, "Password didnt match")
             return redirect('metadata:signup')
 
     return render(request, "signup.html")
-
-
-# ============================================
-# ============================================
 
 
 class profile(LoginRequiredMixin, View):
@@ -113,31 +114,57 @@ class profile(LoginRequiredMixin, View):
         user = get_object_or_404(User, id=pk)
         return render(request, self.template_name)
 
-    def post(self, request, pk):
-        if request.POST['type'] == '1':
-            first_name = request.POST['first_name']
-            last_name = request.POST['last_name']
-            User.objects.filter(id=pk).update(
-                first_name=first_name, last_name=last_name)
-            messages.info(request, "Update Succcessful")
-            return redirect('metadata:profile', pk=pk)
-        else:
-            username = request.POST['username']
-            password1 = request.POST['pass1']
-            password2 = request.POST['pass2']
-            if password1 == password2:
-                u = User.objects.get(username=username)
-                u.set_password(password1)
-                u.save()
-                messages.info(request, "Password updated!!")
-                user = auth.authenticate(username=username, password=password1)
-                if user is not None:
-                    auth.login(request, user)
-                    return redirect('metadata:profile', pk=pk)
 
-            else:
-                messages.info(request, "Password did not match!!")
+def handle_uploaded_file(f):
+    with open('metadata / upload/'+f.name, 'wb+') as destination:
+        for chunk in f.chunks():
+            destination.write(chunk)
+
+
+def view_metadata(request):
+    if request.method == "POST":
+        form = FileUpload(request.POST, request.FILES)
+        # print(request.FILES["upload_file"])
+        if form.is_valid():
+            # handle_uploaded_file(request.FILES["upload_file"])
+            print(request.FILES['upload_file'].content_type)
+            print(request.FILES['upload_file'].name)
+            print(request.FILES['upload_file'].size)
+            parser = createParser(request.FILES['upload_file'])
+            print(extractMetadata(parser))
+            HttpResponseRedirect("/")
+
+    else:
+        form = FileUpload()
+
+    return render(request, 'metadata.html', {'form': form})
+
+
+def post(self, request, pk):
+    if request.POST['type'] == '1':
+        first_name = request.POST['first_name']
+        last_name = request.POST['last_name']
+        User.objects.filter(id=pk).update(
+            first_name=first_name, last_name=last_name)
+        messages.info(request, "Update Succcessful")
+        return redirect('metadata:profile', pk=pk)
+    else:
+        username = request.POST['username']
+        password1 = request.POST['pass1']
+        password2 = request.POST['pass2']
+        if password1 == password2:
+            u = User.objects.get(username=username)
+            u.set_password(password1)
+            u.save()
+            messages.info(request, "Password updated!!")
+            user = auth.authenticate(username=username, password=password1)
+            if user is not None:
+                auth.login(request, user)
                 return redirect('metadata:profile', pk=pk)
+
+        else:
+            messages.info(request, "Password did not match!!")
+            return redirect('metadata:profile', pk=pk)
 
 
 # ===========================================
@@ -152,7 +179,7 @@ def contact(request):
         return redirect('metadata:contact')
     return render(request, "contact.html")
 
-    # ==========================================
+# ==========================================
 # ==========================================
 
 
@@ -170,15 +197,6 @@ class view_metadata(LoginRequiredMixin, View):
 
             uploaded_file = request.FILES['upload_file']
             file_type = uploaded_file.content_type.split("/")
-
-            # context["metadata"].append(
-            #     {"tag_name": "File name", "tag_value": uploaded_file.name.capitalize()})
-            # context["metadata"].append(
-            #     {"tag_name": "File size", "tag_value": uploaded_file.size})
-            # context["metadata"].append(
-            #     {"tag_name": "File type", "tag_value": file_type[1].capitalize()})
-            # context["metadata"].append(
-            #     {"tag_name": "Mime type", "tag_value": uploaded_file.content_type.capitalize()})
 
             if file_type[0] == "video" or file_type[0] == "image" or file_type[0] == "audio":
 
@@ -251,3 +269,17 @@ class change_email(LoginRequiredMixin, View):
             User.objects.filter(id=pk).update(email=email)
             messages.info(request, "Email succesfully updated")
         return redirect('metadata:profile', pk=pk)
+
+
+def accountSettings(request):
+    profile = request.user.profile
+    form = ProfileForm(instance=profile)
+
+    if request.method == 'POST':
+        form = ProfileForm(request.POST, request.FILES, instance=profile)
+        if form.is_valid():
+            form.save()
+            messages.info(request, "Picture Updated succesfully!")
+            return redirect('metadata:index')
+    context = {'form': form}
+    return render(request, 'update_picture.html', context)
