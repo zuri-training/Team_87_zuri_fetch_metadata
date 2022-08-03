@@ -121,25 +121,6 @@ def handle_uploaded_file(f):
             destination.write(chunk)
 
 
-def view_metadata(request):
-    if request.method == "POST":
-        form = FileUpload(request.POST, request.FILES)
-        # print(request.FILES["upload_file"])
-        if form.is_valid():
-            # handle_uploaded_file(request.FILES["upload_file"])
-            print(request.FILES['upload_file'].content_type)
-            print(request.FILES['upload_file'].name)
-            print(request.FILES['upload_file'].size)
-            parser = createParser(request.FILES['upload_file'])
-            print(extractMetadata(parser))
-            HttpResponseRedirect("/")
-
-    else:
-        form = FileUpload()
-
-    return render(request, 'metadata.html', {'form': form})
-
-
 def post(self, request, pk):
     if request.POST['type'] == '1':
         first_name = request.POST['first_name']
@@ -253,6 +234,9 @@ def download_csv_data(request):
     return response
 
 
+# =================================================
+# =================================================
+
 class change_email(LoginRequiredMixin, View):
     success_url = reverse_lazy('metadata:profile')
     template = 'change_email.html'
@@ -269,6 +253,10 @@ class change_email(LoginRequiredMixin, View):
             User.objects.filter(id=pk).update(email=email)
             messages.info(request, "Email succesfully updated")
         return redirect('metadata:profile', pk=pk)
+
+
+# =====================================================
+# =====================================================
 
 
 def accountSettings(request):
