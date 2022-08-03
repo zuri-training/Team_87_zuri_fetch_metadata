@@ -71,3 +71,80 @@ header {
     line-height: 1.3em;
     padding-right: 70px;
 }
+
+
+/* Error 404 page styling here */
+/* Error 404 page styling here */
+
+/* body{
+    margin: 0 10px;
+} */
+
+/* Navigation stylinng below: */
+header{
+    display: flex;
+}
+header div img{
+    width: 70px;
+    height: 70px;
+    margin-right: 230px;
+}
+.nav-items{
+    margin-right: 30px;
+    padding-top: 20px;
+    font-size: 18px;
+}
+header div button{
+    padding: 8px 30px;
+}
+.first-button{
+    margin-left: 250px;
+    padding-top: 22px;
+    font-size: 18px;
+}
+#first-button{
+    background: white;
+    border-color: rgb(13, 112, 226);
+    border-radius: 5px;
+    color: rgb(13, 112, 226);
+    font-size: 18px;
+}
+.second-button{
+    padding-top: 22px;
+    margin-left: 10px;
+}
+#second-button{
+    background: rgb(13, 112, 226);
+    border-color: rgb(13, 112, 226);
+    color: white;
+    border-radius: 5px;
+}
+
+/* main section styling below: */
+
+main{
+    display: flex;
+    margin-top: 60px;
+}
+main div img{
+    width: 600px;
+    height: 500px;
+}
+#right-side{
+    margin: 100px 0 0 80px;
+}
+h2{
+    margin-bottom: 8px;
+}
+#right-side div p{
+    margin-bottom: 50px;
+    font-size: 18px;
+}
+.main-button{
+    background: rgb(13, 112, 226);
+    border-color: rgb(13, 112, 226);
+    color: white;
+    border-radius: 5px;
+    padding: 8px 20px;
+    font-size: 20px;
+}
