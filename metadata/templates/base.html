@@ -10,10 +10,15 @@
 		<header>
 			<nav>
 				<li><a href="/">Home</a></li>
+				<li><a href="contact">Contact</a></li>
 				{% if user.is_authenticated %}
 				<li><a href="/logout">Logout</a></li>
 				<li><a href="{% url 'metadata:profile' user.id %}">Profile</a></li>
+<<<<<<< HEAD
 				<li><a href="/viewMetadata">ViewMetaData</a></li>
+=======
+				<li><a href="/viewMetadata">Extract MetaData</a></li>
+>>>>>>> refs/remotes/origin/main
 				{% else %}
 				<li><a href="/login">Log in</a></li>
 				<li><a href="/signup">Sign Up</a></li>

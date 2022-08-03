@@ -1,0 +1,42 @@
+{% extends "base.html" %} {% block content %} {% if user.is_authenticated %}
+
+<div style="width: 80%; margin: auto; border: 1px solid black">
+	<h1 style="text-align: center">Metadata Result</h1>
+
+	<table border="1" style="width: 50%; margin: auto">
+		<thead>
+			<tr>
+				<th colspan="2">MetaData</th>
+			</tr>
+		</thead>
+		<tbody>
+			{% for data in metadata %}
+			<tr>
+				<td style="padding: 0.3rem 1rem">{{data.tag_name}}</td>
+				<td style="padding: 0.3rem 1rem">{{data.tag_value}}</td>
+			</tr>
+			{% endfor %}
+		</tbody>
+	</table>
+	<a
+		style="
+			display: block;
+			width: 20%;
+			text-align: center;
+			font-size: 1rem;
+			font-weight: bold;
+			background-color: black;
+			margin: 1rem auto 2rem;
+			padding: 1rem 4.7rem;
+			text-decoration: none;
+			color: white;
+		"
+		href="/download"
+		>Download Metadata</a
+	>
+</div>
+{% else %}
+<h2>You must be logged in to access this page</h2>
+<p><a href="/login">Login</a> to continue</p>
+
+{% endif %} {% endblock %}

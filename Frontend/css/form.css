@@ -1,0 +1,162 @@
+@import url("style.css");
+@import url("font.css");
+
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0; 
+
+}
+
+/* Main Section */
+.autentication-form{
+    display: flex;
+    width: 100%;
+    height: auto;
+    display: flex; 
+}
+
+
+/* Sections */
+.left-column {
+    background-color: #3a86ff;
+    width: 40%;
+    height: 100vh;
+    position: fixed;
+}
+
+.right-column {
+    background-color: white;
+    width: 60%;
+    padding: 150px 150px 50px 60px;
+    font-family: sans-serif;
+    position: relative;
+    left: 40%;
+    bottom: 50px;
+}
+
+/* Other Sign up */
+h1 {
+    font-size: 50px;
+    padding-bottom: 1.5rem;
+}
+
+.other-sign-up button {
+    width: 100%;
+    padding: 0.6rem 6rem;
+    margin-bottom: 1rem;
+    border:  1px solid  var(--blue);
+    border-radius: 4px;
+}
+
+/* Line Separator */
+#line{
+    padding: 50px 0 30px 0;
+    overflow: hidden;
+    text-align: center;
+}
+
+#line::before, 
+#line::after{
+    text-decoration: line-through;
+    margin: auto 0.5em;
+    background-color: #D3D1D2;
+    content: "";
+    display: inline-block;
+    height: 1px;
+    position: relative;
+    vertical-align: middle;
+    width: 50%;
+}
+
+#line::before {
+    right: 0.5rem;
+    margin-left: -50%;
+}
+
+#line::after {
+    left: 0.5rem;
+    margin-right: -50%;
+}
+
+
+/* Form */
+input[type=text] {
+    width: 100%;
+    padding: 15px 20px;
+    margin: 8px 0;
+    box-sizing: border-box;
+    border-radius: 5px;
+    border: 1px solid #D3D1D2;
+}
+  
+input[type=email] {
+    width: 100%;
+    padding: 15px 20px;
+    margin: 8px 0;
+    box-sizing: border-box;
+    border-radius: 5px;
+    border: 1px solid #D3D1D2;
+}
+  
+input[type=password] {
+    width: 100%;
+    padding: 15px 20px;
+    margin: 8px 0;
+    box-sizing: border-box;
+    border-radius: 5px;
+    border: 1px solid #D3D1D2;
+}
+
+
+input[type=button], input[type=submit], input[type=reset] {
+    background-color: var(--blue);
+    width: 100%;
+    border: none;
+    color: white;
+    padding: 17px 40px;
+    font-size: 20px;
+    text-decoration: none;
+    cursor: pointer;
+    border-radius: 5px;
+}
+  
+input[type=button]:hover {
+    background-color: var(--blue);
+}
+
+
+#register {
+    margin-top: 70px;
+}
+
+.login-text {
+    margin-top: 40px;
+}
+
+.login-text a {
+    color: var(--blue);
+}
+
+.login-password {
+    margin: 20px 0;
+    color: black;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

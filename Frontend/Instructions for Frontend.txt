@@ -1,0 +1,27 @@
+Read this documentation before you start working
+
+This is the code base for the Fetch metadata project. 
+
+We will be using CSS variables. All global styles (font, colors, buttons) will be stores in "style.css" and should be imported should you create any other CSS file
+
+Please view the figma file to understand the design (https://www.figma.com/file/CkM3iUeJbQPQpanFVs85xx/Figma-Metadata-style-guide?node-id=54%3A393)
+
+LOGIN AND REGISTER FORMS
+
+    CSS
+    'style.css' contains the global styling
+    'form.css' is for styling the Login and Register pages. The 
+
+    Classes and IDs
+    "autentication-form" is the class name for the main content of the page.
+    "left-column" is the class name for the left section.
+    "right-column" is the class name for the right section.
+    "other-sign-up" is the class name for the container housing the other signup/login options buttons.
+    "account-form" is the class name for the container housing the form.
+    "meta-form" is the class name of the form.
+    "meta-form-field" is the class name for the container form field.
+    "field-label" is the class name for the label.
+
+    When making changes, please adhere to the classes in order not to damage the codebase.
+
+
