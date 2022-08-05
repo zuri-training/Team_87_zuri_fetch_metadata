@@ -130,6 +130,9 @@ input[type=text] {
   
 input[type=text]::placeholder {
     padding-left: 30px;
+    background-image: url('img/user.png');
+    background-size: contain;
+    background-repeat: no-repeat;
 }
 
 input[type=email] {
