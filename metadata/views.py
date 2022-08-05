@@ -191,7 +191,7 @@ class view_metadata(LoginRequiredMixin, View):
             request.session["metadata"] = context
             a = request.session.get("metadata")
             size  = a['metadata'][1]['tag_value']
-            if int(size) > 20000000:
+            if int(size) < 20000000:
                 name = a['metadata'][0]['tag_value']
                 owner = request.user
                 data = Files(file_name=name,
