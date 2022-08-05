@@ -1,44 +1,50 @@
 @import url("style.css");
 
-*{
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0; 
+.extract {
+    border: 2px dashed var(--blue);
+    border-radius: 20px;
+    align-items: center;
+    vertical-align: middle;
+    justify-content: center;
+    text-align: center;
+    padding: 50px;
 }
 
-header{
-    background-color: white;
-    display: flex;
-}
-.site-logo{
-    float: left;
-}
-.menu{
-    display: flex;
-    align-items: center;
-    justify-items: center;
-    padding-left: 50px;
-}
-main{
-    background-color: white;
-}
 .file-options{
     display: flex;
 }
+
 .headline{
     text-align: center;
+    font-size: 40px;
 }
+
 .formats{
     display: flex;
-    justify-content: center;
+    width: 1240px;
+    height: auto;
+    margin: 0 auto;
+    padding: 0 auto;
+    justify-content: space-between;
+    vertical-align: middle;
     align-items: center;
-    padding-top: 30px;
+    padding: 20px 40px;
 }
+
 .card{
-    background-color: white;
-    box-shadow: black;
-    padding-right: 40px;
+    background-color: var(--white);
+    width: 33%;
 }
+
+
+
+
+
+
+
+
+
+
 footer{
     background-color: grey;
     display: flex;

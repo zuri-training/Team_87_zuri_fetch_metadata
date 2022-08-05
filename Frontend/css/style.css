@@ -18,7 +18,7 @@ a {
 }
 
 button {
-    padding: 18px 35px;
+    padding: 18px 37px;
     background-color: var(--blue);
     border: 0;
     border-radius: 5px;
@@ -34,32 +34,98 @@ button {
 /* Nav */
 
 header {
+    width: 1240px;
+    height: auto;
+    margin: 0 auto;
+    padding: 0 auto;
+    vertical-align: middle;
+    align-self: center;
     display: flex;
     justify-content: space-between;
     vertical-align: middle;
     align-items: center;
-    padding: 20px 40px;
+}
+
+.nav-logo{
+    width: 20%;
+}
+
+.navigation{
+    width: 50%;
+}
+
+.nav-button {
+    width: 30%;
+    margin: 0;
+    padding: 0;
 }
 
 .site-logo {
     width: 100px;
 }
 
+.menu a {
+    color: var(--black);
+    font-size: 17px;
+    margin: 20px;
+    border-bottom: 2px solid var(--white);
+}
+
+.menu a:hover {  
+    border-bottom: 2px solid;
+    border-color: var(--blue);
+    padding-bottom: 5px;
+}
+
+.menu a:active {
+    border-bottom: 2px solid;
+    border-color: var(--blue);
+}
+
+.nav-btn-outline {
+    background-color: var(--white);
+    border: 1px solid var(--blue);
+    padding: 18px 60px;
+    margin-right: 10px;
+}
+
+.nav-btn-outline a {
+    color: var(--blue);
+    font-size: 16px;
+}
+
+.nav-btn-solid {
+    border: 1px solid var(--blue);
+}
+
+.nav-btn-solid a {
+    color: var(--white);
+    font-size: 16px;
+}
+
 /* Hero Section */
 .hero {
     display: flex;
+    width: 1240px;
+    height: auto;
+    margin: 0 auto;
+    padding: 70px 0;
     justify-content: space-between;
     vertical-align: middle;
     align-items: center;
-    padding: 20px 40px;
 }
 
 .left-hero, .right-hero {
     width: 50%;
 }
 
+.right-hero {
+    text-align: end;
+}
+
 .hero-img {
-    width: 600px;
+    width: 90%;
+    text-align: end;
 }
 
 .hero-head {
