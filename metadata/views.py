@@ -25,23 +25,16 @@ from .helperFuncs.extractPdf import extract_pdf_file
 # from helperFuncs.pillow import extract_image_metadata_with_pillow
 
 # ================
-# import packages for extracting metadata
-from hachoir.metadata import extractMetadata
-from hachoir.parser import createParser
-from tinytag import TinyTag
-
-# ================
 # import for csv
 import csv
 
-import pikepdf
-
 # Create your views here.
 
-#=========
+# =========
 # import jsson to save the results
 import json
-#===
+# ===
+
 
 def index(request):
     context = {}
@@ -190,26 +183,20 @@ class view_metadata(LoginRequiredMixin, View):
                 extracted_metadata = extract_image_metadata(
                     file_type[0], uploaded_file)
                 context['metadata'] += extracted_metadata
-<<<<<<< HEAD
 
             elif file_type[1].lower() == "pdf":
                 pdf_metadata = extract_pdf_file(uploaded_file)
                 context['metadata'] += pdf_metadata
 
-=======
-            #check the file size and  save to  database if less than 20mb
->>>>>>> eb5ec076fe0c4ccf9ca7abbdc687e2969da78614
             request.session["metadata"] = context
             a = request.session.get("metadata")
-            size  = a['metadata'][1]['tag_value']
+            size = a['metadata'][1]['tag_value']
             if int(size) < 20000000:
                 name = a['metadata'][0]['tag_value']
                 owner = request.user
                 data = Files(file_name=name,
                              uploaded_file=uploaded_file, owner=owner)
                 data.save()
-                
-            
 
             return redirect("metadata:result")
         return render(request, self.template_name, {'form': form})
@@ -245,33 +232,32 @@ def save(request):
         messages.info(request, "data saved succesfully")
         return render(request, "index.html")
 
-##================
+# ================
 
 
 class saved_files(LoginRequiredMixin, View):
     login_url = '/login'
     model = Files
     template_name = 'saved_files.html'
-    def get(set,request):
+
+    def get(set, request):
         owner = request.user
         files = Files.objects.all()
         context = {"owner": owner, "files": files}
         return render(request, "saved_files.html", context)
 
 
-##=====
+# =====
 
 def review(request, pk):
-    data= History.objects.get(id=pk)
+    data = History.objects.get(id=pk)
     metadata = json.loads(data.data)
     context = metadata
     request.session["metadata"] = context
     return render(request, "result.html", context)
 
 
-
-
-#===============
+# ===============
 
 
 class history(LoginRequiredMixin, View):
@@ -291,14 +277,12 @@ class history(LoginRequiredMixin, View):
         #         user_history[no] = {"name":i.name,"data":i.data,"time":i.created_at}
         #         no +=1
         # print(user_history)
-                
-        context = {"history":history,"user":user}
+
+        context = {"history": history, "user": user}
         return render(request, self.template_name, context)
 
-        
 
-
-#==============
+# ==============
 
 def download_csv_data(request):
     # response content type
