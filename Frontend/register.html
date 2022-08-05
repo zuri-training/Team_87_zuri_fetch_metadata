@@ -56,7 +56,8 @@
 
                     <div class="meta-form-field">
                         <label for="password" class="field-label">Password</label>
-                        <input type="password" name="" id="">
+                        <input type="password" name="" id="" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"
+                        title="Must contain at least one  number and one uppercase and lowercase letter, and at least 8 or more characters">
                     </div>
 
                     
@@ -66,7 +67,7 @@
                     </div>
 
                     <div class="meta-form-field">
-                        <input type="button" value="Login" id="register">
+                        <input type="submit" value="CReate Account" id="register">
                     </div>
 
                     
