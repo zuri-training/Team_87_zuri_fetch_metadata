@@ -204,7 +204,6 @@ def result(request):
     context = metadata
     return render(request, "result.html", context)
 
-<<<<<<< HEAD
 
 # ============================================
 # ============================================
@@ -222,10 +221,6 @@ def save(request):
         history.save()
         messages.info(request, "data saved succesfully")
         return render(request, "index.html")
-=======
-# =============================================
-# =============================================
->>>>>>> 3723ba6f9a0b9214eefa0ebef080b7495bd6d555
 
 ##================
 
