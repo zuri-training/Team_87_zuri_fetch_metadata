@@ -1,0 +1,56 @@
+@import url("style.css");
+
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0; 
+}
+header{
+    background-color: white;
+    display: flex;
+}
+.site-logo{
+    float: left;
+}
+.menu{
+    display: flex;
+    align-items: center;
+    justify-items: center;
+    padding-left: 50px;
+}
+main{
+    background-color: white;
+}
+.file-options{
+    display: flex;
+}
+.headline{
+    text-align: center;
+}
+.formats{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: 30px;
+}
+.card{
+    background-color: white;
+    box-shadow: black;
+    padding-right: 40px;
+}
+footer{
+    background-color: grey;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: 30px;
+}
+.right{
+    border-color: #3a86ff;
+    border-style: dashed;
+    border-width: 2px;
+    float: right;
+}
+.left{
+    padding-top: 20px;
+}
