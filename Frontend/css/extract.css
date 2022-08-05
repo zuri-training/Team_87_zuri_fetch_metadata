@@ -1,8 +1,19 @@
 @import url("style.css");
 
+
+span {
+    color: var(--blue);
+}
+
+.right-hero {
+    align-items: flex-end;
+    text-align: end;
+}
+
 .extract {
+    width: 450px;
     border: 2px dashed var(--blue);
-    border-radius: 20px;
+    border-radius: 10px;
     align-items: center;
     vertical-align: middle;
     justify-content: center;
@@ -14,9 +25,22 @@
     display: flex;
 }
 
+.img-svg {
+    width: 110px;
+}
+
+.upload-txt {
+    font-size: 25px;
+}
+
+.up, .down {
+    padding: 20px 0;
+}
+
 .headline{
     text-align: center;
     font-size: 40px;
+    padding-top: 100px;
 }
 
 .formats{
@@ -32,10 +56,32 @@
 }
 
 .card{
-    background-color: var(--white);
-    width: 33%;
+    background-color: var(--grey);
+    width: 250px;
+    border-radius: 10px;
+    padding: 0;
+    box-shadow: 0px 0px 50px 0px #cccccc;
+    text-align: center;
 }
 
+.icon-card {
+    background-color: var(--white);
+    border-radius: 10px;
+    padding: 10px;
+}
+
+h3 {
+    font-size: 28px;
+}
+
+.card-text {
+    font-size: 19px;
+}
+
+.card-png {
+    width: 100px;
+    padding: 20px 0;
+}
 
 
 
