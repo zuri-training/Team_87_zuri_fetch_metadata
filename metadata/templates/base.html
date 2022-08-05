@@ -16,7 +16,8 @@
 				<li><a href="{% url 'metadata:profile' user.id %}">Profile</a></li>
 
 				<li><a href="/viewMetadata">Extract MetaData</a></li>
-				<li><a href="{% url 'metadata:history' user.id %}">Saved History</a></li>
+				<li><a href="{% url 'metadata:history' user.id %}">Saved Metadatas</a></li>
+				<li><a href="{% url 'metadata:saved_files' %}">Saved Files</a></li>
 				{% else %}
 				<li><a href="/login">Log in</a></li>
 				<li><a href="/signup">Sign Up</a></li>

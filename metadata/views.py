@@ -14,7 +14,7 @@ import json
 from django.http import JsonResponse
 from django.http import HttpResponse
 from django.utils.encoding import smart_str
-from metadata.models import Contact, History
+from metadata.models import Contact, History, Files
 from django.http import HttpResponseRedirect
 from .forms import FileUpload, ProfileForm
 
@@ -186,8 +186,19 @@ class view_metadata(LoginRequiredMixin, View):
                 extracted_metadata = extract_image_metadata(
                     file_type[0], uploaded_file)
                 context['metadata'] += extracted_metadata
-
+            #check the file size and  save to  database if less than 20mb
             request.session["metadata"] = context
+            a = request.session.get("metadata")
+            size  = a['metadata'][1]['tag_value']
+            if int(size) > 20000000:
+                name = a['metadata'][0]['tag_value']
+                owner = request.user
+                data = Files(file_name=name,
+                             uploaded_file=uploaded_file, owner=owner)
+                data.save()
+                
+            
+
             return redirect("metadata:result")
         return render(request, self.template_name, {'form': form})
 
@@ -224,6 +235,19 @@ def save(request):
 
 ##================
 
+
+class saved_files(LoginRequiredMixin, View):
+    login_url = '/login'
+    model = Files
+    template_name = 'saved_files.html'
+    def get(set,request):
+        owner = request.user
+        files = Files.objects.all()
+        context = {"owner": owner, "files": files}
+        return render(request, "saved_files.html", context)
+
+
+##=====
 
 def review(request, pk):
     data= History.objects.get(id=pk)
