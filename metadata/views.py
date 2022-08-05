@@ -193,14 +193,16 @@ class view_metadata(LoginRequiredMixin, View):
                 context['metadata'] += default_metadata(uploaded_file)
 
             request.session["metadata"] = context
-            a = request.session.get("metadata")
-            size = a['metadata'][1]['tag_value']
-            if int(size) < 20000000:
-                name = a['metadata'][0]['tag_value']
+
+            if uploaded_file.size < 20000000:
+                name = uploaded_file.name
                 owner = request.user
-                data = Files(file_name=name,
-                             uploaded_file=uploaded_file, owner=owner)
-                data.save()
+                file = Files.objects.filter(file_name=name).exists()
+
+                if not file:
+                    data = Files(file_name=name,
+                                 uploaded_file=uploaded_file, owner=owner)
+                    data.save()
 
             return redirect("metadata:result")
         return render(request, self.template_name, {'form': form})

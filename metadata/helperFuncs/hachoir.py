@@ -21,5 +21,4 @@ def extract_metadata_with_hachoir(uploaded_file):
 
                 dic.append(
                     {"tag_name": tag_name, "tag_value": value})
-    print(dic)
     return dic
