@@ -7,21 +7,33 @@
     <title>Sign Up</title>
     <link rel="stylesheet" href="css\style.css">
     <link rel="stylesheet" href="css\form.css">
+    <link href='https://fonts.googleapis.com/css?family=Space Grotesk' rel='stylesheet'>
 </head>
 <body>
      
 
     <main class="autentication-form">
 
-        <div class="left-column">
+        <div class="left-column" id="register-left">
 
         </div>
 
         <div class="right-column">
 
             <div class="other-sign-up">
-
+                <h1><b>Create Account</b></h1>
+                <button type="submit" id="one">
+                    <img src="css/img/google 1.png" alt="" class="google">
+                    Sign Up with Google
+                </button>
+                <br>
+                <button type="submit" id="one">
+                    <img src="css/img/Vector.png" alt="" class="fb">
+                    Sign Up with Facebook
+                </button>
             </div>
+
+            <p id="line">Or</p>
 
             <div class="account-form">
                 <!-- Register Form -->
@@ -47,8 +59,19 @@
                         <input type="password" name="" id="">
                     </div>
 
+                    
                     <div class="meta-form-field">
-                        <input type="button" value="Login">
+                        <label for="password" class="field-label">Confirm Password</label>
+                        <input type="password" name="" id="">
+                    </div>
+
+                    <div class="meta-form-field">
+                        <input type="button" value="Login" id="register">
+                    </div>
+
+                    
+                    <div>
+                        <p class="login-text">Already have an account?  <a href="login.html"> Login</a></p>
                     </div>
                 </form>
 

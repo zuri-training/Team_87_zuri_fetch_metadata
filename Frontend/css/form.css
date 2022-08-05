@@ -1,58 +1,86 @@
 @import url("style.css");
+@import url("font.css");
 
 *{
     box-sizing: border-box;
     margin: 0;
-    padding: 0;   
+    padding: 0; 
+
 }
 
 /* Main Section */
 .autentication-form{
     display: flex;
     width: 100%;
-    height: 100vh;
+    height: auto;
     display: flex; 
 }
 
 
 /* Sections */
-.left-column{
+.left-column {
     background-color: #3a86ff;
     width: 40%;
+    height: 100vh;
+    position: fixed;
 }
 
-.right-column{
+.right-column {
     background-color: white;
     width: 60%;
-    padding: 100px 50px;
+    padding: 150px 150px 50px 80px;
     font-family: sans-serif;
+    position: relative;
+    left: 40%;
+    bottom: 50px;
+}
+
+#login-left {
+    background-image: url('img/Frame\ 1177.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+#register-left {
+    background-image: url('img/Frame\ 24.png');
+    background-size: cover;
+    background-repeat: no-repeat;
 }
 
 /* Other Sign up */
-.google{
-    border-color: #3a86ff;
-    border-style: solid;
-    border-radius: 20px;
-}
-
 h1 {
-    font-size: 2rem;
+    font-size: 45px;
     padding-bottom: 1.5rem;
 }
 
-.right-column button {
-    padding: 0.6rem 10.1rem;
-    background-color:   rgb(51, 131, 235);
-    border:   rgb(51, 131, 235);
+.other-sign-up button {
     width: 100%;
+    padding: 18px 40px;
+    margin-bottom: 20px;
+    color: var(--black);
+    font-size: 19px;
+    background-color: var(--white);
+    border:  1px solid  var(--blue);
     border-radius: 4px;
-    color: #fff ;
-    margin-top: 2rem;
+    vertical-align: middle;
+}
+
+.google {
+    width: 20px;
+    margin-right: 10px;
+    vertical-align: middle;
+}
+
+.fb {
+    width: 10px;
+    margin-right: 10px;
+    vertical-align: middle;
+    margin-bottom: 5px;
 }
 
 /* Line Separator */
 #line{
-    padding: 2rem 0;
+    padding: 20px 10px 30px 10px;
     overflow: hidden;
     text-align: center;
 }
@@ -61,7 +89,7 @@ h1 {
 #line::after{
     text-decoration: line-through;
     margin: auto 0.5em;
-    background-color: #000;
+    background-color: #D3D1D2;
     content: "";
     display: inline-block;
     height: 1px;
@@ -82,49 +110,95 @@ h1 {
 
 
 /* Form */
-input::placeholder {
-    text-align: left;
-    color: #666;
-    font-weight: 100;
+
+form {
+    position: relative;
 }
 
-.account-form input {
-    text-align: left; 
-    padding: 0.6rem 11.5rem 0.6rem 0.6rem;
-    margin-bottom: 1rem;
+.meta-form-field {
+    margin-bottom: 20px;
+}
+
+input[type=text] {
     width: 100%;
-    border:  1px solid  #666;
-    border-radius: 4px;
+    padding: 15px 20px;
+    margin: 8px 0;
+    box-sizing: border-box;
+    border-radius: 5px;
+    border: 1px solid #D3D1D2;
+}
+  
+input[type=text]::placeholder {
+    padding-left: 30px;
 }
 
-.other-sign-up button {
+input[type=email] {
     width: 100%;
-    padding: 0.6rem 6rem;
-    margin-bottom: 1rem;
-    border:  1px solid  rgb(51, 131, 235);
-    border-radius: 4px;
+    padding: 15px 20px;
+    margin: 8px 0;
+    box-sizing: border-box;
+    border-radius: 5px;
+    border: 1px solid #D3D1D2;
+}
+  
+input[type=password] {
+    width: 100%;
+    padding: 15px 20px;
+    margin: 8px 0;
+    box-sizing: border-box;
+    border-radius: 5px;
+    border: 1px solid #D3D1D2;
 }
 
-button:hover{
+
+input[type=button], input[type=submit], input[type=reset] {
+    background-color: var(--blue);
+    width: 100%;
+    border: none;
+    color: white;
+    padding: 18px 40px;
+    font-size: 20px;
+    text-decoration: none;
     cursor: pointer;
-    background-color: blue;
+    border-radius: 5px;
+}
+  
+input[type=button]:hover {
+    background-color: var(--blue);
 }
 
-#one{
-    border: 1px solid #3a86ff;
-    background-color: white;
-    color: #000;
-    width: 532px;
+
+#register {
+    margin-top: 70px;
 }
 
-.one{
-    width: 532px;
+.login-text {
+    margin-top: 40px;
 }
 
-#login{
-    width: 532px;
+.login-text a  {
+    color: var(--blue);
 }
 
+.login-password {
+    margin: 25px 0;
+    color: black;
+}
+
+.login-password a {
+    color: #000000;
+    font-size: 20px;
+}
+
+/* Icons */
+
+.form-img {
+    position: absolute;
+    left: 0;
+    top: 20px;
+    width: 20px;
+    margin: 20px;
+}
 
 
 

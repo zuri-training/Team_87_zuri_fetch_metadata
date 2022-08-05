@@ -1,5 +1,10 @@
+from bz2 import compress
+from re import M
+from stat import FILE_ATTRIBUTE_HIDDEN
+from tkinter import N
 from django.db import models
 from django.core.validators import MinLengthValidator
+from django.contrib.auth.models import User
 
 
 class Contact(models.Model):
@@ -16,3 +21,66 @@ class Contact(models.Model):
         if len(self.message) < 15:
             return self.message
         return self.text[:11] + ' ...'
+
+
+class Profile(models.Model):
+    # Delete profile when user is deleted
+    user = models.OneToOneField(User, on_delete=models.CASCADE)
+    profile_pic = models.ImageField(
+        default='default.jpg', upload_to='profile_pics', null=True, blank=True)
+
+    def __str__(self):
+        # show how we want it to be displayed
+        return f'{self.user.username} Profile'
+
+
+class ImageMetadata(models.Model):
+    filename = models.CharField(max_length=250)
+    filesize = models.CharField(max_length=20)
+    filetype = models.CharField(max_length=20)
+    mimetype = models.CharField(max_length=50)
+    imagewidth = models.CharField(max_length=120, null=True)
+    imagelength = models.CharField(max_length=120, null=True)
+    imageorientation = models.CharField(max_length=120, null=True)
+    bitspixel = models.CharField(max_length=120, null=True)
+    pixelformat = models.CharField(max_length=120, null=True)
+    creationdate = models.CharField(max_length=120, null=True)
+    cameraaperture = models.CharField(max_length=120, null=True)
+    camerafocal = models.CharField(max_length=50, null=True)
+    cameraexposure = models.CharField(max_length=50, null=True)
+    cameramodel = models.CharField(max_length=120, null=True)
+    cameramanufacturer = models.CharField(max_length=120, null=True)
+    compression = models.CharField(max_length=120, null=True)
+    isospeed = models.CharField(max_length=50, null=True)
+    exifversion = models.CharField(max_length=50, null=True)
+    shutterspeed = models.CharField(max_length=50, null=True)
+    aperture = models.CharField(max_length=50, null=True)
+    exposure_bias = models.CharField(max_length=120, null=True)
+    focallength = models.CharField(max_length=50, null=True)
+    producer = models.CharField(max_length=120, null=True)
+    comment = models.CharField(max_length=120, null=True)
+    formatversion = models.CharField(max_length=120, null=True)
+    resolutionunit = models.IntegerField(null=True)
+    exifoffset = models.IntegerField(null=True)
+    make = models.CharField(max_length=120, null=True)
+    model = models.CharField(max_length=120, null=True)
+    software = models.CharField(max_length=120, null=True)
+    orientation = models.IntegerField(null=True)
+    datetime = models.CharField(max_length=120, null=True)
+
+
+# class PillowMetadata(models.Model):
+#     file_name = models.CharField(max_length=250)
+#     file_size = models.CharField(max_length=20)
+#     file_type = models.CharField(max_length=20)
+#     mime_type = models.CharField(max_length=50)
+#     image_width = models.CharField(max_length=120)
+#     image_length = models.CharField(max_length=120)
+#     compression = models.CharField(max_length=120)
+#     resolution_unit = models.IntegerField()
+#     exif_offset = models.IntegerField()
+#     make = models.CharField(max_length=120)
+#     model = models.CharField(max_length=120)
+#     software = models.CharField(max_length=120)
+#     orientation = models.IntegerField()
+#     datetime = models.CharField(max_length=120)

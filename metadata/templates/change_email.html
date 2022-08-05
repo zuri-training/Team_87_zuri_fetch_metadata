@@ -1,0 +1,10 @@
+<h2>Enter your new email below</h2>
+{% for message in messages %}
+<h5>{{message}}</h5>
+{% endfor %}
+<form action="{% url 'metadata:change_email' user.id %}" method="POST">
+	{% csrf_token %}
+	<label for="new_email">Enter your New email</label><br />
+	<input type="text" name="new_email" /><br />
+	<input type="submit" value="Change Email" /><br />
+</form>
