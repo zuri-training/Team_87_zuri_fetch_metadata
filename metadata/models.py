@@ -54,3 +54,6 @@ class Files(models.Model):
 
     def __str__(self):
         return self.file_name
+
+class other(models.Model):
+    pass
