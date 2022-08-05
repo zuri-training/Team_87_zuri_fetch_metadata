@@ -6,7 +6,7 @@
     --blue: #3a86ff;
     --white: #ffffff;
     --black: #000000;
-    --grey: #D3D1D2;
+    --grey: #EEF1F4;
 }
 
 body {
@@ -23,7 +23,14 @@ button {
     border: 0;
     border-radius: 5px;
     color: var(--white);
+    border: 1px solid var(--blue);
 }
+
+button a {
+    color: var(--white);
+    font-size: 16px;
+}
+
 
 /* 
     Home Page Code
@@ -109,7 +116,7 @@ header {
     width: 1240px;
     height: auto;
     margin: 0 auto;
-    padding: 70px 0;
+    padding: 100px 0;
     justify-content: space-between;
     vertical-align: middle;
     align-items: center;
@@ -135,82 +142,23 @@ header {
 .hero-text {
     font-size: 25px;
     line-height: 1.3em;
-    padding-right: 70px;
+    padding-right: 130px;
+    padding-bottom: 50px;
 }
 
-
-/* Error 404 page styling here
-/* Error 404 page styling here */
-
-/* body{
-    margin: 0 10px;
-} */
-
-/* Navigation stylinng below: */
-/* header{
+.hero-btn {
     display: flex;
+    vertical-align: middle;
+    align-items: center;
+    align-content: center;
 }
-header div img{
-    width: 70px;
-    height: 70px;
-    margin-right: 230px;
-}
-.nav-items{
-    margin-right: 30px;
-    padding-top: 20px;
-    font-size: 18px;
-}
-header div button{
-    padding: 8px 30px;
-}
-.first-button{
-    margin-left: 250px;
-    padding-top: 22px;
-    font-size: 18px;
-}
-#first-button{
-    background: white;
-    border-color: rgb(13, 112, 226);
-    border-radius: 5px;
-    color: rgb(13, 112, 226);
-    font-size: 18px;
-}
-.second-button{
-    padding-top: 22px;
-    margin-left: 10px;
-}
-#second-button{
-    background: rgb(13, 112, 226);
-    border-color: rgb(13, 112, 226);
-    color: white;
-    border-radius: 5px;
-} */
 
-/* main section styling below: */
+.hero-btn a {
+    padding: 0 0 0 10px;
+}
 
-/* main{
-    display: flex;
-    margin-top: 60px;
+.icon-hero {
+    width: 20px;
 }
-main div img{
-    width: 600px;
-    height: 500px;
-}
-#right-side{
-    margin: 100px 0 0 80px;
-}
-h2{
-    margin-bottom: 8px;
-}
-#right-side div p{
-    margin-bottom: 50px;
-    font-size: 18px;
-}
-.main-button{
-    background: rgb(13, 112, 226);
-    border-color: rgb(13, 112, 226);
-    color: white;
-    border-radius: 5px;
-    padding: 8px 20px;
-    font-size: 20px;
-}  */
+
+

@@ -87,6 +87,7 @@ def signup(request):
         email = request.POST['email']
         password = request.POST['password']
         pass2 = request.POST['pass2']
+        email = email.lower()
         if password == pass2:
             if User.objects.filter(email=email).exists():
                 messages.info(request, "Email already exist")
@@ -327,6 +328,7 @@ class change_email(LoginRequiredMixin, View):
 
     def post(self, request, pk):
         email = request.POST['new_email']
+        email = email.lower()
         if User.objects.filter(email=email).exists():
             messages.info(request, "Email already exist choose another one")
             return redirect('metadata:change_email', pk=pk)
