@@ -68,6 +68,7 @@ class ImageMetadata(models.Model):
     software = models.CharField(max_length=120, null=True)
     orientation = models.IntegerField(null=True)
     datetime = models.CharField(max_length=120, null=True)
+<<<<<<< HEAD
 
 
 # class PillowMetadata(models.Model):
@@ -96,3 +97,5 @@ class History(models.Model):
 
     def __str__(self):
         return self.name
+=======
+>>>>>>> 3723ba6f9a0b9214eefa0ebef080b7495bd6d555
