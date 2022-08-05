@@ -13,7 +13,7 @@ from hachoir.metadata import extractMetadata
 import json
 from django.http import HttpResponse
 from django.utils.encoding import smart_str
-from metadata.models import Contact
+from metadata.models import Contact, History
 from django.http import HttpResponseRedirect
 from .forms import FileUpload, ProfileForm
 
@@ -36,6 +36,10 @@ import csv
 
 # Create your views here.
 
+#=========
+# import jsson to save the results
+import json
+#===
 
 def index(request):
     context = {}
@@ -203,7 +207,62 @@ def result(request):
 
 # ============================================
 # ============================================
+def save(request):
+    metadata = request.session.get("metadata")
+    name = metadata['metadata'][0]['tag_value']
+    owner = request.user
+    #size = metadata['metadata'][1]['tag_value']
+    if History.objects.filter(name=name).exists() and History.objects.get(name=name).owner == owner:
+        messages.info(request, "Data already present in your save history")
+        return render(request, "index.html")
+    else:
+        data = json.dumps(metadata)
+        history = History(data=data, name=name, owner=owner)
+        history.save()
+        messages.info(request, "data saved succesfully")
+        return render(request, "index.html")
 
+##================
+
+
+def review(request, pk):
+    data= History.objects.get(id=pk)
+    metadata = json.loads(data.data)
+    context = metadata
+    request.session["metadata"] = context
+    return render(request, "result.html", context)
+
+
+
+
+#===============
+
+
+class history(LoginRequiredMixin, View):
+    login_url = '/login'
+    success_url = reverse_lazy('metadata:history')
+    model = History
+    template_name = 'saved.html'
+
+    def get(self, request, pk):
+        user = request.user
+        history = History.objects.all()
+        # print(history)
+        # user = request.user
+        # no = 1
+        # for i in history:
+        #      if i.owner == user:
+        #         user_history[no] = {"name":i.name,"data":i.data,"time":i.created_at}
+        #         no +=1
+        # print(user_history)
+                
+        context = {"history":history,"user":user}
+        return render(request, self.template_name, context)
+
+        
+
+
+#==============
 
 def download_csv_data(request):
     # response content type

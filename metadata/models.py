@@ -5,6 +5,7 @@ from tkinter import N
 from django.db import models
 from django.core.validators import MinLengthValidator
 from django.contrib.auth.models import User
+from django.conf import settings
 
 
 class Contact(models.Model):
@@ -84,3 +85,14 @@ class ImageMetadata(models.Model):
 #     software = models.CharField(max_length=120)
 #     orientation = models.IntegerField()
 #     datetime = models.CharField(max_length=120)
+
+
+class History(models.Model):
+    name = models.CharField(max_length=200)
+    #size = models.IntegerField()
+    data = models.TextField(null=True)
+    owner = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE)
+    created_at = models.DateTimeField(auto_now_add=True)
+
+    def __str__(self):
+        return self.name
