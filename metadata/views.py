@@ -21,6 +21,7 @@ from .forms import FileUpload, ProfileForm
 
 # import helper function defined in helper_functions.py
 from .helperFuncs.extractImage import extract_image_metadata
+from .helperFuncs.extractPdf import extract_pdf_file
 # from helperFuncs.pillow import extract_image_metadata_with_pillow
 
 # ================
@@ -32,6 +33,8 @@ from tinytag import TinyTag
 # ================
 # import for csv
 import csv
+
+import pikepdf
 
 # Create your views here.
 
@@ -183,6 +186,10 @@ class view_metadata(LoginRequiredMixin, View):
                     file_type[0], uploaded_file)
                 context['metadata'] += extracted_metadata
 
+            elif file_type[1].lower() == "pdf":
+                pdf_metadata = extract_pdf_file(uploaded_file)
+                context['metadata'] += pdf_metadata
+
             request.session["metadata"] = context
             return redirect("metadata:result")
         return render(request, self.template_name, {'form': form})
@@ -222,8 +229,8 @@ def download_csv_data(request):
     metadata_label_value = []
 
     for metadata_val in metadata["metadata"]:
-        metadata_label_name.append(smart_str(metadata_val["label_name"]))
-        metadata_label_value.append(smart_str(metadata_val["label_value"]))
+        metadata_label_name.append(smart_str(metadata_val["tag_name"]))
+        metadata_label_value.append(smart_str(metadata_val["tag_value"]))
 
     writer.writerow(metadata_label_name)
     writer.writerow(metadata_label_value)
