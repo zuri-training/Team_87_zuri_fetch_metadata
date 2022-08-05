@@ -190,6 +190,8 @@ AUTHENTICATION_BACKENDS = [
     'allauth.account.auth_backends.AuthenticationBackend',
 ]
 
+
+CSRF_TRUSTED_ORIGINS = ['https://8000-zuritrainin-team87zurif-92g6jpehggb.ws-eu59.gitpod.io']
 #pls copy this on time, i  will soon remove it
 
 # Google client Id: 484561921057-e1a8tg8hpcvj4amp04vu2qjr58gqb43k.apps.googleusercontent.com
