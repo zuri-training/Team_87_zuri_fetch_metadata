@@ -1,0 +1,97 @@
+@import url("font.css");
+@import url('fonts/cabinetgrotesk-bold.woff2');
+
+    
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    /* font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif; */
+    font-family: 'CabinetGrotesk-Bold';
+}
+body{
+    height: 100%;
+    width: 100%;
+}
+header{
+    /* display: flex;*/
+    /* flex-direction: row; */
+    display: flex;
+    justify-content: space-between;
+    vertical-align: middle;
+    align-items: center;
+    padding-top: 20px;
+    padding-left: 60px;
+    padding-right: 40px;
+    
+}
+header .logo {
+    width: 100px;
+    height: 50px;
+    
+}
+header nav{
+    display: flex;
+    flex-direction: row;
+    gap: 30px;
+    padding-right: 470px;
+}
+header nav:hover{
+    color: rgb(94, 19, 19)
+}
+h1 {
+    text-align: center;
+    padding-top: 80px;
+    font-size:xx-large ;
+    font-family: 'CabinetGrotesk-Bold';
+    font-weight: bolder;
+}
+p{
+    padding-left: 150px;
+    padding-right: 120px;
+    text-align: center;
+    font-size: larger;
+    font-weight: 200;
+}
+h2{
+    text-align: center;
+    padding-top: 80px;
+    font-size:xx-large ;
+    font-family: 'CabinetGrotesk-Bold';
+    font-weight: bolder;
+    padding-bottom: 35px;
+}
+
+
+#parent { 
+    min-height: 100vh;
+    display: grid;
+    gap: 3px;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(6, 1fr);
+}
+
+.child {
+    background-color: white;
+    padding: 10px;
+    height: 250px;
+    width: 200px;
+    display: grid;
+    padding-left: 70px;
+    padding-right: 10px;
+}
+.child img{
+    width: 50px;
+    height: 50px;
+    border: 1px;
+    
+}
+.child img:hover{
+    background-color: dodgerblue;
+    color: white;
+}
+.child .namefocus{
+    display: grid;
+    font-size: small;
+    font-style: normal;
+}
