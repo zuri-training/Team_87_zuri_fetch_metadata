@@ -40,13 +40,15 @@
                 <form class="meta-form" action="">
                     <div class="meta-form-field">
                         <label for="text" class="field-label">Username</label>
-                        <img src="css/img/user.png" alt="" class="form-img">
+                        <!-- <img src="css/img/user.png" alt="" class="form-img"> -->
                         <input type="text" placeholder="username">
                     </div>
 
                     <div class="meta-form-field">
-                        <p>Password</p>
-                        <input type="password" name="password" placeholder="Password" class="one">
+                        <label for="text" class="field-label">Password</label>
+                        <!-- <img src="css/img/user.png" alt="" class="form-img"> -->
+                        <input type="password" name="password" placeholder="Password" class="one" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"
+                        title="Must contain at least one  number and one uppercase and lowercase letter, and at least 8 or more characters">
                     </div>
 
                     <div>
@@ -54,7 +56,7 @@
                     </div>
 
                     <div class="meta-form-field">
-                        <input type="button" value="Login" id="login">
+                        <input type="submit" value="Login" id="login">
                     </div>
 
                     <div>

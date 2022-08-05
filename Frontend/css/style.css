@@ -73,7 +73,7 @@ header {
 }
 
 
-/* Error 404 page styling here */
+/* Error 404 page styling here
 /* Error 404 page styling here */
 
 /* body{
@@ -81,7 +81,7 @@ header {
 } */
 
 /* Navigation stylinng below: */
-header{
+/* header{
     display: flex;
 }
 header div img{
@@ -118,11 +118,11 @@ header div button{
     border-color: rgb(13, 112, 226);
     color: white;
     border-radius: 5px;
-}
+} */
 
 /* main section styling below: */
 
-main{
+/* main{
     display: flex;
     margin-top: 60px;
 }
@@ -147,4 +147,4 @@ h2{
     border-radius: 5px;
     padding: 8px 20px;
     font-size: 20px;
-}
+}  */
