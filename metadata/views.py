@@ -11,6 +11,7 @@ import os
 from hachoir.parser import createParser
 from hachoir.metadata import extractMetadata
 import json
+from django.http import JsonResponse
 from django.http import HttpResponse
 from django.utils.encoding import smart_str
 from metadata.models import Contact
@@ -19,8 +20,6 @@ from .forms import FileUpload, ProfileForm
 
 
 # import helper function defined in helper_functions.py
-from .helperFuncs.pillow import extract_image_metadata_with_pillow
-from .helperFuncs.hachoir import extract_metadata_with_hachoir
 from .helperFuncs.extractImage import extract_image_metadata
 # from helperFuncs.pillow import extract_image_metadata_with_pillow
 
@@ -113,6 +112,7 @@ class profile(LoginRequiredMixin, View):
     def get(self, request, pk):
         user = get_object_or_404(User, id=pk)
         return render(request, self.template_name)
+
     def post(self, request, pk):
         if request.POST['type'] == '1':
             first_name = request.POST['first_name']
@@ -200,9 +200,8 @@ def result(request):
     context = metadata
     return render(request, "result.html", context)
 
-
-# ============================================
-# ============================================
+# =============================================
+# =============================================
 
 
 def download_csv_data(request):

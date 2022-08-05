@@ -67,20 +67,3 @@ class ImageMetadata(models.Model):
     software = models.CharField(max_length=120, null=True)
     orientation = models.IntegerField(null=True)
     datetime = models.CharField(max_length=120, null=True)
-
-
-# class PillowMetadata(models.Model):
-#     file_name = models.CharField(max_length=250)
-#     file_size = models.CharField(max_length=20)
-#     file_type = models.CharField(max_length=20)
-#     mime_type = models.CharField(max_length=50)
-#     image_width = models.CharField(max_length=120)
-#     image_length = models.CharField(max_length=120)
-#     compression = models.CharField(max_length=120)
-#     resolution_unit = models.IntegerField()
-#     exif_offset = models.IntegerField()
-#     make = models.CharField(max_length=120)
-#     model = models.CharField(max_length=120)
-#     software = models.CharField(max_length=120)
-#     orientation = models.IntegerField()
-#     datetime = models.CharField(max_length=120)
