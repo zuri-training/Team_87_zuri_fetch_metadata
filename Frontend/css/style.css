@@ -2,11 +2,19 @@
 @import url('fonts/cabinetgrotesk-bold.woff2');
 
 /* Global styling */
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
 :root {
     --blue: #3a86ff;
     --white: #ffffff;
     --black: #000000;
     --grey: #EEF1F4;
+    /* --darkgrey: ; */
 }
 
 body {
@@ -31,6 +39,14 @@ button a {
     font-size: 16px;
 }
 
+.section {
+    width: 1240px;
+    height: auto;
+    margin: 0 auto;
+    vertical-align: middle;
+    align-items: center;
+}
+
 
 /* 
     Home Page Code
@@ -43,8 +59,8 @@ button a {
 header {
     width: 1240px;
     height: auto;
-    margin: 0 auto;
-    padding: 0 auto;
+    margin: 10px auto;
+    padding: 10px auto;
     vertical-align: middle;
     align-self: center;
     display: flex;
@@ -113,10 +129,7 @@ header {
 /* Hero Section */
 .hero {
     display: flex;
-    width: 1240px;
-    height: auto;
-    margin: 0 auto;
-    padding: 100px 0;
+    padding: 70px 0;
     justify-content: space-between;
     vertical-align: middle;
     align-items: center;
@@ -143,7 +156,7 @@ header {
     font-size: 25px;
     line-height: 1.3em;
     padding-right: 130px;
-    padding-bottom: 50px;
+    padding-bottom: 30px;
 }
 
 .hero-btn {
@@ -162,3 +175,102 @@ header {
 }
 
 
+/* About/Features */
+
+.general-head {
+    font-size: 40px;
+    text-align: center;
+    padding-bottom: 40px;
+    padding-top: 110px;
+}
+
+.about-features {
+    display: flex;
+}
+
+.about-items {
+    text-align: center;
+    padding: 10px;
+    width: 25%;
+}
+
+.about-icon {
+    width: 110px;
+}
+
+.about-title {
+    font-size: 22px;
+    padding: 10px 0;
+}
+
+.about-txt {
+    font-size: 17px;
+    color: var(--black);
+    opacity: 50%;
+}
+
+
+/* logos */
+
+.logo-section {
+    padding: 70px 0;
+    min-width: 1240px;
+}
+
+.logos {
+    background-color: var(--grey);
+    display: flex;
+    flex-wrap: wrap;
+    vertical-align: middle;
+    align-items: center;
+    justify-content: center;
+    padding: 30px 0;
+}
+
+.logo {
+    width: 250px;
+    height: auto;
+    padding: 30px;
+    
+}
+
+/* Why Meta Data */
+
+.meta-section {
+    background-color: var(--grey);
+    padding: 30px 0;
+}
+
+.meta-inner {
+    display: flex;
+    width: 1240px;
+    height: auto;
+    margin: 0 auto;
+    vertical-align: middle;
+    align-items: center;
+}
+
+.left-meta {
+    width: 40%;
+}
+
+.right-meta {
+    width: 60%;
+    padding-left: 50px;
+}
+
+.meta-img {
+    width: 80%;
+}
+
+.meta-head {
+    font-size: 40px;
+    text-align: left;
+    padding-bottom: 40px;
+    padding-top: 0px;
+}
+
+.meta-text {
+    font-size: 18px;
+    color: var(--black);
+}
