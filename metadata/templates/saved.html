@@ -1,0 +1,22 @@
+{% extends "base.html" %} {% block content %}
+
+
+<h2>Saved metadata </h2>
+<table>
+    <thead>
+        <th>Date</th>
+        <th>Filename</th>
+    </thead>
+
+{% for i in history %}
+<tr></tr>
+{% if i.owner == user%}
+<td>{{ i.created_at }}</td>
+<td>{{ i.name }} </td>
+<td><a href="{% url 'metadata:review' i.id %}">View</a></td>
+{% endif %}
+</tr>
+{% endfor %}
+
+</table>
+{% endblock %}

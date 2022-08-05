@@ -1,1 +1,6 @@
 @import url("style.css");
+
+.nav-button {
+    display: none;
+}
+

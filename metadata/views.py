@@ -14,7 +14,7 @@ import json
 from django.http import JsonResponse
 from django.http import HttpResponse
 from django.utils.encoding import smart_str
-from metadata.models import Contact
+from metadata.models import Contact, History, Files
 from django.http import HttpResponseRedirect
 from .forms import FileUpload, ProfileForm
 
@@ -38,6 +38,10 @@ import pikepdf
 
 # Create your views here.
 
+#=========
+# import jsson to save the results
+import json
+#===
 
 def index(request):
     context = {}
@@ -86,6 +90,7 @@ def signup(request):
         email = request.POST['email']
         password = request.POST['password']
         pass2 = request.POST['pass2']
+        email = email.lower()
         if password == pass2:
             if User.objects.filter(email=email).exists():
                 messages.info(request, "Email already exist")
@@ -185,12 +190,27 @@ class view_metadata(LoginRequiredMixin, View):
                 extracted_metadata = extract_image_metadata(
                     file_type[0], uploaded_file)
                 context['metadata'] += extracted_metadata
+<<<<<<< HEAD
 
             elif file_type[1].lower() == "pdf":
                 pdf_metadata = extract_pdf_file(uploaded_file)
                 context['metadata'] += pdf_metadata
 
+=======
+            #check the file size and  save to  database if less than 20mb
+>>>>>>> eb5ec076fe0c4ccf9ca7abbdc687e2969da78614
             request.session["metadata"] = context
+            a = request.session.get("metadata")
+            size  = a['metadata'][1]['tag_value']
+            if int(size) < 20000000:
+                name = a['metadata'][0]['tag_value']
+                owner = request.user
+                data = Files(file_name=name,
+                             uploaded_file=uploaded_file, owner=owner)
+                data.save()
+                
+            
+
             return redirect("metadata:result")
         return render(request, self.template_name, {'form': form})
 
@@ -207,9 +227,78 @@ def result(request):
     context = metadata
     return render(request, "result.html", context)
 
-# =============================================
-# =============================================
 
+# ============================================
+# ============================================
+def save(request):
+    metadata = request.session.get("metadata")
+    name = metadata['metadata'][0]['tag_value']
+    owner = request.user
+    #size = metadata['metadata'][1]['tag_value']
+    if History.objects.filter(name=name).exists() and History.objects.get(name=name).owner == owner:
+        messages.info(request, "Data already present in your save history")
+        return render(request, "index.html")
+    else:
+        data = json.dumps(metadata)
+        history = History(data=data, name=name, owner=owner)
+        history.save()
+        messages.info(request, "data saved succesfully")
+        return render(request, "index.html")
+
+##================
+
+
+class saved_files(LoginRequiredMixin, View):
+    login_url = '/login'
+    model = Files
+    template_name = 'saved_files.html'
+    def get(set,request):
+        owner = request.user
+        files = Files.objects.all()
+        context = {"owner": owner, "files": files}
+        return render(request, "saved_files.html", context)
+
+
+##=====
+
+def review(request, pk):
+    data= History.objects.get(id=pk)
+    metadata = json.loads(data.data)
+    context = metadata
+    request.session["metadata"] = context
+    return render(request, "result.html", context)
+
+
+
+
+#===============
+
+
+class history(LoginRequiredMixin, View):
+    login_url = '/login'
+    success_url = reverse_lazy('metadata:history')
+    model = History
+    template_name = 'saved.html'
+
+    def get(self, request, pk):
+        user = request.user
+        history = History.objects.all()
+        # print(history)
+        # user = request.user
+        # no = 1
+        # for i in history:
+        #      if i.owner == user:
+        #         user_history[no] = {"name":i.name,"data":i.data,"time":i.created_at}
+        #         no +=1
+        # print(user_history)
+                
+        context = {"history":history,"user":user}
+        return render(request, self.template_name, context)
+
+        
+
+
+#==============
 
 def download_csv_data(request):
     # response content type
@@ -250,6 +339,7 @@ class change_email(LoginRequiredMixin, View):
 
     def post(self, request, pk):
         email = request.POST['new_email']
+        email = email.lower()
         if User.objects.filter(email=email).exists():
             messages.info(request, "Email already exist choose another one")
             return redirect('metadata:change_email', pk=pk)

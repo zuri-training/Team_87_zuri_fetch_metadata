@@ -1,44 +1,96 @@
 @import url("style.css");
 
-*{
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0; 
+
+span {
+    color: var(--blue);
 }
 
-header{
-    background-color: white;
-    display: flex;
+.right-hero {
+    align-items: flex-end;
+    text-align: end;
 }
-.site-logo{
-    float: left;
-}
-.menu{
-    display: flex;
+
+.extract {
+    width: 450px;
+    border: 2px dashed var(--blue);
+    border-radius: 10px;
     align-items: center;
-    justify-items: center;
-    padding-left: 50px;
+    vertical-align: middle;
+    justify-content: center;
+    text-align: center;
+    padding: 50px;
 }
-main{
-    background-color: white;
-}
+
 .file-options{
     display: flex;
 }
+
+.img-svg {
+    width: 110px;
+}
+
+.upload-txt {
+    font-size: 25px;
+}
+
+.up, .down {
+    padding: 20px 0;
+}
+
 .headline{
     text-align: center;
+    font-size: 40px;
+    padding-top: 100px;
 }
+
 .formats{
     display: flex;
-    justify-content: center;
+    width: 1240px;
+    height: auto;
+    margin: 0 auto;
+    padding: 0 auto;
+    justify-content: space-between;
+    vertical-align: middle;
     align-items: center;
-    padding-top: 30px;
+    padding: 20px 40px;
 }
+
 .card{
-    background-color: white;
-    box-shadow: black;
-    padding-right: 40px;
+    background-color: var(--grey);
+    width: 250px;
+    border-radius: 10px;
+    padding: 0;
+    box-shadow: 0px 0px 50px 0px #cccccc;
+    text-align: center;
 }
+
+.icon-card {
+    background-color: var(--white);
+    border-radius: 10px;
+    padding: 10px;
+}
+
+h3 {
+    font-size: 28px;
+}
+
+.card-text {
+    font-size: 19px;
+}
+
+.card-png {
+    width: 100px;
+    padding: 20px 0;
+}
+
+
+
+
+
+
+
+
+
 footer{
     background-color: grey;
     display: flex;

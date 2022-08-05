@@ -2,11 +2,19 @@
 @import url('fonts/cabinetgrotesk-bold.woff2');
 
 /* Global styling */
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
 :root {
     --blue: #3a86ff;
     --white: #ffffff;
     --black: #000000;
-    --grey: #D3D1D2;
+    --grey: #EEF1F4;
+    /* --darkgrey: ; */
 }
 
 body {
@@ -18,12 +26,27 @@ a {
 }
 
 button {
-    padding: 18px 35px;
+    padding: 18px 37px;
     background-color: var(--blue);
     border: 0;
     border-radius: 5px;
     color: var(--white);
+    border: 1px solid var(--blue);
 }
+
+button a {
+    color: var(--white);
+    font-size: 16px;
+}
+
+.section {
+    width: 1240px;
+    height: auto;
+    margin: 0 auto;
+    vertical-align: middle;
+    align-items: center;
+}
+
 
 /* 
     Home Page Code
@@ -34,32 +57,95 @@ button {
 /* Nav */
 
 header {
+    width: 1240px;
+    height: auto;
+    margin: 10px auto;
+    padding: 10px auto;
+    vertical-align: middle;
+    align-self: center;
     display: flex;
     justify-content: space-between;
     vertical-align: middle;
     align-items: center;
-    padding: 20px 40px;
+}
+
+.nav-logo{
+    width: 20%;
+}
+
+.navigation{
+    width: 50%;
+}
+
+.nav-button {
+    width: 30%;
+    margin: 0;
+    padding: 0;
 }
 
 .site-logo {
     width: 100px;
 }
 
+.menu a {
+    color: var(--black);
+    font-size: 17px;
+    margin: 20px;
+    border-bottom: 2px solid var(--white);
+}
+
+.menu a:hover {  
+    border-bottom: 2px solid;
+    border-color: var(--blue);
+    padding-bottom: 5px;
+}
+
+.menu a:active {
+    border-bottom: 2px solid;
+    border-color: var(--blue);
+}
+
+.nav-btn-outline {
+    background-color: var(--white);
+    border: 1px solid var(--blue);
+    padding: 18px 60px;
+    margin-right: 10px;
+}
+
+.nav-btn-outline a {
+    color: var(--blue);
+    font-size: 16px;
+}
+
+.nav-btn-solid {
+    border: 1px solid var(--blue);
+}
+
+.nav-btn-solid a {
+    color: var(--white);
+    font-size: 16px;
+}
+
 /* Hero Section */
 .hero {
     display: flex;
+    padding: 70px 0;
     justify-content: space-between;
     vertical-align: middle;
     align-items: center;
-    padding: 20px 40px;
 }
 
 .left-hero, .right-hero {
     width: 50%;
 }
 
+.right-hero {
+    text-align: end;
+}
+
 .hero-img {
-    width: 600px;
+    width: 90%;
+    text-align: end;
 }
 
 .hero-head {
@@ -69,82 +155,122 @@ header {
 .hero-text {
     font-size: 25px;
     line-height: 1.3em;
-    padding-right: 70px;
+    padding-right: 130px;
+    padding-bottom: 30px;
+}
+
+.hero-btn {
+    display: flex;
+    vertical-align: middle;
+    align-items: center;
+    align-content: center;
+}
+
+.hero-btn a {
+    padding: 0 0 0 10px;
+}
+
+.icon-hero {
+    width: 20px;
 }
 
 
-/* Error 404 page styling here
-/* Error 404 page styling here */
+/* About/Features */
 
-/* body{
-    margin: 0 10px;
-} */
+.general-head {
+    font-size: 40px;
+    text-align: center;
+    padding-bottom: 40px;
+    padding-top: 110px;
+}
 
-/* Navigation stylinng below: */
-/* header{
+.about-features {
     display: flex;
 }
-header div img{
-    width: 70px;
-    height: 70px;
-    margin-right: 230px;
-}
-.nav-items{
-    margin-right: 30px;
-    padding-top: 20px;
-    font-size: 18px;
-}
-header div button{
-    padding: 8px 30px;
-}
-.first-button{
-    margin-left: 250px;
-    padding-top: 22px;
-    font-size: 18px;
-}
-#first-button{
-    background: white;
-    border-color: rgb(13, 112, 226);
-    border-radius: 5px;
-    color: rgb(13, 112, 226);
-    font-size: 18px;
-}
-.second-button{
-    padding-top: 22px;
-    margin-left: 10px;
-}
-#second-button{
-    background: rgb(13, 112, 226);
-    border-color: rgb(13, 112, 226);
-    color: white;
-    border-radius: 5px;
-} */
 
-/* main section styling below: */
+.about-items {
+    text-align: center;
+    padding: 10px;
+    width: 25%;
+}
 
-/* main{
+.about-icon {
+    width: 110px;
+}
+
+.about-title {
+    font-size: 22px;
+    padding: 10px 0;
+}
+
+.about-txt {
+    font-size: 17px;
+    color: var(--black);
+    opacity: 50%;
+}
+
+
+/* logos */
+
+.logo-section {
+    padding: 70px 0;
+    min-width: 1240px;
+}
+
+.logos {
+    background-color: var(--grey);
     display: flex;
-    margin-top: 60px;
+    flex-wrap: wrap;
+    vertical-align: middle;
+    align-items: center;
+    justify-content: center;
+    padding: 30px 0;
 }
-main div img{
-    width: 600px;
-    height: 500px;
+
+.logo {
+    width: 250px;
+    height: auto;
+    padding: 30px;
+    
 }
-#right-side{
-    margin: 100px 0 0 80px;
+
+/* Why Meta Data */
+
+.meta-section {
+    background-color: var(--grey);
+    padding: 30px 0;
 }
-h2{
-    margin-bottom: 8px;
+
+.meta-inner {
+    display: flex;
+    width: 1240px;
+    height: auto;
+    margin: 0 auto;
+    vertical-align: middle;
+    align-items: center;
 }
-#right-side div p{
-    margin-bottom: 50px;
+
+.left-meta {
+    width: 40%;
+}
+
+.right-meta {
+    width: 60%;
+    padding-left: 50px;
+}
+
+.meta-img {
+    width: 80%;
+}
+
+.meta-head {
+    font-size: 40px;
+    text-align: left;
+    padding-bottom: 40px;
+    padding-top: 0px;
+}
+
+.meta-text {
     font-size: 18px;
+    color: var(--black);
 }
-.main-button{
-    background: rgb(13, 112, 226);
-    border-color: rgb(13, 112, 226);
-    color: white;
-    border-radius: 5px;
-    padding: 8px 20px;
-    font-size: 20px;
-}  */

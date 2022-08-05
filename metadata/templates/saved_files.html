@@ -1,0 +1,24 @@
+{% extends "base.html" %} {% block content %}
+
+
+<h2>Files upload history</h2>
+
+<table>
+    <thead>
+        <th>Date</th>
+        <th>Filename</th>
+    </thead>
+
+{% for i in files %}
+<tr></tr>
+{% if i.owner == user%}
+<td>{{ i.created_at }}</td>
+<td>{{ i.file_name }} </td>
+<td><a href="" ">Download</a></td>
+<td><a href="" ">Delete file</a></td>
+{% endif %}
+</tr>
+{% endfor %}
+
+</table>
+{% endblock %}

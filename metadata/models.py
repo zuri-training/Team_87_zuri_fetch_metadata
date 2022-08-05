@@ -5,6 +5,7 @@ from tkinter import N
 from django.db import models
 from django.core.validators import MinLengthValidator
 from django.contrib.auth.models import User
+from django.conf import settings
 
 
 class Contact(models.Model):
@@ -33,37 +34,26 @@ class Profile(models.Model):
         # show how we want it to be displayed
         return f'{self.user.username} Profile'
 
+class History(models.Model):
+    name = models.CharField(max_length=200)
+    #size = models.IntegerField()
+    data = models.TextField(null=True)
+    owner = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE)
+    created_at = models.DateTimeField(auto_now_add=True)
 
-class ImageMetadata(models.Model):
-    filename = models.CharField(max_length=250)
-    filesize = models.CharField(max_length=20)
-    filetype = models.CharField(max_length=20)
-    mimetype = models.CharField(max_length=50)
-    imagewidth = models.CharField(max_length=120, null=True)
-    imagelength = models.CharField(max_length=120, null=True)
-    imageorientation = models.CharField(max_length=120, null=True)
-    bitspixel = models.CharField(max_length=120, null=True)
-    pixelformat = models.CharField(max_length=120, null=True)
-    creationdate = models.CharField(max_length=120, null=True)
-    cameraaperture = models.CharField(max_length=120, null=True)
-    camerafocal = models.CharField(max_length=50, null=True)
-    cameraexposure = models.CharField(max_length=50, null=True)
-    cameramodel = models.CharField(max_length=120, null=True)
-    cameramanufacturer = models.CharField(max_length=120, null=True)
-    compression = models.CharField(max_length=120, null=True)
-    isospeed = models.CharField(max_length=50, null=True)
-    exifversion = models.CharField(max_length=50, null=True)
-    shutterspeed = models.CharField(max_length=50, null=True)
-    aperture = models.CharField(max_length=50, null=True)
-    exposure_bias = models.CharField(max_length=120, null=True)
-    focallength = models.CharField(max_length=50, null=True)
-    producer = models.CharField(max_length=120, null=True)
-    comment = models.CharField(max_length=120, null=True)
-    formatversion = models.CharField(max_length=120, null=True)
-    resolutionunit = models.IntegerField(null=True)
-    exifoffset = models.IntegerField(null=True)
-    make = models.CharField(max_length=120, null=True)
-    model = models.CharField(max_length=120, null=True)
-    software = models.CharField(max_length=120, null=True)
-    orientation = models.IntegerField(null=True)
-    datetime = models.CharField(max_length=120, null=True)
+    def __str__(self):
+        return self.name
+
+
+class Files(models.Model):
+    file_name = models.CharField(max_length=200)
+    uploaded_file = models.FileField()
+    owner = models.ForeignKey(settings.AUTH_USER_MODEL,
+                              on_delete=models.CASCADE)
+    created_at = models.DateTimeField(auto_now_add=True)
+
+    def __str__(self):
+        return self.file_name
+
+class other(models.Model):
+    pass
