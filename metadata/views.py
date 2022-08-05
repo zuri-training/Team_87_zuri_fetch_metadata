@@ -22,6 +22,7 @@ from .forms import FileUpload, ProfileForm
 # import helper function defined in helper_functions.py
 from .helperFuncs.extractImage import extract_image_metadata
 from .helperFuncs.extractPdf import extract_pdf_file
+from .helperFuncs.defaultMetadata import default_metadata
 # from helperFuncs.pillow import extract_image_metadata_with_pillow
 
 # ================
@@ -187,6 +188,9 @@ class view_metadata(LoginRequiredMixin, View):
             elif file_type[1].lower() == "pdf":
                 pdf_metadata = extract_pdf_file(uploaded_file)
                 context['metadata'] += pdf_metadata
+
+            else:
+                context['metadata'] += default_metadata(uploaded_file)
 
             request.session["metadata"] = context
             a = request.session.get("metadata")
