@@ -3,15 +3,12 @@
 
 /* Global styling */
 
-*, 
-*::before,
- *::after {
+* {
     padding: 0;
     margin: 0;
     box-sizing: border-box;
+    font-family: 'Cabinet Grotesk', sans-serif;
 }
-
-
 
 :root {
     --blue: #3a86ff;
@@ -19,10 +16,6 @@
     --black: #000000;
     --grey: #EEF1F4;
     /* --darkgrey: ; */
-}
-
-html{
-    font-size: 62.5%;
 }
 
 body {
@@ -46,13 +39,6 @@ button a {
     color: var(--white);
     font-size: 16px;
 }
-
-.hero-head{
-    
-}
-
-@media screen and (min-width:1024px) {
-
 
 .section {
     width: 1240px;
@@ -96,9 +82,9 @@ header {
     text-align: end;
 }
 
-/* .site-logo {
+.site-logo {
     width: 100px;
-} */
+}
 
 .menu a {
     color: var(--black);
@@ -118,7 +104,7 @@ header {
     border-color: var(--blue);
     padding-bottom: 5px;
 }
-
+/* 
 .nav-btn-outline {
     background-color: var(--white);
     border: 1px solid var(--blue);
@@ -138,11 +124,9 @@ header {
 .nav-btn-solid a {
     color: var(--white);
     font-size: 16px;
-}
+} */
 
 /* Hero Section */
-
-
 .hero {
     display: flex;
     padding: 70px 0;
@@ -150,8 +134,6 @@ header {
     vertical-align: middle;
     align-items: center;
 }
-
-
 
 .left-hero, .right-hero {
     width: 50%;
@@ -298,6 +280,4 @@ header {
 .meta-text {
     font-size: 18px;
     color: var(--black);
-}
-
 }

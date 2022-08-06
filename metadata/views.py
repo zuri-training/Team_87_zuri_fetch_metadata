@@ -168,7 +168,8 @@ def contact(request):
 
 class view_metadata(LoginRequiredMixin, View):
     success_url = reverse_lazy('metadata:viewMetadata')
-    template_name = 'metadata.html'
+    # template_name = 'metadata.html'
+    template_name = 'extract.html'
     login_url = '/login'
     REDIRECT_FIELD_NAME = 'next'
 

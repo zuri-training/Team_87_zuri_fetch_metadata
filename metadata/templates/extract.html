@@ -1,0 +1,68 @@
+
+{% extends "base.html" %} 
+
+{% block content %} 
+<main>
+    <!--Body-->
+
+    <div class="section">
+        <div class="hero">
+            <div class="left-hero">
+                <h2 class="hero-head">Extract <span>Metadata</span> <br>of Your <span>Desired</span> <br>File Type</h2>
+            </div>
+
+            <div class="right-hero">
+                <div class="extract">
+                    <div class="up">
+                        <img src="../../static/css/img/document-upload.svg" class="img-svg">
+                        <p class="upload-txt">Choose a File</p>
+                    </div>
+                    <div class="down">
+                        <img src="../../static/css/img/cloud-plus.svg" class="img-svg">
+                        <p class="upload-txt">Upload a File</p>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <!--supported formats-->
+    <h2 class="headline"><b>Supported Formats</b></h2>
+
+    <div class="formats">
+
+        <div class="card">
+            <div class="icon-card">
+                <h3><span>IMAGE</span> FILES</h3>
+                <img src="../../static/css/img/Frame 1156.png" class="card-png">
+            </div>
+            <div class="text">
+                <p class="card-text">JPEG,PNG,GIF,PSD,EPS,<br>PDF,AI,INDD,RAW,BMP,<br>TIFF</p>
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="icon-card">
+                <h3><span>PDF</span> FILES</h3>
+                <img src="../../static/css/img/Frame 1167.png" class="card-png">
+            </div>
+            <div class="text">
+                <p class="card-text">XML,XFA,Static PDF,<br>Dynamic forms,Traditional,<br>PDF for Archive</p>
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="icon-card">
+                <h3><span>JSON</span> FILES</h3>
+                <img src="../../static/css/img/Frame 1156-1.png" class="card-png">
+            </div>
+            <div class="text">
+                <p class="card-text">Number,String,Boolean,<br>Array,Object,Value,<br>Whitespace</p>
+            </div>
+        </div>
+    </div>
+
+</main>
+
+{% endblock %}

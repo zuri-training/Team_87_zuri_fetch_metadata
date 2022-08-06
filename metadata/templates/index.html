@@ -1,10 +1,12 @@
 {% extends "base.html" %}
 
 {% block content %}
+<div class="container">
 
-<h1>Home Page</h1>
-{% if user.is_authenticated %}
-<h4>Welcome {{user.username}}</h4>
-{% endif %}
-{% endblock %}
+    <h1>Home Page</h1>
+    {% if user.is_authenticated %}
+    <h4>Welcome {{user.username}}</h4>
+    {% endif %}
+    {% endblock %}
+</div>
 
