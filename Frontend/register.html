@@ -7,7 +7,7 @@
     <title>Sign Up</title>
     <link rel="stylesheet" href="css\style.css">
     <link rel="stylesheet" href="css\form.css">
-    <link href='https://fonts.googleapis.com/css?family=Space Grotesk' rel='stylesheet'>
+    <link href="https://api.fontshare.com/v2/css?f[]=cabinet-grotesk@800,500,700,400,900&display=swap" rel="stylesheet">
 </head>
 <body>
      
@@ -28,8 +28,8 @@
                 </button>
                 <br>
                 <button type="submit" id="one">
-                    <img src="css/img/Vector.png" alt="" class="fb">
-                    Sign Up with Facebook
+                    <img src="css/img/akar-icons_github-fill.png" alt="" class="fb">
+                    Sign Up with GitHub
                 </button>
             </div>
 
@@ -51,23 +51,31 @@
 
                     <div class="meta-form-field">
                         <label for="email" class="field-label">Email</label>
-                        <input type="email" name="email" id="">
+                        <input type="email" name="email" id="" placeholder="Email">
                     </div>
 
                     <div class="meta-form-field">
                         <label for="password" class="field-label">Password</label>
-                        <input type="password" name="" id="" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"
-                        title="Must contain at least one  number and one uppercase and lowercase letter, and at least 8 or more characters">
+                        <input type="password" name="" id="psw" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"
+                        title="Must contain at least one  number and one uppercase and lowercase letter, and at least 8 or more characters" placeholder="Password">
+                        <span class="eye"  onclick="myFunction()">
+                            <img src="css/img/eye.png" alt="" class="psw-icon" id="hide3">
+                            <img src="css/img/eye-slash.png" alt="" class="psw-icon" id="hide4">
+                        </span>
                     </div>
 
                     
                     <div class="meta-form-field">
                         <label for="password" class="field-label">Confirm Password</label>
-                        <input type="password" name="" id="">
+                        <input type="password" name="" id="pswd" placeholder="Password">
+                        <span class="eye"  onclick="myFunction()">
+                            <img src="css/img/eye.png" alt="" class="psw-icon" id="hide5">
+                            <img src="css/img/eye-slash.png" alt="" class="psw-icon" id="hide6">
+                        </span>
                     </div>
 
                     <div class="meta-form-field">
-                        <input type="submit" value="CReate Account" id="register">
+                        <input type="submit" value="Create Account" id="register">
                     </div>
 
                     
@@ -75,6 +83,35 @@
                         <p class="login-text">Already have an account?  <a href="login.html"> Login</a></p>
                     </div>
                 </form>
+
+                <script>
+                    function myFunction() {
+                        var a = document.getElementById("psw");
+                        var b = document.getElementById("pswd");
+                        var w = document.getElementById("hide3");
+                        var x = document.getElementById("hide4");
+                        var y = document.getElementById("hide5");
+                        var z = document.getElementById("hide6");
+
+                        if (a.type === 'password' && b.type === 'password') {
+                            a.type = "text";
+                            b.type = "text";
+                            w.style.display = "block";
+                            x.style.display = "none";
+                            y.style.display = "block";
+                            z.style.display = "none";
+                        }
+
+                        else {
+                            a.type = "password";
+                            b.type = "password";
+                            w.style.display = "none";
+                            x.style.display = "block";
+                            y.style.display = "none";
+                            z.style.display = "block";
+                        }
+                    }
+                </script>
 
             </div>
             

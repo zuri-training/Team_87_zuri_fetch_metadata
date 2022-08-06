@@ -7,6 +7,7 @@
     padding: 0;
     margin: 0;
     box-sizing: border-box;
+    font-family: 'Cabinet Grotesk', sans-serif;
 }
 
 :root {
@@ -18,7 +19,7 @@
 }
 
 body {
-    font-family: 'CabinetGrotesk-Bold';
+    font-family: 'Cabinet Grotesk', sans-serif;
 }
 
 a {
@@ -62,7 +63,6 @@ header {
     margin: 10px auto;
     padding: 10px auto;
     vertical-align: middle;
-    align-self: center;
     display: flex;
     justify-content: space-between;
     vertical-align: middle;
@@ -79,8 +79,7 @@ header {
 
 .nav-button {
     width: 30%;
-    margin: 0;
-    padding: 0;
+    text-align: end;
 }
 
 .site-logo {
@@ -217,18 +216,23 @@ header {
     min-width: 1240px;
 }
 
-.logos {
+.logo-gallery {
     background-color: var(--grey);
+}
+
+.logos {
     display: flex;
     flex-wrap: wrap;
     vertical-align: middle;
     align-items: center;
     justify-content: center;
     padding: 30px 0;
+    margin: 0 auto;
+    width: 1240px;
 }
 
 .logo {
-    width: 250px;
+    width: 240px;
     height: auto;
     padding: 30px;
     
@@ -237,8 +241,10 @@ header {
 /* Why Meta Data */
 
 .meta-section {
-    background-color: var(--grey);
-    padding: 30px 0;
+    background: url("img/Frame\ 293.jpg");
+    background-size: calc(100%);
+    /* background-position: center; */
+    padding: 50px 0;
 }
 
 .meta-inner {
