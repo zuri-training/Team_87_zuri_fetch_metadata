@@ -4,6 +4,11 @@
 {% for message in messages %}
 <h5>{{message}}</h5>
 {% endfor %}
+<p>Sign in with social account</p>
+<ul>
+	<li><a href="/accounts/google/login/?process=login">Google</a></li>
+	<li><a href="/accounts/github/login/?process=login">Github</a></li>
+</ul>
 <form action="signup" method="POST" id="form">
 	{% csrf_token %}
 	<label for="username">Username</label><br />

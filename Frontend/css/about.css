@@ -1,64 +1,39 @@
-@import url("font.css");
-@import url('fonts/cabinetgrotesk-bold.woff2');
+@import url("style.css");
 
-    
-*{
-    margin: 0;
+* {
     padding: 0;
+    margin: 0;
     box-sizing: border-box;
-    /* font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif; */
-    font-family: 'CabinetGrotesk-Bold';
+    font-family: 'Cabinet Grotesk', sans-serif;
 }
-body{
-    height: 100%;
-    width: 100%;
+
+h1, h2, h3, h4 {
+    font-family: 'Cabinet Grotesk', sans-serif;
+    font-weight: 800;
 }
-header{
-    /* display: flex;*/
-    /* flex-direction: row; */
-    display: flex;
-    justify-content: space-between;
-    vertical-align: middle;
-    align-items: center;
-    padding-top: 20px;
-    padding-left: 60px;
-    padding-right: 40px;
-    
+
+.top-about {
+    text-align: center;
+    margin: 0 auto;
+    width: 1140px;
+    padding: 0 68px;
 }
-header .logo {
-    width: 100px;
-    height: 50px;
-    
+
+.head-about {
+    text-align: center;
+    padding-top: 100px;
+    font-size: 60px;
 }
-header nav{
-    display: flex;
-    flex-direction: row;
-    gap: 30px;
-    padding-right: 470px;
+
+.txt-about{
+    font-size: 18px;
+    line-height: 1.2em;
 }
-header nav:hover{
-    color: rgb(94, 19, 19)
-}
-h1 {
+
+.subhead-about{
     text-align: center;
     padding-top: 80px;
-    font-size:xx-large ;
-    font-family: 'CabinetGrotesk-Bold';
-    font-weight: bolder;
-}
-p{
-    padding-left: 150px;
-    padding-right: 120px;
-    text-align: center;
-    font-size: larger;
-    font-weight: 200;
-}
-h2{
-    text-align: center;
-    padding-top: 80px;
-    font-size:xx-large ;
-    font-family: 'CabinetGrotesk-Bold';
-    font-weight: bolder;
+    font-size: 40px;
     padding-bottom: 35px;
 }
 
@@ -81,9 +56,10 @@ h2{
     padding-right: 10px;
 }
 .child img{
-    width: 50px;
-    height: 50px;
+    width: 160px;
+    height: 160px;
     border: 1px;
+    border-radius: 16px;
     
 }
 .child img:hover{

@@ -2,7 +2,7 @@ Read this documentation before you start working
 
 This is the code base for the Fetch metadata project. 
 
-We will be using CSS variables. All global styles (font, colors, buttons) will be stores in "style.css" and should be imported should you create any other CSS file
+We will be using CSS variables. All global styles (font, colors, buttons) will be stored in "style.css" and should be imported should you create any other CSS file
 
 Please view the figma file to understand the design (https://www.figma.com/file/CkM3iUeJbQPQpanFVs85xx/Figma-Metadata-style-guide?node-id=54%3A393)
 

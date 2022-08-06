@@ -16,6 +16,10 @@ urlpatterns = [
     path("contact", views.contact, name="contact"),
     path("download", views.download_csv_data, name="download"),
     path("result", views.result, name="result"),
+    path("save", views.save, name="save"),
+    path("saved_files", views.saved_files.as_view(), name="saved_files"),
+    path("review/<int:pk>", views.review, name="review"),
+    path("history/<int:pk>", views.history.as_view(), name="history"),
     path("change_email/<int:pk>", views.change_email.as_view(), name="change_email"),
     path("update_picture", views.accountSettings, name='update_picture'),
     path('password_reset/', auth_views.PasswordResetView.as_view(),
@@ -26,5 +30,5 @@ urlpatterns = [
          name='password_reset_confirm'),
     path('reset/done/', auth_views.PasswordResetCompleteView.as_view(),
          name='password_reset_complete'),
-
+    path("delete/<int:pk>", views.delete),
 ]

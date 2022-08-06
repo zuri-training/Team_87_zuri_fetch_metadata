@@ -1,11 +1,16 @@
 @import url("style.css");
 @import url("font.css");
 
-*{
+* {
     box-sizing: border-box;
     margin: 0;
     padding: 0; 
+    font-family: 'Cabinet Grotesk', sans-serif;
+}
 
+h1, h2, h3, h4 {
+    font-family: 'Cabinet Grotesk', sans-serif;
+    font-weight: 800;
 }
 
 /* Main Section */
@@ -51,6 +56,8 @@
 h1 {
     font-size: 45px;
     padding-bottom: 1.5rem;
+    font-family: 'Cabinet Grotesk', sans-serif;
+    font-weight: 800;
 }
 
 .other-sign-up button {
@@ -72,7 +79,7 @@ h1 {
 }
 
 .fb {
-    width: 10px;
+    width: 20px;
     margin-right: 10px;
     vertical-align: middle;
     margin-bottom: 5px;
@@ -150,6 +157,14 @@ input[type=email] {
     border-radius: 5px;
     border: 1px solid #D3D1D2;
 }
+
+input[type=email]::placeholder {
+    font-size: 16px;
+    padding-left: 30px;
+    background-image: url('img/sms.svg');
+    background-size: contain;
+    background-repeat: no-repeat;
+}
   
 input[type=password] {
     width: 100%;
@@ -189,6 +204,7 @@ input[type=button]:hover {
 
 .login-text {
     margin-top: 40px;
+    text-align: center;
 }
 
 .login-text a  {
@@ -197,24 +213,32 @@ input[type=button]:hover {
 
 .login-password {
     margin: 25px 0;
-    color: black;
+    color: var(--blue);
+    text-align: end;
 }
 
 .login-password a {
-    color: #000000;
+    color: var(--blue);
     font-size: 20px;
 }
 
 /* Icons */
 
-.form-img {
+.eye {
     position: absolute;
-    left: 0;
-    top: 20px;
-    width: 20px;
-    margin: 20px;
+    top: 20;
+    right: 30;
 }
 
+.psw-icon {
+    width: 20px;
+    margin-top: 27px;
+    margin-left: -50px;
+}
+
+#hide1,#hide3, #hide5 {
+    display: none;
+}
 
 
 
