@@ -1,3 +1,4 @@
+from metadata.helperFuncs.defaultMetadata import default_metadata
 from .hachoir import extract_metadata_with_hachoir
 from .pillow import extract_image_metadata_with_pillow
 
@@ -5,14 +6,7 @@ from .pillow import extract_image_metadata_with_pillow
 def extract_image_metadata(file_type, uploaded_file):
     image_metadata = []
 
-    image_metadata.append(
-        {"tag_name": "FileName", "tag_value": uploaded_file.name.capitalize()})
-    image_metadata.append(
-        {"tag_name": "FileSize", "tag_value": uploaded_file.size})
-    image_metadata.append(
-        {"tag_name": "FileType", "tag_value": uploaded_file.content_type.split("/")[1].upper()})
-    image_metadata.append(
-        {"tag_name": "MimeType", "tag_value": uploaded_file.content_type.capitalize()})
+    image_metadata += default_metadata(uploaded_file)
 
     """
         Hachoir package for extracting metadata does not extract
