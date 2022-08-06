@@ -22,7 +22,7 @@ body {
     font-family: 'Cabinet Grotesk', sans-serif;
 }
 
-h1, h2, h3 {
+h1, h2, h3, h4 {
     font-family: 'Cabinet Grotesk', sans-serif;
     font-weight: 800;
 }
@@ -161,7 +161,7 @@ header {
     font-size: 23px;
     line-height: 1.3em;
     padding-right: 130px;
-    padding-bottom: 30px;
+    padding-bottom: 50px;
 }
 
 .hero-btn {
@@ -183,7 +183,7 @@ header {
 /* About/Features */
 
 .general-head {
-    font-size: 40px;
+    font-size: 50px;
     text-align: center;
     padding-bottom: 40px;
     padding-top: 110px;
@@ -277,7 +277,7 @@ header {
 }
 
 .meta-head {
-    font-size: 40px;
+    font-size: 50px;
     text-align: left;
     padding-bottom: 40px;
     padding-top: 0px;
@@ -286,4 +286,68 @@ header {
 .meta-text {
     font-size: 18px;
     color: var(--black);
+}
+
+
+/* Footer */
+
+footer {
+    background-color: var(--grey);
+    padding: 120px 0 150px 0;
+}
+
+.footer {
+    display: flex;
+    width: 1140px;
+    height: auto;
+    margin: 0 auto;
+    vertical-align: top;
+}
+
+.footer1 {
+    width: 35%;
+    padding-right: 140px;
+}
+
+.footer2 {
+    width: 18%;
+}
+
+.footer3 {
+    width: 17%;
+}
+
+.footer4 {
+    width: 30%;
+}
+
+.footer-img {
+    width: 100px;
+}
+
+.footer-title {
+    padding-bottom: 20px;
+    font-size: 20px;
+}
+
+.footer-txt {
+    font-size: 18px;
+    padding: 50px 0;
+}
+
+.social {
+    width: 30px;
+    margin-right: 10px;
+}
+
+.footer-nav {
+    display: flex;
+    flex-direction: column;
+}
+
+.footer-nav a {
+    padding: 5px 0;
+    color: var(--black);
+    opacity: 90%;
+    font-size: 18px;
 }
