@@ -5,7 +5,7 @@ from django.contrib import messages
 from django.contrib.messages.views import SuccessMessageMixin
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.views import View
-from django.urls import reverse_lazy
+from django.urls import reverse_lazy, reverse
 import os
 
 from hachoir.parser import createParser
@@ -253,7 +253,18 @@ class saved_files(LoginRequiredMixin, View):
         return render(request, "saved_files.html", context)
 
 
-# =====
+# ==============
+
+def delete(request, pk):
+    file = Files.objects.get(id=pk)
+    print(file)
+    file.delete()
+    messages.info(request, f"file deleted succesfully")
+    return redirect("/saved_files")
+
+
+# ===============
+
 
 def review(request, pk):
     data = History.objects.get(id=pk)

@@ -14,8 +14,8 @@
 {% if i.owner == user%}
 <td>{{ i.created_at }}</td>
 <td>{{ i.file_name }} </td>
-<td><a href="" ">Download</a></td>
-<td><a href="" ">Delete file</a></td>
+<td><a href="">Download</a></td>
+<td><a href="delete/{{i.id}}">Delete file</a></td>
 {% endif %}
 </tr>
 {% endfor %}
