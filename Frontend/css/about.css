@@ -7,21 +7,21 @@
     font-family: 'Cabinet Grotesk', sans-serif;
 }
 
-h1 {
+.head-abou {
     text-align: center;
     padding-top: 80px;
     font-size:xx-large ;
     font-family: 'CabinetGrotesk-Bold';
     font-weight: bolder;
 }
-p{
+.txt-about{
     padding-left: 150px;
     padding-right: 120px;
     text-align: center;
     font-size: larger;
     font-weight: 200;
 }
-h2{
+.subhead-about{
     text-align: center;
     padding-top: 80px;
     font-size:xx-large ;
