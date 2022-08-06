@@ -93,6 +93,8 @@ header {
 }
 
 .nav-icon {
+    width: 40px;
+    height: auto;
     padding-right: 15px;
 }
 
