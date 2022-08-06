@@ -1,4 +1,6 @@
+from posixpath import basename
 import re
+from urllib import response
 from django.shortcuts import render, redirect, get_object_or_404
 from django.contrib.auth.models import User, auth
 from django.contrib import messages
@@ -17,7 +19,7 @@ from django.utils.encoding import smart_str
 from metadata.models import Contact, History, Files
 from django.http import HttpResponseRedirect
 from .forms import FileUpload, ProfileForm
-
+from extractMetadata import settings
 
 # import helper function defined in helper_functions.py
 from .helperFuncs.extractImage import extract_image_metadata
@@ -257,13 +259,24 @@ class saved_files(LoginRequiredMixin, View):
 
 def delete(request, pk):
     file = Files.objects.get(id=pk)
-    print(file)
     file.delete()
     messages.info(request, f"file deleted succesfully")
     return redirect("/saved_files")
 
-
 # ===============
+
+
+def download(request, path):
+    file_path = os.path.join(settings.MEDIA_ROOT, path)
+    if os.path.exists(file_path):
+        with open(file_path) as fh:
+            response = HttpResponse(
+                fh.read(), content_type="application/uploaded_file")
+            response["Content-Disposition"] = "inline;filename" + \
+                os.path.basename(file_path)
+            return response
+
+# =================
 
 
 def review(request, pk):
