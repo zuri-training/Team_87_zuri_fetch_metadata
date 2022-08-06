@@ -69,6 +69,39 @@ header {
     padding-top: 10px;
 }
 
+.dash-nav-btn, .log-out-btn {
+    display: flex;
+    vertical-align: middle;
+    align-items: center;
+    align-content: center;
+    width: 100%;
+    background-color: var(--grey);
+    border: 0;
+    border-left: 10px solid;
+    border-color: var(--grey);
+    border-radius: 0;
+    cursor: pointer;
+}
+
+.dash-nav-btn:hover {
+    background-color: var(--white);
+    border: 0;
+    border-left: 10px solid;
+    border-color: var(--blue);
+}
+
+.dash-nav-btn a {
+    color: var(--black);
+    padding-left: 15px;
+    font-size: 18px;
+}
+
+.log-out-btn a {
+    color: red;
+    padding-left: 15px;
+    font-size: 18px;
+}
+
 
 /* Dashboard main */
 .dash-main {
