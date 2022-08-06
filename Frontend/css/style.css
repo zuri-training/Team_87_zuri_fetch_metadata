@@ -288,12 +288,56 @@ header {
     color: var(--black);
 }
 
+/* Accordion - Toggle */
+
+#faq {
+    padding: 100px 0;
+}
+
+.faq-btn{
+    align-items: center;
+    justify-content: center;
+    margin: 70px auto;
+    text-align: center;
+}
+
+#faqbtn {
+    text-align: center;
+}
+
+.toggle-wrapper {
+    background-color: var(--grey);
+    margin-bottom: 20px;
+    padding: 30px 30px 30px 80px;
+    border-radius: 10px;
+}
+
+.toggle {
+    background-color: var(--grey);
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    font-size: 19px;
+    color: var(--black);
+    border: none;
+    padding: 15px 0;
+    cursor: pointer;
+}
+
+.toggle-content {
+    font-size: 18px;
+    position: relative;
+    height: 0;
+    overflow: hidden;
+    transition: all 1s;
+}
 
 /* Footer */
 
 footer {
     background-color: var(--grey);
     padding: 120px 0 150px 0;
+    margin-top: 100px;
 }
 
 .footer {
