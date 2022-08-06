@@ -99,9 +99,10 @@ header {
     padding-bottom: 5px;
 }
 
-.menu a:active {
+.menu a.active {
     border-bottom: 2px solid;
     border-color: var(--blue);
+    padding-bottom: 5px;
 }
 
 .nav-btn-outline {

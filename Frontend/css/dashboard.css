@@ -69,11 +69,10 @@ header {
     padding-top: 10px;
 }
 
-.dash-nav-btn, .log-out-btn {
+
+
+.account-nav a {
     display: flex;
-    vertical-align: middle;
-    align-items: center;
-    align-content: center;
     width: 100%;
     background-color: var(--grey);
     border: 0;
@@ -81,25 +80,35 @@ header {
     border-color: var(--grey);
     border-radius: 0;
     cursor: pointer;
+    color: var(--black);
+    font-size: 18px;
+    padding: 17px 20px;
 }
 
-.dash-nav-btn:hover {
+.account-nav a:hover, .account-nav a.active {
     background-color: var(--white);
     border: 0;
     border-left: 10px solid;
     border-color: var(--blue);
 }
 
-.dash-nav-btn a {
-    color: var(--black);
-    padding-left: 15px;
-    font-size: 18px;
+.nav-icon {
+    padding-right: 15px;
 }
 
-.log-out-btn a {
+
+.log-out a {
+    display: flex;
+    width: 100%;
+    background-color: var(--grey);
+    border: 0;
+    border-left: 10px solid;
+    border-color: var(--grey);
+    border-radius: 0;
+    cursor: pointer;
     color: red;
-    padding-left: 15px;
     font-size: 18px;
+    padding: 20px;
 }
 
 
