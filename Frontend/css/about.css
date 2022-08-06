@@ -1,6 +1,11 @@
-@import url("font.css");
-@import url('fonts/cabinetgrotesk-bold.woff2');
 @import url("style.css");
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Cabinet Grotesk', sans-serif;
+}
 
 h1 {
     text-align: center;
