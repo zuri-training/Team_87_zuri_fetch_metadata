@@ -54,12 +54,12 @@ header {
 
 .profile-img {
     text-align: center;
-    padding: 40px 20px;
+    padding: 40px 50px 40px 20px;
 }
 
 .user-img {
-    width: 200px;
-    height: 200px;
+    width: 180px;
+    height: 180px;
     border-radius: 50%;
     text-align: center;
 }
