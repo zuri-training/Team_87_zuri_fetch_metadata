@@ -1,15 +1,40 @@
-{% extends "base.html" %}
-
+{% load static %}
 {% load i18n %}
+<!DOCTYPE html>
+<html lang="en">
 
-{% block head_title %}{% trans "Login Cancelled" %}{% endblock %}
+<head>
+	<meta charset="UTF-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<title>MetaData Extractor | Get detailed information on your files</title>
+	<link rel="stylesheet" href="{% static 'css/main.css' %}" />
+	<link rel="stylesheet" href="{% static 'css/font.css' %}">
+	<link rel="stylesheet" href="{% static 'css/login.css' %}">
+	<link href="https://api.fontshare.com/v2/css?f[]=cabinet-grotesk@800,500,700,400,900&display=swap" rel="stylesheet">
 
-{% block content %}
+</head>
 
+
+<body>
+  <section class="autentication-form">
+		<div class="left-column" id="login-left">
+			<img src="{% static 'images/login-bg.png' %}" alt="" />
+		</div>
+		<div class="right-column">
+			<div class="form-header">
+				<h1>{% block head_title %}{% trans "Login Cancelled" %}{% endblock %}</h1>
+       
+                {% block content %}
 <h1>{% trans "Login Cancelled" %}</h1>
 
 {% url 'account_login' as login_url %}
 
-<p>{% blocktrans %}You decided to cancel logging in to our site using one of your existing accounts. If this was a mistake, please proceed to <a href="{{login_url}}">sign in</a>.{% endblocktrans %}</p>
+<h3>{% blocktrans %}You decided to cancel logging in to our site using one of your existing accounts. If this was a mistake, please proceed to <a href="{{login_url}}">sign in</a>.{% endblocktrans %}</h3>
 
 {% endblock %}
+			</div>
+			
+		</div>
+	</section>
+</body>
