@@ -239,6 +239,13 @@ input[type=button]:hover {
 #hide1,#hide3, #hide5 {
     display: none;
 }
+.fp,.fp1{
+    text-align: center;
+}
+.fp{
+    padding-top: 50px;
+}
+
 
 
 
