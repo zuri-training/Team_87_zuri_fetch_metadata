@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reset Password page</title>
+    <link rel="stylesheet" href="css\form.css">
+</head>
+<body>
+    <h1 class="fp">Forgot Password</h1>
+    <h4 class="fp1">Follow the prompt to reset your password</h4>
+    <!--form-->
+    <form class="myform">
+        <div class="meta-form-field">
+            <label for="password" class="field-label">Password</label>
+            <input type="password" name="" id="psw" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"
+            title="Must contain at least one  number and one uppercase and lowercase letter, and at least 8 or more characters" placeholder="Password">
+            <span class="eye"  onclick="myFunction()">
+                <img src="css/img/eye.png" alt="" class="psw-icon" id="hide3">
+                <img src="css/img/eye-slash.png" alt="" class="psw-icon" id="hide4">
+            </span>
+        </div>
+
+        
+        <div class="meta-form-field">
+            <label for="password" class="field-label">Confirm Password</label>
+            <input type="password" name="" id="pswd" placeholder="Password">
+            <span class="eye"  onclick="myFunction()">
+                <img src="css/img/eye.png" alt="" class="psw-icon" id="hide5">
+                <img src="css/img/eye-slash.png" alt="" class="psw-icon" id="hide6">
+            </span>
+        </div>
+        <button type="submit" id="register">Proceed</button>
+    </form>
+    <script>
+        function myFunction() {
+            var a = document.getElementById("psw");
+            var b = document.getElementById("pswd");
+            var w = document.getElementById("hide3");
+            var x = document.getElementById("hide4");
+            var y = document.getElementById("hide5");
+            var z = document.getElementById("hide6");
+
+            if (a.type === 'password' && b.type === 'password') {
+                a.type = "text";
+                b.type = "text";
+                w.style.display = "block";
+                x.style.display = "none";
+                y.style.display = "block";
+                z.style.display = "none";
+            }
+
+            else {
+                a.type = "password";
+                b.type = "password";
+                w.style.display = "none";
+                x.style.display = "block";
+                y.style.display = "none";
+                z.style.display = "block";
+            }
+        }
+    </script>
+
+    
+</body>
+</html>
