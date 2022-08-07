@@ -1,0 +1,66 @@
+{% extends "base.html" %}
+
+{% block styles %}
+<link rel="stylesheet" href="../../static/css/dashboard.css">
+{% endblock styles %}
+
+
+
+<!-- Content  -->
+{% block content %} 
+
+<main class="user-dashboard">
+
+    <!-- Dashboard Navigation -->
+    <div class="dash-nav">
+
+        <div class="control">
+            <div class="profile-img">
+                <img src="css/img/20201126_171021.jpg" alt="" class="user-img">
+                <p class="img-txt">Edit Profile Picture</p>
+            </div>
+
+            <div class="account-nav">
+
+                <a href="dashboard.html" class="active">
+                    <img src="css/img/user.png" alt="" class="nav-icon">
+                    Account
+                </a>
+
+
+
+
+                <a href="saved.html">
+                    <img src="css/img/archive-tick.svg" alt="" class="nav-icon">
+                    Saved
+                </a>
+
+
+            </div>
+        </div>
+
+        <div class="log-out">
+            <a href="#">
+                <img src="css/img/cloud-plus.svg" alt="" class="nav-icon">
+                Log Out
+            </a>
+        </div>
+
+    </div>
+
+    <!-- Dashboard Main -->
+    <div class="dash-main">
+
+        <h2> Account</h2>
+        <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+            Atque nisi recusandae et, 
+            accusamus pariatur praesentium, similique perferendis temporibus ipsam id 
+            optio quae reprehenderit maiores eligendi tempore, doloremque eos dicta voluptatum?
+        </p>
+
+    </div>
+
+</main>
+
+{% endblock %}

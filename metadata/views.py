@@ -110,6 +110,16 @@ def signup(request):
 
     return render(request, "signup.html")
 
+#======================================================#
+# ============== DASHBOARD ============================#
+#======================================================#
+
+
+def dashboard(request):
+    return render(request, "profile.html")
+
+# =================================================
+
 
 class profile(LoginRequiredMixin, View):
     login_url = '/login'
@@ -236,16 +246,15 @@ def save(request):
     metadata = request.session.get("metadata")
     name = metadata['metadata'][0]['tag_value']
     owner = request.user
-    #size = metadata['metadata'][1]['tag_value']
     if History.objects.filter(name=name).exists() and History.objects.get(name=name).owner == owner:
         messages.info(request, "Data already present in your save history")
-        return render(request, "index.html")
+        return render(request, "profile.html")
     else:
         data = json.dumps(metadata)
         history = History(data=data, name=name, owner=owner)
         history.save()
         messages.info(request, "data saved succesfully")
-        return render(request, "index.html")
+        return render(request, "profile.html")
 
 # ================
 

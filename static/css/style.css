@@ -78,7 +78,7 @@ button a {
     /* Nav */
 
     header {
-        width: 1240px;
+        max-width: 1240px;
         height: auto;
         margin: 10px auto;
         padding: 10px auto;
@@ -357,13 +357,13 @@ button a {
     footer {
         background-color: var(--grey);
         padding: 120px 0 150px 0;
-        margin-top: 100px;
+        margin-top: 50px;
     }
 
     .footer {
         display: flex;
         width: 1140px;
-        height: auto;
+        /* height: auto; */
         margin: 0 auto;
         vertical-align: top;
     }

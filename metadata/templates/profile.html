@@ -1,59 +1,89 @@
-{% extends "base.html" %}
-{% load static %}
+{% extends "base.html" %} 
+{% block styles %}
+<link rel="stylesheet" href="../../static/css/profile.css" />
+{% endblock %} 
+
+{% block nav %}
+
+<div class="navigation">
+	<nav class="menu">
+		<a href="/">Home</a>
+		<a href="/about">About Us</a>
+		<a href="/viewMetadata">Extract Metadata</a>
+		<a href="/dashboard" class="active">Dashboard</a>
+	</nav>
+</div>
+
+{% endblock %}
+
+{% load static %} 
 {% block title %}Profile Page{% endblock%} 
 {% block content %}
- <div class="content-section">
-      <div class="media">
-		{% if user.profile.profile_pic %}
-			<img class="rounded-circle account-img" src="{{ user.profile.profile_pic.url }}" width="200" height="200">
-		{% else %}
-		<img class="rounded-circle account-img" src="{% static 'metadata/images/default.jpg'%}" width="200" height="200">
-		{% endif %}
-      </div>
-	  <a href="/update_picture">Update Picture</a>
+
+<div class="profile-wrapper">
+  <div class="content-section">
+    <div class="media">
+      {% if user.profile.profile_pic %}
+      <img class="rounded-circle account-img" src="{{ user.profile.profile_pic.url }}" width="200" height="200" />
+      {% else %}
+      <img class="rounded-circle account-img" src="{% static 'metadata/images/default.jpg'%}" width="200" height="200" />
+      {% endif %}
     </div>
+    <a class="profile-edit" href="/update_picture">Edit Profile Picture</a>
 
-<div class="head">
-	{% for message in messages %}
-	<h5>{{message}}</h5>
-	{% endfor %}
-	<h1>Account</h1>
-	Email address <br />
-	{{user.email}} <br />
-	<a href="{% url 'metadata:change_email' user.id %}">change</a>
-</div>
-<div>
-	<form action="{% url 'metadata:profile' user.id %}" method="POST">
-		{% csrf_token %}
-		<h3>Profile</h3>
-		<p>First Name</p>
-		<input
-			type="text"
-			placeholder="{{ user.first_name }}"
-			name="first_name"
-		/><br />
-		<p>Last Name</p>
-		<input
-			type="text"
-			placeholder="{{ user.last_name }}"
-			name="last_name"
-		/><br />
-		<input type="submit" value="Save Changes" />
-		<input type="hidden" name="type" value="1" />
-	</form>
-</div>
+	<div class="profile-link link-active">
+		<img src="../../static/images/user.png" alt="">
+		<a href="/dashboard">Account</a>
+	</div>
+	<div class="profile-link">
+		<img src="../../static/images/archive-tick.svg" alt="">
+		<a href="/save">Saved Metadata</a>
+	</div>
+	<div class="profile-link">
+		<img src="../../static/images/archive-tick.svg" alt="">
+		<a href="/saved_files">Saved Files</a>
+	</div>
+  </div>
 
-<div>
-	<form action="{% url 'metadata:profile' user.id %}" method="POST">
-		{% csrf_token %}
-		<h3>Password</h3>
-		<p>Enter Password</p>
-		<input type="password" name="pass1" /><br />
-		<p>Confirm Password</p>
-		<input type="password" name="pass2" /><br />
-		<input type="submit" value="Save Changes" />
-        <input type="hidden" name="username" value="{{ user.username }}" />
-		<input type="hidden" name="type" value="2" />
-	</form>
+  <div class="form-wrapper">
+    <div class="head">
+      {% for message in messages %}
+      <h5>{{message}}</h5>
+      {% endfor %}
+      <h1>Account</h1>
+      <h3>Email address</h3>
+      <h4>{{user.email}}</h4>
+      <a href="{% url 'metadata:change_email' user.id %}">change</a>
+    </div>
+    <div class="form">
+      <h2>Edit Profile</h2>
+      <div>
+        <form action="{% url 'metadata:profile' user.id %}" method="POST">
+          {% csrf_token %}
+          <label for="first_name">First Name</label><br />
+          <input type="text" placeholder="{{ user.first_name }}" name="first_name" /><br />
+          <label for="last_name">Last Name</label><br />
+          <input type="text" placeholder="{{ user.last_name }}" name="last_name" /><br />
+          <input type="submit" value="Save Changes" class="submit"/>
+          <input type="hidden" name="type" value="1" />
+        </form>
+      </div>
+
+      <div class="form">
+        <h2>Change Password</h2>
+        <form action="{% url 'metadata:profile' user.id %}" method="POST">
+          {% csrf_token %}
+          <label for="pass1">Enter Password</label>
+          <input type="password" name="pass1" /><br />
+          <label for="pass2">Confirm Password</label>
+          <input type="password" name="pass2" /><br />
+          <input type="submit" value="Save Changes" class="submit"/>
+          <input type="hidden" name="username" value="{{ user.username }}" />
+          <input type="hidden" name="type" value="2" />
+        </form>
+      </div>
+    </div>
+  </div>
 </div>
 {% endblock %}
+

@@ -1,0 +1,221 @@
+@import url("../css/style.css");
+
+.profile-wrapper {
+    display: flex;
+    margin-top: 40px;
+    margin-left: 2px;
+}
+
+
+
+
+.content-section {
+    min-height: 100vh;
+    background-color: var(--grey);
+    width: 277px;
+    padding-top: 20px;
+    margin-right: 100px;
+}
+
+.media{
+    padding-left: 55px;
+}
+
+.content-section .media img {
+    border-radius: 100%;
+    object-fit: cover;
+    object-position: center;
+    height: 139.75px;
+    width: 139.75px;
+    margin-top: 34px;
+
+}
+
+.content-section a {
+    display: block;
+    font-size: 1.5rem;
+    margin-left: 8px;
+    color: black;
+}
+
+.profile-edit{
+    margin-bottom: 88px;
+    margin-top: 18px;
+    padding-left: 55px;
+}
+
+.profile-link{
+    display: flex;
+    align-items: center;
+    margin-bottom: 29px;
+    padding-left: 55px;
+
+    
+}
+
+.link-active{
+    padding-top: 20px;
+    padding-bottom: 20px;
+    padding-left: 41px;
+    background-color: white;
+    border-left: 14px solid var(--blue);
+}
+
+.active a{
+    font-weight: 800;
+}
+
+.profile-link img{
+    height: 26px;
+    width: 26px;
+}
+
+.form-wrapper {
+    width: 40%;
+}
+
+.head {
+    margin-bottom: 32px;
+}
+
+.head h1 {
+    font-size: 6.4rem;
+    font-weight: 800;
+    line-height: 9.6rem;
+    margin-bottom: 64px;
+}
+
+.head h3 {
+    font-size: 2.4rem;
+    font-weight: 800;
+    line-height: 3.6rem;
+}
+
+.head h4 {
+    font-size: 1.6rem;
+    line-height: 2.4rem;
+    margin: 5px 0;
+}
+
+.head a {
+    display: block;
+    color: var(--blue);
+    font-size: 2rem;
+    line-height: 3rem;
+}
+
+
+
+.form h2 {
+    font-size: 2.4rem;
+    line-height: 3.6rem;
+    font-weight: 800;
+    margin: 24px 0;
+}
+
+.form label {
+    font-size: 1.4rem;
+    line-height: 2rem;
+    color: #818181;
+}
+
+.form input {
+    margin-top: 5px;
+    margin-bottom: 16px;
+    padding: 20px 30px;
+    width: 100%;
+    border: 1.9px solid #D3D1D2;
+    border-radius: 10px;
+}
+
+.form .submit {
+    background-color: var(--blue);
+    color: white;
+    font-size: 1.9rem;
+    line-height: 2.8rem;
+    cursor: pointer;
+}
+
+
+
+
+/* ========== SAVED FILES STYLES =========== */
+
+#file-content_content{
+    width: 60%;
+    margin-right:auto;
+}
+
+.file-heading, .file-content{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    place-items: center;
+    row-gap: 30px;
+    column-gap: 30px;
+    width: 100%;
+    text-align: center;
+}
+
+.download-wrapper .link-wrapper{
+    display: flex;
+}
+
+.file-heading{
+    margin-bottom: 32px;
+}
+
+
+.file-heading h2{
+    font-size: 1.5rem;
+    font-weight: 700;
+    line-height: 2.4rem;
+}
+
+
+.file-content img{
+ width: 20px;
+
+}
+
+.file-content p{
+    font-size: 1.5rem;
+}
+
+.file-content .img{
+    padding: 8px;
+    border-radius: 10px;
+    cursor: pointer;
+    background-color: var(--blue);
+    position: relative;
+}
+
+
+.hide-download-btn a{
+display: block;
+font-size: 1.5rem;
+color: white;
+margin-bottom: 8px;
+}
+
+.hide-download-btn a:hover{
+    text-decoration: underline;
+}
+
+
+
+.hide-download-btn{
+    position: absolute;
+    width: 120px;
+    background-color: var(--blue);
+    display: none;
+    height: 80px;
+    padding: 10px;
+    border-radius: 10px;
+    top: 40px;
+    left: 0;
+}
+
+.img .show {
+    display: block;
+    z-index: 10;
+}

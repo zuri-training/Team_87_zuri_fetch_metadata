@@ -1,20 +1,21 @@
-@import url("style.css");
+@import url("../css/style.css");
 
 
-* {
-    padding: 0;
-    margin: 0;
-    box-sizing: border-box;
-    font-family: 'Cabinet Grotesk', sans-serif;
+.user-dashboard{
+    display: flex;
+    /* max-width: 1240px; */
+    margin: auto;
 }
 
-header {
-    padding: 0;
-    margin: 0 auto;
-    height: 10vh;
+.dash-nav {
+    width: 30%;
+    min-height: 90vh;
+    background-color: var(--grey);
+    padding-left: 52px;
 }
 
-.nav-head {
+
+/* .nav-head {
     height: 10vh;
 }
 
@@ -32,46 +33,38 @@ header {
 
 /* Dashboard */
 
-.user-dashboard {
+/* .user-dashboard {
     width: 100%;
     height: auto;
     display: flex;
     justify-content: space-between;
     margin: 0 auto;
-}
+} */
 
 /* Dashboard navigation */
 
-.dash-nav {
-    width: 22%;
-    height: 90vh;
-    background-color: var(--grey);
-    position: fixed;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-}
 
-.profile-img {
+
+/* .profile-img {
     text-align: center;
     padding: 40px 50px 40px 20px;
 }
 
-.user-img {
+/* .user-img {
     width: 180px;
     height: 180px;
     border-radius: 50%;
     text-align: center;
-}
-
+} */
+/* 
 .img-txt {
     font-size: 18px;
     padding-top: 10px;
-}
+}  */
 
 
 
-.account-nav a {
+/* .account-nav a {
     display: flex;
     width: 100%;
     background-color: var(--grey);
@@ -109,11 +102,11 @@ header {
     color: red;
     font-size: 18px;
     padding: 20px;
-}
+}  */
 
 
 /* Dashboard main */
-.dash-main {
+/* .dash-main {
     width: 78%;
     margin-left: 22%;
-}
+} */
