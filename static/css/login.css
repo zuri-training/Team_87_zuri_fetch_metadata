@@ -22,6 +22,10 @@
   width: 45%;
 }
 
+.left-column img{
+  object-fit: cover;
+}
+
 .right-column {
   background-color: white;
   width: 35%;
@@ -232,3 +236,25 @@ input[type="button"]:hover {
 }
 
 
+
+
+/* Sign up */
+
+
+
+
+
+/* #signup-left-column {
+
+} */
+
+.autentication-form #signup-left-column{
+  background-image: url("../images/signup-bg.png");
+    background-size: cover;
+    background-position: center;
+    margin-top: 500px;
+}
+
+#signup-right-column {
+  margin-top: 500px;
+}
