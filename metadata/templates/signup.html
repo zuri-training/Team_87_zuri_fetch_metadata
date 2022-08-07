@@ -1,141 +1,90 @@
-{% extends "base.html" %} {% block content %}
+<!DOCTYPE html>
+<html lang="en">
 
-<h1>Signup Page</h1>
-{% for message in messages %}
-<h3>{{message}}</h3>
-{% endfor %}
-<p>Sign in with social account</p>
-<ul>
-	<li><a href="/accounts/google/login/?process=login">Google</a></li>
-	<li><a href="/accounts/github/login/?process=login">Github</a></li>
-</ul>
-<form action="signup" method="POST" id="form">
-	{% csrf_token %}
-	<label for="username">Username</label><br />
-	<input type="text" name="username" required /><br />
-	<label for="first_name">First Name</label><br />
-	<input type="text" name="first_name" required /><br />
-	<label for="last_name">Last Name</label><br />
-	<input type="text" name="last_name" required /><br />
-	<label for="email">Email address</label><br />
-	<input type="email" name="email" required /><br />
-	<label for="password">Password</label><br />
-	<input type="password" name="password" required /><br />
-	<label for="pass2">Confirm password</label><br />
-	<input type="password" name="pass2" required /><br />
-	<input type="submit" value="Create Account" />
-</form>
-<h3>Already have an account? <a href="login">Login</a> now</h3>
+<head>
+	<meta charset="UTF-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<title>MetaData Extractor | Get detailed information on your files</title>
+	<link rel="stylesheet" href="../../static/css/main.css" />
+	<link rel="stylesheet" href="../../static/css/font.css">
+	<link rel="stylesheet" href="../../static/css/login.css">
+	<link href="https://api.fontshare.com/v2/css?f[]=cabinet-grotesk@800,500,700,400,900&display=swap" rel="stylesheet">
+	
+</head>
+<html>
+<body>
+	<section class="autentication-form" >
 
-<!-- ========================================================================== -->
-
-<main class="autentication-form">
-
-	<div class="left-column" id="register-left">
-
-	</div>
-
-	<div class="right-column">
-
-		<div class="other-sign-up">
-			<h1><b>Create Account</b></h1>
-			<a href="/accounts/google/login/?process=login">
-				<img src="../../static/images/google.png" alt="" class="google">
-				Sign Up with Google
-			</a>
-			<br>
-			<a href="/accounts/github/login/?process=login">
-				<img src="../../static/images/github.png" alt="" class="fb">
-				Sign Up with GitHub
-			</a>
+		<div class="left-column" id="signup-left-column">
+			<img src="static/images/signup-bg.png" alt="" />
 		</div>
 
-		<p id="line">Or</p>
+		<div class="right-column" id="signup-right-column">
+										
+			<div class="form-header">
+				<h1>Sign Up</h1>
 
-		<div class="account-form">
-			<!-- Register Form -->
-			<form class="meta-form" action="">
+				<a href="/accounts/google/login/?process=login">
+					<img src="static/images/google.png" alt="" class="google" />
+					Sign in with Google
+				</a>
+				<a href="/accounts/github/login/?process=login">
+					<img src="static/images/github.png" alt="" class="fb" />
+					Sign in with Github
+				</a>
+			</div>
+
+			<form action="signup" method="post">
 				{% csrf_token %}
-				<div class="meta-form-field">
-					<label for="text" class="field-label">UserName</label>
-					<input type="text" name="username" placeholder="Franc" required>
+				<div class="form-field">
+					<label for="username" class="field-label">Username</label>
+					<input type="text" name="username" placeholder="UserName" required />
 				</div>
-				<div class="meta-form-field">
-					<label for="text" class="field-label">First Name</label>
-					<input type="text" name="first_name" placeholder="Franc" required>
+				<div class="form-field">
+					<label for="username" class="field-label">First Name</label>
+					<input type="text" name="first_name" placeholder="First Name" required />
 				</div>
-
-				<div class="meta-form-field">
-					<label for="text" class="field-label">Last Name</label>
-					<input type="text" name="last_name" placeholder="Edu" required>
+				<div class="form-field">
+					<label for="username" class="field-label">Last Name</label>
+					<input type="text" name="last_name" placeholder="Last Name" required />
 				</div>
-
-				<div class="meta-form-field">
-					<label for="email" class="field-label">Email</label>
-					<input type="email" name="email" id="" placeholder="Email" required>
+				<div class="form-field">
+					<label for="email" class="field-label">Email Address</label>
+					<input type="text" name="email" placeholder="Email Address" required />
 				</div>
-
-				<div class="meta-form-field">
+				<div class="form-field">
 					<label for="password" class="field-label">Password</label>
-					<input type="password" name="password" id="psw" required>
-					<span class="eye" onclick="myFunction()">
-						<img src="css/img/eye.png" alt="" class="psw-icon" id="hide3">
-						<img src="css/img/eye-slash.png" alt="" class="psw-icon" id="hide4">
+					<input type="password" name="password" placeholder="Password" id="psw" required />
+					<span class="eye">
+						<img src="../../static/images/eye.png" alt="" class="psw-icon" id="hide" />
+						<img src="../../static/images/eye-slash.png" alt="" class="psw-icon" />
 					</span>
 				</div>
-
-				<div class="meta-form-field">
+				<div class="form-field">
 					<label for="password" class="field-label">Confirm Password</label>
-					<input type="password" name="pass2" id="pswd" placeholder="Password" required>
-					<span class="eye" onclick="myFunction()">
-						<img src="css/img/eye.png" alt="" class="psw-icon" id="hide5">
-						<img src="css/img/eye-slash.png" alt="" class="psw-icon" id="hide6">
+					<input type="password" name="pass2" placeholder="Password" id="psw" required />
+					<span class="eye">
+						<img src="../../static/images/eye.png" alt="" class="psw-icon" id="hide" />
+						<img src="../../static/images/eye-slash.png" alt="" class="psw-icon" />
 					</span>
 				</div>
 
-				<div class="meta-form-field">
-					<input type="submit" value="Create Account" id="Create Account">
-				</div>
+				<p class="login-password"><a href="#"> Forgot Password</a></p>
 
-
-				<div>
-					<p class="login-text">Already have an account? <a href="login"> Login</a></p>
-				</div>
+				<input type="submit" value="Create Account"/>
+				<input type="hidden" name="next" value="{{ next }}" />
 			</form>
 
-			<script>
-				function myFunction() {
-					var a = document.getElementById("psw");
-					var b = document.getElementById("pswd");
-					var w = document.getElementById("hide3");
-					var x = document.getElementById("hide4");
-					var y = document.getElementById("hide5");
-					var z = document.getElementById("hide6");
-
-					if (a.type === 'password' && b.type === 'password') {
-						a.type = "text";
-						b.type = "text";
-						w.style.display = "block";
-						x.style.display = "none";
-						y.style.display = "block";
-						z.style.display = "none";
-					}
-
-					else {
-						a.type = "password";
-						b.type = "password";
-						w.style.display = "none";
-						x.style.display = "block";
-						y.style.display = "none";
-						z.style.display = "block";
-					}
-				}
-			</script>
-
+			<div>
+				<p class="login-text">Alerady Have an account? <a href="/login"> Login</a></p>
+			</div>
+							
 		</div>
+	</section>
 
-	</div>
+</body>
 
+</html>
 
-</main>
-{% endblock %}
+<!-- ========================================================================== -->
