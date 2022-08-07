@@ -22,6 +22,9 @@
 		<div class="right-column">
 			<div class="form-header">
 				<h1>Login</h1>
+				{% for message in messages %}
+<h5>{{message}}</h5>
+{% endfor %}
 
 				<a href="/accounts/google/login/?process=login">
 					<img src="../../static/images/google.png" alt="" class="google" />
@@ -47,7 +50,7 @@
 					</span>
 				</div>
 
-				<p class="login-password"><a href="#"> Forgot Password</a></p>
+				<p class="login-password"><a href="{% url 'metadata:password_reset' %}"> Forgot Password</a></p>
 				
 				<input type="submit" value="Login" />
 				<input type="hidden" name="next" value="{{ next }}" />

@@ -188,7 +188,11 @@
 
         <div class="faq-btn">
             <button class="nav-btn-solid" id="faqbtn">
-                <a href="register.html">Get Started</a>
+                {% if user.is_authenticated %}
+                <a href="/viewMetadata">Get Started</a>
+                {% else %}
+                <a href="/signup">Get Started</a>
+                {% endif %}
             </button>
         </div>
     </div>
