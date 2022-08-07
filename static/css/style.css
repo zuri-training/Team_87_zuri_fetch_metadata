@@ -298,14 +298,229 @@ footer{
 
 
 
-@media screen and (min-width:76) {
+@media screen and (min-width:768px) {
+
     .header-sm{
         display: none;
     }  
 
     .nav-head{
-        display: block;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 25px;
     }
+
+    .site-logo {
+        width: 107px;
+    }
+
+    .nav-button button{
+        padding: 10px 20px;
+    }
+
+    .nav-button button:last-child {
+        margin-left: 10px;
+    }
+
+    .menu a {
+        color: var(--black);
+        font-size: 1.6rem;
+        margin-right: 15px;
+        border-bottom: 2px solid var(--white);
+    }
+
+    .menu a:last-child {
+        margin-right: 0;
+    }
+
+    .menu a:hover {
+        border-bottom: 2px solid;
+        border-color: var(--blue);
+        padding-bottom: 5px;
+    }
+
+    .menu a.active {
+        border-bottom: 2px solid;
+        border-color: var(--blue);
+        padding-bottom: 5px;
+    }
+
+
+    /* ================================ */
+    /* ======== Hero ================== */
+
+    .hero{
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        text-align: left;
+    }
+
+    .left-hero h2{
+        font-size: 5rem;
+        line-height: 6.5rem;
+    }
+
+    .left-hero{
+        width: 50%;
+        margin: 0;
+    }
+
+    .right-hero{
+        width: 40%;
+        margin: 0;
+    }
+
+
+    /* ======================= */
+    /* ===== About =========== */
+
+    .section{
+        margin-bottom: 100px;
+    }
+
+    .general-head{
+        margin-bottom: 80px;
+        font-size: 3rem;
+        line-height: 5rem;
+    }
+    .about-features{
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 50px;
+        width: 80%;
+        margin: auto;
+    }
+
+
+    /* ================================ */
+    /* ========== PARTNERS============ */
+
+    .logo-gallery{
+        width: 80%;
+        margin: auto;
+    }
+
+    .logos {
+        gap: 50px;
+    }
+
+
+
+    /* ==============================*/
+    /* =========MetaData============ */
+    .meta-section {
+        text-align: left;
+    }
+
+    .meta-inner {
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    .left-meta{
+        margin-right: 60px;
+    }
+
+    .meta-head {
+        text-align: left;
+        font-size: 4rem;
+        line-height: 7rem;
+    }
+
+
+    /* ======================== */
+    /* ========= FAQ ========= */
+
+    .toggle {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 20px;
+        margin-bottom: 20px;
+        width: 100%;
+        font-size: ;
+    }
+
+ 
+
+    .toggle-content {
+        display: none;
+    }
+
+    .faq-btn {
+        width: 100%;
+        margin-top: 50px;
+    }
+
+
+    /* ========================== */
+    /* ======== FOOTER ========== */
+    
+    
+    
+        .social {
+            width: 30px;
+            margin: 20px 5px 20px 0;
+        }
+    
+        .footer2,
+        .footer3 {
+            width: 25%;
+        }
+    
+        .footer-nav a {
+            display: block;
+            font-size: 1.6rem;
+            margin-bottom: 10px;
+        }
+
+        footer {
+            background-color: var(--grey);
+            padding: 86px 25px;
+            text-align: left;
+        }
+    
+        .footer {
+            display: flex;
+            justify-content: space-between;
+        }
+    
+        .footer1 {
+            width: 45%;
+            padding-right: 140px;
+        }
+    
+    
+        .footer-img {
+            width: 103px;
+            margin-bottom: 30px;
+        }
+
+    
+        /* .footer-txt {
+            font-size: 18px;
+            padding: 50px 0;
+        }
+    
+        .social {
+            width: 30px;
+            margin-right: 10px;
+        }
+     */
+        .footer-nav {
+            display: flex;
+            flex-direction: column;
+        }
+    
+        .footer-nav a {
+            padding: 5px 0;
+            color: var(--black);
+            opacity: 90%;
+            font-size: 18px;
+        }
 }
 
 
@@ -365,28 +580,9 @@ footer{
         align-self: center;
     }
 
-    .site-logo {
-        width: 130px;
-    }
+   
 
-    .menu a {
-        color: var(--black);
-        font-size: 17px;
-        margin: 20px;
-        border-bottom: 2px solid var(--white);
-    }
-
-    .menu a:hover {
-        border-bottom: 2px solid;
-        border-color: var(--blue);
-        padding-bottom: 5px;
-    }
-
-    .menu a.active {
-        border-bottom: 2px solid;
-        border-color: var(--blue);
-        padding-bottom: 5px;
-    }
+    
 
     .nav-btn-outline {
         background-color: var(--white);
