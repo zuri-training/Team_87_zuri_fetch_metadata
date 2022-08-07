@@ -23,10 +23,12 @@
 
 html {
     font-size: 62.5%;
+    overflow-x: hidden;
 }
 
 body {
     font-family: 'Cabinet Grotesk', sans-serif;
+    overflow-x:hidden;
 }
 
 h1,
@@ -39,16 +41,18 @@ h4 {
 
 a {
     text-decoration: none;
+    color: black;
 }
 
-button {
-    padding: 13px 37px;
-    background-color: var(--blue);
-    border: 0;
-    border-radius: 5px;
-    color: var(--white);
-    border: 1px solid var(--blue);
-}
+  button {
+      padding: 13px 37px;
+      background-color: var(--blue);
+      border: none;
+      border-radius: 5px;
+      color: var(--white);
+      text-align: center;
+
+  }
 
 button a {
     color: var(--white);
@@ -56,21 +60,269 @@ button a {
     font-weight: 500;
 }
 
+p{
+    font-size: 1.6rem;
+}
 
-@media screen and (max-with:768px) {
-    img {
-        max-width: 100%;
-    }
+img{
+    max-width: 100%;
+}
 
-    .site-logo {
-        width: 80px;
-    }
+
+.nav-head{
+    display: none;
+}
+
+/* ============================= */
+/* ===== MOBILE NAV =========== */
+.header-sm{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px 25px;
+    margin-bottom: 24px;
+}
+
+.sm-navigation{
+    position: fixed;
+    left: 0;
+    top: 0;
+    background-color: white;
+    height: 80vh;
+    width: 100%;
+    padding: 20px 25px;
+    transform: translateY(-100%);
+    transition: 0.5s ease-out;
+}
+
+.show-navigation{
+    transform: translateY(0%);
+    transition: 0.5s ease-in;
+}
+
+.sm-hamburger{
+    display: flex;
+    justify-content: space-between;
+    align-items:center;
+}
+
+.sm-menu{
+    margin-top: 45px;
+}
+
+.sm-menu a{
+    font-size: 2.4rem;
+    line-height: 3.6rem;
+    display: block;
+    margin-left: 19px;
+}
+
+.sm-menu li{
+    list-style: none;
+    display: flex;
+    align-items: center;
+    margin-bottom: 24px;
+}
+
+.sm-active a{
+    font-weight: 800;
+}
+
+.sm-nav-button{
+    margin-top: 50px;
+}
+
+.nav-logo-sm img{
+    width: 80px;
+}
+
+.hamburger,
+.hamburger-close{
+    cursor: pointer;
+}
+
+
+/* ===================== */
+/* ==== HERO ========== */
+
+.section{
+    padding: 0 25px;
+    text-align: center;
+    margin: 48px 0;
+}
+
+.left-hero h2{
+    font-size: 2.4rem;
+    line-height: 2.7rem;
+    margin-bottom: 8px;
+}
+
+.hero-btn{
+    margin-top: 50px;
+}
+
+.hero-btn a{
+    margin-top: 50px;
+    width: 100%;
+    margin-top: -5px;
+}
+
+.right-hero{
+    margin-top: 60px;
+}
+
+
+/* ===== About ========= */
+.about-features{
+    margin-bottom: 68px;
+}
+
+.general-head{
+    font-size: 2.4rem;
+    line-height: 3rem;
+    margin-bottom: 24px;
+    text-align: center;
+}
+
+.about-icon{
+    width: 30%;
+    margin-bottom: 40px;
+}
+
+.about-title{
+    font-size: 1.6rem;
+    line-height: 1.6rem;
+    margin-bottom: 30px;
+}
+
+.about-txt{
+    margin-bottom: 68px;
+}
+
+
+/* ================= */
+/* ==== PARTNERS==== */
+
+.logo-section{
+    padding: 25px;
+    background-color: var(--grey);
+}
+
+.logos{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    align-items: center;
+}
+
+
+/* ==============================*/
+/* =========MetaData============ */
+.meta-section{
+    padding: 25px;
+    background-color: var(--grey);
+    text-align: center;
+    margin-top: 48px;
+}
+
+.meta-inner{
+    display: flex;
+    flex-direction: column-reverse;
+}
+
+.meta-head{
+    text-align: center;
+    font-size: 2.4rem;
+    line-height: 3rem;
+    margin-bottom: 10px;
+}
+
+/* ======================== */
+/* ========= FAQ ========= */
+
+.toggle{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px;
+    margin-bottom: 20px;
+}
+
+.toggle-content{
+    display: none;
+}
+
+.faq-btn{
+    width: 100%;
+    margin-top: 30px;
+}
+
+/* ====================== */
+/* ===== FOOTER ==== */
+footer{
+    text-align: center;
+    background-color: var(--grey);
+    padding: 25px;
+   
+}
+.footer-img{
+    width: 40%;
+    margin-bottom: 32px;
+}
+
+.footer-txt{
+    margin-bottom: 32px;
+}
+
+.footer-title{
+    margin-bottom: 20px;
+    font-size: 1.8rem;
+    line-height: 3rem;
+}
+
+
+.social{
+    width: 40px;
+    margin: 20px 0;
+}
+
+.footer2, .footer3{
+    margin-bottom: 30px;
+}
+
+.footer-nav a{
+    display: block;
+    font-size: 1.6rem;
+    margin-bottom: 10px;
 }
 
 
 
+@media screen and (min-width:76) {
+    .header-sm{
+        display: none;
+    }  
+
+    .nav-head{
+        display: block;
+    }
+}
+
+
+/* ====================================== */
+/* ============ Desktop ================= */
 
 @media screen and (min-width:1024px) {
+
+    button {
+        padding: 13px 37px;
+        background-color: var(--blue);
+        border: 0;
+        border-radius: 5px;
+        color: var(--white);
+        border: 1px solid var(--blue);
+    }
+
     .section {
         width: 1240px;
         height: auto;

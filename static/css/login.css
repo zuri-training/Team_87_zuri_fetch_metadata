@@ -249,10 +249,10 @@ input[type="button"]:hover {
 } */
 
 .autentication-form #signup-left-column{
-  background-image: url("../images/signup-bg.png");
-    background-size: cover;
-    background-position: center;
-    margin-top: 500px;
+  background-image: url("../images/login-bg.png");
+  background-size: cover;
+  background-position: center;
+  margin-top: 500px;
 }
 
 #signup-right-column {
