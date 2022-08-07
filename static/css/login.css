@@ -216,7 +216,9 @@ input[type="button"]:hover {
   top: 42px;
   right: 10px;
   width: 25px;
-  /* width: 50px; */
+  cursor: pointer;
+  z-index: 10;
+
 }
 
 #hide {
@@ -229,4 +231,4 @@ input[type="button"]:hover {
   display: none;
 }
 
-/* } */
+

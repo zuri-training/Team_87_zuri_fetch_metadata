@@ -11,10 +11,14 @@
     <nav class="menu">
         <a href="/">Home</a>
         <a href="/about" class="active">About Us</a>
+        {% if user.is_authenticated %}
         <a href="/viewMetadata">Extract Metadata</a>
         <a href="/dashboard">Dashboard</a>
+        {% endif %}
     </nav>
 </div>
+
+
 
 {% endblock %}
 

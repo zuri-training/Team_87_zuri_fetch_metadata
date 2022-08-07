@@ -28,6 +28,11 @@
 
         <!-- nav buttons -->
         <div class="nav-button">
+        {% if user.is_authenticated %}
+            <button class="nav-btn-solid">
+                <a href="/logout">Sign Out</a>
+            </button>
+        {% else %}
             <button class="nav-btn-outline">
                 <a href="/login">Login</a>
             </button>
@@ -35,6 +40,7 @@
             <button class="nav-btn-solid">
                 <a href="/signup">Get Started</a>
             </button>
+        {% endif %}
         </div>
 
     </header>
