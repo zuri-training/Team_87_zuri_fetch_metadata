@@ -1,7 +1,24 @@
+{% extends "base.html" %}
 
-{% extends "base.html" %} 
+{% block styles %}
+<link rel="stylesheet" href="../../static/css/extract.css">
+{% endblock %}
 
-{% block content %} 
+
+{% block nav %}
+
+<div class="navigation">
+    <nav class="menu">
+        <a href="/">Home</a>
+        <a href="/about">About Us</a>
+        <a href="/viewMetadata" class="active">Extract Metadata</a>
+        <a href="/dashboard">Dashboard</a>
+    </nav>
+</div>
+
+{% endblock %}
+
+{% block content %}
 <main>
     <!--Body-->
 
@@ -14,14 +31,26 @@
             <div class="right-hero">
                 <div class="extract">
                     <div class="up">
-                        <img src="../../static/css/img/document-upload.svg" class="img-svg">
-                        <p class="upload-txt">Choose a File</p>
+                        <img src="../../static/css/img/document-upload.svg" class="img-svg upload">
+                        <img src="../../static/images/document-cloud.svg" alt="" class="cloud hide-upload">
+                        <p class="upload-text file-name"></p>
                     </div>
-                    <div class="down">
-                        <img src="../../static/css/img/cloud-plus.svg" class="img-svg">
-                        <p class="upload-txt">Upload a File</p>
-                    </div>
+                    <form enctype="multipart/form-data" action="/viewMetadata" method="post">
+                        {% csrf_token %}
+                        <label for="id_upload_file" class="down" id="file-label">
+                            <img src="../../static/css/img/cloud-plus.svg" class="img-svg">
+                            <p class="upload-txt">Choose a File</p>
+                            <div class="extract-input">
+                                {{form}}
+                            </div>
+                        </label>
+                        <button type="submit" class="metadata-btn hide-upload" id="metadata-btn">
+                            Analyise file
+                            <img src="../../static/images/bx_analyse.svg" alt="">
+                        </button>
+                    </form>
                 </div>
+
             </div>
 
         </div>

@@ -49,7 +49,11 @@ def index(request):
 
 # ==============================================
 # =============================================
+def about(request):
+    return render(request, "about.html")
 
+
+# ==========================================
 
 def login(request):
     if request.method == 'POST':
@@ -177,10 +181,12 @@ class view_metadata(LoginRequiredMixin, View):
         form = FileUpload(request.POST, request.FILES)
         context = {"metadata": []}
 
+        print("=====================")
         if form.is_valid():
 
             uploaded_file = request.FILES['upload_file']
             file_type = uploaded_file.content_type.split("/")
+            print(uploaded_file)
 
             if file_type[0] == "video" or file_type[0] == "image" or file_type[0] == "audio":
 

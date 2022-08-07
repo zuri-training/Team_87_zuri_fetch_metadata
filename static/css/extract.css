@@ -1,7 +1,133 @@
-@import url("style.css");
+@import url("../css/style.css");
 
-
-
-.hero-head{
-    font-size: 3rem;
+span {
+    color: var(--blue);
 }
+
+
+.right-hero {
+    align-items: flex-end;
+    text-align: end;
+    justify-content: end;
+}
+
+.extract {
+    width: 450px;
+    margin: auto;
+    border: 2px dashed var(--blue);
+    border-radius: 10px;
+    align-items: center;
+    vertical-align: middle;
+    justify-content: center;
+    text-align: center;
+    padding: 50px;
+    display: flex;
+    flex-direction: column;
+}
+
+.file-options {
+    display: flex;
+    flex-direction: column;
+}
+
+.img-svg {
+    width: 110px;
+}
+
+.upload-txt, .file-name {
+    font-size: 25px;
+    margin-bottom: 30px;
+}
+
+.metadata-btn{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    background-color: var(--blue);
+    border: none;
+    outline: none;
+    color: white;
+    padding: 20px 40px;
+    font-size: 2rem;
+    text-decoration: none;
+    cursor: pointer;
+    border-radius: 5px;
+    font-weight: bold;
+}
+
+.metadata-btn img{
+    margin-left: 10px;
+}
+
+.up,
+.down {
+    padding: 20px 0;
+}
+
+
+
+.headline {
+    text-align: center;
+    font-size: 40px;
+    padding-top: 150px;
+}
+
+.formats {
+    display: flex;
+    width: 1240px;
+    height: auto;
+    margin: 0 auto;
+    padding: 0 auto;
+    justify-content: space-between;
+    vertical-align: middle;
+    align-items: center;
+    padding: 70px 40px;
+}
+
+.card {
+    background-color: var(--grey);
+    width: 250px;
+    border-radius: 10px;
+    padding: 0;
+    box-shadow: 0px 0px 50px 0px #cccccc;
+    text-align: center;
+}
+
+.icon-card {
+    background-color: var(--white);
+    border-radius: 10px;
+    padding: 20px;
+}
+
+h3 {
+    font-size: 28px;
+}
+
+
+.card-text {
+    font-size: 19px;
+    padding: 20px 0;
+}
+
+.card-png {
+    width: 100px;
+    padding: 20px 0;
+}
+
+
+.hide-upload{
+    display: none;
+}
+
+
+.extract .down .extract-input{
+    display: none !important;
+}
+
+.down img {
+    cursor: pointer;
+}
+
+
+
