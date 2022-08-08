@@ -370,6 +370,16 @@ class change_email(LoginRequiredMixin, View):
     def post(self, request, pk):
         email = request.POST['new_email']
         email = email.lower()
+        confirm_email = request.POST['email2']
+        confirm_email = confirm_email.lower()
+
+        if len(email) < 1 or len(confirm_email) <1 :
+            messages.info(request, "Field cannot be empty")
+            return redirect('metadata:change_email', pk=pk)
+        if email != confirm_email:
+            messages.info(request, "Email didn't match")
+            return redirect('metadata:change_email', pk=pk)
+
         if User.objects.filter(email=email).exists():
             messages.info(request, "Email already exist choose another one")
             return redirect('metadata:change_email', pk=pk)

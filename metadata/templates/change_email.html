@@ -16,7 +16,7 @@
 <body>
 
 
-	<h2>Enter your new email below</h2>
+	<h1 class="fp1">Change email address</h1>
 	{% for message in messages %}
 	<h5>{{message}}</h5>
 	{% endfor %}
@@ -24,31 +24,11 @@
 		{% csrf_token %}
 		<label for="new_email">Enter your New email</label><br />
 		<input type="text" name="new_email" /><br />
-		<input type="submit" value="Change Email" /><br />
+		<label for="email" class="field-label">Confirm New Email Address</label><br>
+		<input type="email" name="email2" id="" placeholder="Email"><br>
+
+		<input type="submit" value="Save Change" /><br />
 	</form>
-
-	<div class="password">
-		<h1 class="fp1">Change email address</h1>
-		<!--form-->
-		<form class="myform">
-			<div class="meta-form-field">
-				<label for="email" class="field-label">Enter New Email Address</label>
-				<input type="email" name="email" id="" placeholder="Email">
-			</div>
-			<form class="myform">
-				<div class="meta-form-field">
-					<label for="email" class="field-label">Confirm New Email Address</label>
-					<input type="email" name="email" id="" placeholder="Email">
-				</div>
-				<div> <button class="nav-btn-solid">
-						<a href="">Save Changes
-					</button>
-				</div>
-			</form>
-		</form>
-	</div>
-
-
 </body>
 
 </html>
