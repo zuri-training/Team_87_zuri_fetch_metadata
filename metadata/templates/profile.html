@@ -82,7 +82,7 @@
       <h1>Account</h1>
       <h3>Email address</h3>
       <h4>{{user.email}}</h4>
-      <a href="{% url 'metadata:change_email' user.id %}">change</a>
+      <a href="{% url 'metadata:change_email' user.id %}">Change Email</a>
     </div>
     <div class="form">
       <h2>Edit Profile</h2>
@@ -117,14 +117,4 @@
 
 
 
-<h2>Enter your new email below</h2>
-{% for message in messages %}
-<h5>{{message}}</h5>
-{% endfor %}
-<form action="{% url 'metadata:change_email' user.id %}" method="POST">
-  {% csrf_token %}
-  <label for="new_email">Enter your New email</label><br />
-  <input type="text" name="new_email" /><br />
-  <input type="submit" value="Change Email" /><br />
-</form>
 {% endblock %}

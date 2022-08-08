@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -10,24 +11,28 @@
     <link rel="stylesheet" href="css/dashboard.css">
     <title>Change Email Address</title>
 </head>
+
 <body>
     <div class="password">
         <h1 class="fp1">Change email address</h1>
-            <!--form-->
+        <!--form-->
+        <form class="myform">
+            <div class="meta-form-field">
+                <label for="email" class="field-label">Enter New Email Address</label>
+                <input type="email" name="email" id="" placeholder="Email">
+            </div>
             <form class="myform">
                 <div class="meta-form-field">
-                    <label for="email" class="field-label">Enter New Email Address</label>
+                    <label for="email" class="field-label">Confirm New Email Address</label>
                     <input type="email" name="email" id="" placeholder="Email">
                 </div>
-                <form class="myform">
-                    <div class="meta-form-field">
-                        <label for="email" class="field-label">Confirm New Email Address</label>
-                        <input type="email" name="email" id="" placeholder="Email">
-                    </div>   
-                    <center> <button class="nav-btn-solid">
-                            <a href="">Save Changes
-                        </button></center>
-                    </div>
+                <div> <button class="nav-btn-solid">
+                        <a href="">Save Changes
+                    </button>
+                </div>
+            </form> 
+        </form>
     </div>
 </body>
+
 </html>

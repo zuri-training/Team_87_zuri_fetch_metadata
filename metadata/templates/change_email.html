@@ -1,10 +1,56 @@
-<h2>Enter your new email below</h2>
-{% for message in messages %}
-<h5>{{message}}</h5>
-{% endfor %}
-<form action="{% url 'metadata:change_email' user.id %}" method="POST">
-	{% csrf_token %}
-	<label for="new_email">Enter your New email</label><br />
-	<input type="text" name="new_email" /><br />
-	<input type="submit" value="Change Email" /><br />
-</form>
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="notification.css">
+	<link rel="stylesheet" href="css/style.css">
+	<link rel="stylesheet" href="css\form.css">
+	<link rel="stylesheet" href="css/dashboard.css">
+	<title>Change Email Address</title>
+</head>
+
+<body>
+
+
+	<h2>Enter your new email below</h2>
+	{% for message in messages %}
+	<h5>{{message}}</h5>
+	{% endfor %}
+	<form action="{% url 'metadata:change_email' user.id %}" method="POST">
+		{% csrf_token %}
+		<label for="new_email">Enter your New email</label><br />
+		<input type="text" name="new_email" /><br />
+		<input type="submit" value="Change Email" /><br />
+	</form>
+
+	<div class="password">
+		<h1 class="fp1">Change email address</h1>
+		<!--form-->
+		<form class="myform">
+			<div class="meta-form-field">
+				<label for="email" class="field-label">Enter New Email Address</label>
+				<input type="email" name="email" id="" placeholder="Email">
+			</div>
+			<form class="myform">
+				<div class="meta-form-field">
+					<label for="email" class="field-label">Confirm New Email Address</label>
+					<input type="email" name="email" id="" placeholder="Email">
+				</div>
+				<div> <button class="nav-btn-solid">
+						<a href="">Save Changes
+					</button>
+				</div>
+			</form>
+		</form>
+	</div>
+
+
+</body>
+
+</html>
+
+
