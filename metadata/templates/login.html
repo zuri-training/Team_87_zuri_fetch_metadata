@@ -30,9 +30,13 @@
 					Sign in with Github
 				</a>
 			</div>
+
+			<div class="line">
+				<hr> Or <hr>
+			</div>
 			<form action="login" method="post">
 				{% csrf_token %}
-				<div>
+				<div class="form-field">
 					<label for="username" class="field-label">Username</label>
 					<input type="text" name="username" placeholder="username" />
 				</div>
