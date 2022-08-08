@@ -46,20 +46,21 @@
     </div>
   </div>
   <div id="sm-hamburger">
-    <img src="static/images/menu-light.svg" alt=""> 
+    <img src="static/images/menu-light.svg" alt="">
     <span>profile nav</span>
-  </div> 
+  </div>
   <div class="content-section-sm">
     <img src="static/images/close-circle.svg" alt="" id="sm-hamburger-close">
     <div class="media">
       {% if user.profile.profile_pic %}
       <img class="rounded-circle account-img" src="{{ user.profile.profile_pic.url }}" width="200" height="200" />
       {% else %}
-      <img class="rounded-circle account-img" src="{% static 'metadata/images/default.jpg'%}" width="200" height="200" />
+      <img class="rounded-circle account-img" src="{% static 'metadata/images/default.jpg'%}" width="200"
+        height="200" />
       {% endif %}
     </div>
     <a class="sm-profile-edit" href="/update_picture">Edit Profile Picture</a>
-    
+
     <div class="sm-profile-link sm-link-active">
       <a href="/dashboard">
         <img src="../../static/images/user.png" alt="">
