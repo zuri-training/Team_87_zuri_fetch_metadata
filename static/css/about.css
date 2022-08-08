@@ -1,53 +1,100 @@
 @import url("../css/style.css");
 
 .container {
-    max-width: 1200px;
+    max-width: 1440px;
     margin: auto;
+    padding-left: 25px;
+    padding-right: 25px;
 }
 
 img {
     max-width: 100%;
 }
 
-.about h1{
+.about{
+    margin-bottom: 150px;
+}
+
+.top-about{
+    text-align: center;
+    margin-bottom: 100px;
+}
+
+.top-about h1{
     font-size: 2.4rem;
     line-height: 3.6rem;
+    margin-bottom: 20px;
+    font-weight: 800;
+    text-align: center;
+}
+
+/*============================== */
+/* ====== About Images========= */
+
+.subhead-about{
+    font-size: 2.4rem;
+    line-height: 3.6rem;
+    text-align: center;
+    margin-bottom: 4.8rem;
+}
+
+  
+
+
+#parent{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 22px;
+}
+
+.namefocus h5 {
+    font-size: 1.5rem;
+    font-weight: 500;
+}
+
+.namefocus {
+    text-align: center;
+    margin-top: 1.6rem;
+}
+
+.namefocus span {
+    font-weight: 800;
 }
 
 
-
-@media screen and (min-width:1024px) {
-
-    .about h1 {
-        text-align: center;
-        padding-top: 80px;
-        margin-bottom: 20px;
-        font-size: 6rem;
-        font-family: 'CabinetGrotesk-Bold';
-        font-weight: 800;
+@media screen and (min-width:768px) {
+    .top-about{
+        margin-bottom: 50px;
     }
 
-    .about p {
-        padding-left: 150px;
-        padding-right: 120px;
+    .top-about h1 {
+        padding-top: 80px;
+        font-size: 6rem;
+        margin-bottom: 50px;
+    }
+
+    .top-about p {
+        width: 75%;
+        margin: auto;
         text-align: center;
         font-size: 1.8rem;
         font-weight: 200;
     }
 
-    .about h2 {
-        text-align: center;
-        padding-top: 80px;
-        font-size: 4rem;
-        font-family: 'CabinetGrotesk-Bold';
-        font-weight: bolder;
-        padding-bottom: 35px;
+    .subhead-about{
+        font-size: 3.2rem;
+        line-height: 3.84rem;
     }
 
+    #parent{
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+
+@media screen and (min-width:1024px) {
 
     #parent {
-        min-height: 100vh;
-        display: grid;
         grid-template-columns: repeat(4, 1fr);
         gap: 3px;
     }
@@ -67,20 +114,11 @@ img {
         font-style: normal;
     }
 
-    .namefocus {
-        text-align: center;
-        margin-top: 1.6rem;
-    }
+    
 
-    .namefocus h5 {
-        font-size: 1.5rem;
-        font-weight: 500;
-    }
+   
 
-    .namefocus span {
-        font-weight: 800;
-        margin-bottom: 10px;
-    }
+    
 
 
 }

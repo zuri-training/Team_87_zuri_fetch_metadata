@@ -130,6 +130,12 @@ img{
 
 .sm-nav-button{
     margin-top: 50px;
+    display: flex;
+    flex-direction: column;
+}
+
+.sm-nav-button button{
+    margin-bottom:20px;
 }
 
 .nav-logo-sm img{
