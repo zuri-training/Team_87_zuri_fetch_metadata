@@ -56,6 +56,8 @@ button a {
     
 }
 
+
+
 @media screen and (min-width:1024px) {
 
 
@@ -288,6 +290,21 @@ header {
 .right-meta {
     width: 60%;
     padding-left: 50px;
+}
+
+.User-Testimonals{
+    width: 1400px;
+}
+
+.User{
+    width: 1400px;
+    margin-top: -285px;
+}
+.Users{
+    width: 800px;
+}
+.hold-body .User-Testimonals img{
+    margin-top: 150px;
 }
 
 .meta-img {

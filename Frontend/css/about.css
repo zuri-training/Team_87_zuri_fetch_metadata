@@ -1,4 +1,4 @@
-/* @import url("style.css");
+ @import url("style.css");
 
 * {
     padding: 0;
@@ -59,7 +59,7 @@ h1, h2, h3, h4 {
     width: 160px;
     height: 160px;
     border: 1px;
-    border-radius: 16px;
+    border-radius: 15px;
     
 }
 .child img:hover{
@@ -70,4 +70,4 @@ h1, h2, h3, h4 {
     display: grid;
     font-size: small;
     font-style: normal;
-} */
+} 
