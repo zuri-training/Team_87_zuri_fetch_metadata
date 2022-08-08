@@ -34,11 +34,13 @@ class Profile(models.Model):
         # show how we want it to be displayed
         return f'{self.user.username} Profile'
 
+
 class History(models.Model):
     name = models.CharField(max_length=200)
     #size = models.IntegerField()
     data = models.TextField(null=True)
-    owner = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE)
+    owner = models.ForeignKey(settings.AUTH_USER_MODEL,
+                              on_delete=models.CASCADE)
     created_at = models.DateTimeField(auto_now_add=True)
 
     def __str__(self):
@@ -54,6 +56,7 @@ class Files(models.Model):
 
     def __str__(self):
         return self.file_name
+
 
 class other(models.Model):
     pass

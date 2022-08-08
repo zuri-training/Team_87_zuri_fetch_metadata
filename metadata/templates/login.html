@@ -1,25 +1,61 @@
-{% extends "base.html" %} {% block content %}
+<!DOCTYPE html>
+<html lang="en">
 
-<h1>Login Page</h1>
-{% for message in messages %}
-<h5>{{message}}</h5>
-{% endfor %}
+<head>
+	<meta charset="UTF-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<title>MetaData Extractor | Get detailed information on your files</title>
+	<link rel="stylesheet" href="../../static/css/main.css" />
+	<link rel="stylesheet" href="../../static/css/font.css">
+	<link rel="stylesheet" href="../../static/css/login.css">
+	<link href="https://api.fontshare.com/v2/css?f[]=cabinet-grotesk@800,500,700,400,900&display=swap" rel="stylesheet">
+</head>
 
-<p>Sign in with social account</p>
-<ul>
-	<li><a href="/accounts/google/login/?process=login">Google</a></li>
-	<li><a href="/accounts/github/login/?process=login">Github</a></li>
-</ul>
-<form action="login" method="post">
-	{% csrf_token %}
-	<label for="username">Username</label><br />
-	<input type="text" name="username" /><br />
-	<label for="password">Password</label><br />
-	<input type="password" name="password" /><br />
-	<input type="submit" />
-	<input type="hidden" name="next" value="{{ next }}" />
-</form>
-<p><a href="{% url "metadata:password_reset" %}">Forgotten your password?</a></p>
-<h3><a href="signup">SignUp</a> if you dont have an account</h3>
+<body>
+	<section class="autentication-form">
+		<div class="left-column" id="login-left">
+			<img src="../../static/images/login-bg.png" alt="" />
+		</div>
+		<div class="right-column">
+			<div class="form-header">
+				<h1>Login</h1>
 
-{% endblock %}
+				<a href="/accounts/google/login/?process=login">
+					<img src="../../static/images/google.png" alt="" class="google" />
+					Sign in with Google
+				</a>
+				<a href="/accounts/github/login/?process=login">
+					<img src="../../static/images/github.png" alt="" class="fb" />
+					Sign in with Github
+				</a>
+			</div>
+			<form action="login" method="post">
+				{% csrf_token %}
+				<div>
+					<label for="username" class="field-label">Username</label>
+					<input type="text" name="username" placeholder="username" />
+				</div>
+				<div class="form-field">
+					<label for="password" class="field-label">Password</label>
+					<input type="password" name="password" placeholder="Password" id="psw" />
+					<span class="eye" onclick="myFunction()">
+						<img src="../../static/images/eye.png" alt="" class="psw-icon" id="hide"/>
+						<img src="../../static/images/eye-slash.png" alt="" class="psw-icon"  />
+					</span>
+				</div>
+
+				<p class="login-password"><a href="#"> Forgot Password</a></p>
+				
+				<input type="submit" value="Login" />
+				<input type="hidden" name="next" value="{{ next }}" />
+			</form>
+
+			<div>
+				<p class="login-text">Don't have an account? <a href="signup"> Create Account</a></p>
+			</div>
+		</div>
+	</section>
+</body>
+
+</html>

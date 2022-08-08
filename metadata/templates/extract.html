@@ -1,0 +1,101 @@
+{% extends "base.html" %}
+
+{% block styles %}
+<link rel="stylesheet" href="../../static/css/extract.css">
+{% endblock %}
+
+
+{% block nav %}
+<div class="navigation">
+    <nav class="menu">
+        <a href="/">Home</a>
+        <a href="/about">About Us</a>
+        {% if user.is_authenticated %}
+        <a href="/viewMetadata" class="active">Extract Metadata</a>
+        <a href="/dashboard">Dashboard</a>
+        {% endif %}
+    </nav>
+</div>
+
+{% endblock %}
+
+{% block content %}
+<main>
+    <!--Body-->
+
+    <div class="section">
+        <div class="hero extract-hero">
+            <div class="extract-left-hero">
+                <h2 class="hero-head">Extract <span>Metadata</span> <br>of Your <span>Desired</span> <br>File Type</h2>
+            </div>
+
+            <div class="extract-right-hero">
+                <div class="extract">
+                    <div class="up">
+                        <img src="static/css/img/document-upload.svg" class="img-svg upload">
+                        <img src="static/images/document-cloud.svg" alt="" class="cloud hide-upload">
+                        <p class="upload-text file-name"></p>
+                    </div>
+                    <form enctype="multipart/form-data" action="/viewMetadata" method="post">
+                        {% csrf_token %}
+                        <label for="id_upload_file" class="down" id="file-label">
+                            <img src="static/css/img/cloud-plus.svg" class="img-svg">
+                            <p><label for="id_upload_file" class="upload-txt">Choose a File</label></p>
+                            <div class="extract-input">
+                                {{form}}
+                            </div>
+                        </label>
+                        <div class="btn-wrapper">
+
+                            <button type="submit" class="metadata-btn hide-upload" id="metadata-btn">
+                                <span>Analyise file</span> 
+                                <img src="static/images/bx_analyse.svg" alt="">
+                            </button>
+                        </div>
+                    </form>
+                </div>
+
+            </div>
+
+        </div>
+    </div>
+
+    <!--supported formats-->
+    <h2 class="headline"><b>Supported Formats</b></h2>
+
+    <div class="formats">
+
+        <div class="card">
+            <div class="icon-card">
+                <h3><span>IMAGE</span> FILES</h3>
+                <img src="../../static/css/img/Frame 1156.png" class="card-png">
+            </div>
+            <div class="text">
+                <p class="card-text">JPEG, PNG, GIF, PSD, EPS,<br>PDF, AI, INDD, RAW, BMP, <br>TIFF</p>
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="icon-card">
+                <h3><span>PDF</span> FILES</h3>
+                <img src="../../static/css/img/Frame 1167.png" class="card-png">
+            </div>
+            <div class="text">
+                <p class="card-text">XML, XFA, Static PDF, <br>Dynamic forms, Traditional, <br>PDF for Archive</p>
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="icon-card">
+                <h3><span>JSON</span> FILES</h3>
+                <img src="../../static/css/img/Frame 1156-1.png" class="card-png">
+            </div>
+            <div class="text">
+                <p class="card-text">Number, String, Boolean, <br>Array, Object, Value, <br>Whitespace</p>
+            </div>
+        </div>
+    </div>
+
+</main>
+
+{% endblock %}

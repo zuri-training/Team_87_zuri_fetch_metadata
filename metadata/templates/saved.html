@@ -1,5 +1,27 @@
-{% extends "base.html" %} {% block content %}
+{% extends "base.html" %} 
 
+{% block styles %}
+<link rel="stylesheet" href="../../static/css/profile.css" />
+{% endblock %}
+
+{% block nav %}
+
+<div class="navigation">
+    <nav class="menu">
+        <a href="/">Home</a>
+        <a href="/about">About Us</a>
+        <a href="/viewMetadata">Extract Metadata</a>
+        <a href="/dashboard" class="active">Dashboard</a>
+    </nav>
+</div>
+
+{% endblock %}
+
+
+{% block content %}
+
+
+<div class="profile-wrapper">
 
 <h2>Saved metadata </h2>
 <table>
@@ -19,4 +41,6 @@
 {% endfor %}
 
 </table>
+
+</div>
 {% endblock %}

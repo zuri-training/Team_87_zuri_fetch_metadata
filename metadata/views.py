@@ -49,7 +49,11 @@ def index(request):
 
 # ==============================================
 # =============================================
+def about(request):
+    return render(request, "about.html")
 
+
+# ==========================================
 
 def login(request):
     if request.method == 'POST':
@@ -105,6 +109,16 @@ def signup(request):
             return redirect('metadata:signup')
 
     return render(request, "signup.html")
+
+#======================================================#
+# ============== DASHBOARD ============================#
+#======================================================#
+
+
+def dashboard(request):
+    return render(request, "profile.html")
+
+# =================================================
 
 
 class profile(LoginRequiredMixin, View):
@@ -168,7 +182,8 @@ def contact(request):
 
 class view_metadata(LoginRequiredMixin, View):
     success_url = reverse_lazy('metadata:viewMetadata')
-    template_name = 'metadata.html'
+    # template_name = 'metadata.html'
+    template_name = 'extract.html'
     login_url = '/login'
     REDIRECT_FIELD_NAME = 'next'
 
@@ -176,10 +191,12 @@ class view_metadata(LoginRequiredMixin, View):
         form = FileUpload(request.POST, request.FILES)
         context = {"metadata": []}
 
+        print("=====================")
         if form.is_valid():
 
             uploaded_file = request.FILES['upload_file']
             file_type = uploaded_file.content_type.split("/")
+            print(uploaded_file)
 
             if file_type[0] == "video" or file_type[0] == "image" or file_type[0] == "audio":
 
@@ -229,16 +246,15 @@ def save(request):
     metadata = request.session.get("metadata")
     name = metadata['metadata'][0]['tag_value']
     owner = request.user
-    #size = metadata['metadata'][1]['tag_value']
     if History.objects.filter(name=name).exists() and History.objects.get(name=name).owner == owner:
         messages.info(request, "Data already present in your save history")
-        return render(request, "index.html")
+        return render(request, "profile.html")
     else:
         data = json.dumps(metadata)
         history = History(data=data, name=name, owner=owner)
         history.save()
         messages.info(request, "data saved succesfully")
-        return render(request, "index.html")
+        return render(request, "profile.html")
 
 # ================
 
