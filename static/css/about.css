@@ -1,80 +1,86 @@
 @import url("../css/style.css");
 
-.container{
+.container {
     max-width: 1200px;
     margin: auto;
 }
 
-img{
+img {
     max-width: 100%;
 }
 
-
-.about h1 {
-    text-align: center;
-    padding-top: 80px;
-    margin-bottom: 20px;
-    font-size: 6rem;
-    font-family: 'CabinetGrotesk-Bold';
-    font-weight: 800;
-}
-.about p{
-    padding-left: 150px;
-    padding-right: 120px;
-    text-align: center;
-    font-size: 1.8rem;
-    font-weight: 200;
-}
-.about h2{
-    text-align: center;
-    padding-top: 80px;
-    font-size: 4rem;
-    font-family: 'CabinetGrotesk-Bold';
-    font-weight: bolder;
-    padding-bottom: 35px;
+.about h1{
+    font-size: 2.4rem;
+    line-height: 3.6rem;
 }
 
 
-#parent { 
-    min-height: 100vh;
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 3px;
-    /* grid-template-rows: repeat(6, 1fr); */
-}
 
-.child {
-    background-color: white;
-    padding: 10px;
-    display: grid;
-    padding-left: 70px;
-    padding-right: 10px;
-}
-.child img{
-    /* width: 50px;
-    height: 50px;
-    border: 1px; */
-}
+@media screen and (min-width:1024px) {
 
-.child .namefocus{
-    display: grid;
-    font-size: small;
-    font-style: normal;
-}
+    .about h1 {
+        text-align: center;
+        padding-top: 80px;
+        margin-bottom: 20px;
+        font-size: 6rem;
+        font-family: 'CabinetGrotesk-Bold';
+        font-weight: 800;
+    }
 
-.namefocus{
-    text-align: center;
-    margin-top: 1.6rem;
-}
+    .about p {
+        padding-left: 150px;
+        padding-right: 120px;
+        text-align: center;
+        font-size: 1.8rem;
+        font-weight: 200;
+    }
 
-.namefocus h5{
-    font-size: 1.5rem;
-    font-weight: 500;
-}
-
-.namefocus span{
-    font-weight: 800;
-    margin-bottom: 10px;
-}
+    .about h2 {
+        text-align: center;
+        padding-top: 80px;
+        font-size: 4rem;
+        font-family: 'CabinetGrotesk-Bold';
+        font-weight: bolder;
+        padding-bottom: 35px;
+    }
 
 
+    #parent {
+        min-height: 100vh;
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 3px;
+    }
+
+    .child {
+        background-color: white;
+        padding: 10px;
+        display: grid;
+        padding-left: 70px;
+        padding-right: 10px;
+    }
+
+   
+    .child .namefocus {
+        display: grid;
+        font-size: small;
+        font-style: normal;
+    }
+
+    .namefocus {
+        text-align: center;
+        margin-top: 1.6rem;
+    }
+
+    .namefocus h5 {
+        font-size: 1.5rem;
+        font-weight: 500;
+    }
+
+    .namefocus span {
+        font-weight: 800;
+        margin-bottom: 10px;
+    }
+
+
+}
