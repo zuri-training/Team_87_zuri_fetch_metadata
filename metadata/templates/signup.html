@@ -10,18 +10,19 @@
 	<link rel="stylesheet" href="../../static/css/font.css">
 	<link rel="stylesheet" href="../../static/css/login.css">
 	<link href="https://api.fontshare.com/v2/css?f[]=cabinet-grotesk@800,500,700,400,900&display=swap" rel="stylesheet">
-	
+
 </head>
 <html>
+
 <body>
-	<section class="autentication-form" >
+	<section class="autentication-form">
 
 		<div class="left-column" id="signup-left-column">
 			<img src="static/images/signup-bg.png" alt="" />
 		</div>
 
 		<div class="right-column" id="signup-right-column">
-										
+
 			<div class="form-header">
 				<h1>Sign Up</h1>
 
@@ -33,6 +34,10 @@
 					<img src="static/images/github.png" alt="" class="fb" />
 					Sign in with Github
 				</a>
+			</div>
+
+			<div class="line">
+				<hr>Or<hr>
 			</div>
 
 			<form action="signup" method="post">
@@ -72,14 +77,14 @@
 
 				<p class="login-password"><a href="#"> Forgot Password</a></p>
 
-				<input type="submit" value="Create Account"/>
+				<input type="submit" value="Create Account" />
 				<input type="hidden" name="next" value="{{ next }}" />
 			</form>
 
 			<div>
 				<p class="login-text">Alerady Have an account? <a href="/login"> Login</a></p>
 			</div>
-							
+
 		</div>
 	</section>
 
