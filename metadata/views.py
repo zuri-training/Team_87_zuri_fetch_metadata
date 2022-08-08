@@ -362,7 +362,7 @@ def download_csv_data(request):
 
 class change_email(LoginRequiredMixin, View):
     success_url = reverse_lazy('metadata:profile')
-    template = 'change_email.html'
+    template = 'profile.html'
 
     def get(self, request, pk):
         return render(request, self.template)

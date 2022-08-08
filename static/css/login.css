@@ -332,7 +332,9 @@ input[type="button"]:hover {
   #hide3,
   #hide5 {
     display: none;
-  }
+  }  #signup-right-column {
+      /* margin-top: 500px; */
+    }
 
 
   /* Sign up */

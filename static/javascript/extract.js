@@ -3,7 +3,6 @@ const fileLabel = document.querySelector("#file-label");
 const upload = document.querySelector(".upload");
 const cloud = document.querySelector(".cloud");
 const fileName = document.querySelector(".file-name");
-const metadataBtn = document.querySelector(".metadata-btn");
 
 file.addEventListener("change", () => {
   fileName.textContent = file.value.split("\\").pop();
