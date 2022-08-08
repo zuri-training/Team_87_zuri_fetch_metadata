@@ -21,20 +21,20 @@
             </a>
         </div>
 
-        
+
 
         {% block nav %}
         <!-- Menu -->
-        
+
         {% endblock %}
 
         <!-- nav buttons -->
         <div class="nav-button">
-        {% if user.is_authenticated %}
+            {% if user.is_authenticated %}
             <button class="nav-btn-solid">
                 <a href="/logout">Sign Out</a>
             </button>
-        {% else %}
+            {% else %}
             <button class="nav-btn-outline">
                 <a href="/login">Login</a>
             </button>
@@ -42,10 +42,76 @@
             <button class="nav-btn-solid">
                 <a href="/signup">Get Started</a>
             </button>
-        {% endif %}
+            {% endif %}
         </div>
 
     </header>
+    <!-- ========================================================================= -->
+    <!--============================= MOBILE NAVIGATION=========================== -->
+    <header class="header-sm">
+        <div class="nav-logo-sm">
+            <a href="/">
+                <img src="../../static/images/deevr 2.png" class="site-logo">
+            </a>
+        </div>
+
+        <nav class="sm-navigation">
+            <div class="sm-hamburger">
+                <a href="/">
+                    <img src="static/images/logo-mobile.svg">
+                </a>
+
+                <img src="static/images/close-circle.svg" alt="" class="hamburger-close">
+            </div>
+
+
+            <div class="sm-nav-links">
+                <ul class="sm-menu">
+                    <li class="sm-active">
+                        <img src="static/images/home-2.svg" alt="">
+                        <a href="/">Home</a>
+                    </li>
+                  
+                    {% if user.is_authenticated %}
+                    <li>
+                        <img src="static/images/data.svg" alt="">
+                        <a href="/viewMetadata" class="active">Extract Metadata</a>
+                    </li>
+                    <li>
+                        <img src="static/images/user-dark.png" alt="">
+                        <a href="/dashboard">Dashboard</a>
+                    </li>
+                    {% endif %}
+                    <li>
+                        <img src="static/images/people.svg" alt="">
+                        <a href="/about">About Us</a>
+                    </li>
+                </ul>
+
+                <!-- nav buttons -->
+                <div class="sm-nav-button">
+                    {% if user.is_authenticated %}
+                    <button class="nav-btn-solid">
+                        <a href="/logout">Sign Out</a>
+                    </button>
+                    {% else %}
+                    <button class="nav-btn-outline">
+                        <a href="/login">Login</a>
+                    </button>
+
+                    <button class="nav-btn-solid">
+                        <a href="/signup">Get Started</a>
+                    </button>
+                    {% endif %}
+                </div>
+            </div>
+        </nav>
+        <div class="hamburger">
+            <img src="static/images/menu.svg" alt="" class="hambuger-menu">
+        </div>
+    </header>
+
+    <!-- ================================================================================== -->
 
     {% block content %}
 
@@ -118,6 +184,7 @@
 
     <script src="../../static/javascript/extract.js"></script>
     <script src="../../static/javascript/savedFiles.js"></script>
+    <script src="../../static/javascript/navBar.js"></script>
 
 </body>
 

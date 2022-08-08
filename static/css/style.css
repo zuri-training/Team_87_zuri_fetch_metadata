@@ -23,10 +23,12 @@
 
 html {
     font-size: 62.5%;
+    overflow-x: hidden;
 }
 
 body {
     font-family: 'Cabinet Grotesk', sans-serif;
+    overflow-x:hidden;
 }
 
 h1,
@@ -39,16 +41,18 @@ h4 {
 
 a {
     text-decoration: none;
+    color: black;
 }
 
-button {
-    padding: 13px 37px;
-    background-color: var(--blue);
-    border: 0;
-    border-radius: 5px;
-    color: var(--white);
-    border: 1px solid var(--blue);
-}
+  button {
+      padding: 13px 37px;
+      background-color: var(--blue);
+      border: none;
+      border-radius: 5px;
+      color: var(--white);
+      text-align: center;
+
+  }
 
 button a {
     color: var(--white);
@@ -56,85 +60,650 @@ button a {
     font-weight: 500;
 }
 
+p{
+    font-size: 1.6rem;
+}
 
-@media screen and (max-with:768px) {
-    img {
-        max-width: 100%;
-    }
+img{
+    max-width: 100%;
+}
 
-    .site-logo {
-        width: 80px;
-    }
+
+.nav-head{
+    display: none;
+}
+
+/* ============================= */
+/* ===== MOBILE NAV =========== */
+.header-sm{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px 25px;
+    margin-bottom: 24px;
+}
+
+.sm-navigation{
+    position: fixed;
+    left: 0;
+    top: 0;
+    background-color: white;
+    height: 80vh;
+    width: 100%;
+    padding: 20px 25px;
+    transform: translateY(-100%);
+    transition: 0.5s ease-out;
+}
+
+.show-navigation{
+    transform: translateY(0%);
+    transition: 0.5s ease-in;
+}
+
+.sm-hamburger{
+    display: flex;
+    justify-content: space-between;
+    align-items:center;
+}
+
+.sm-menu{
+    margin-top: 45px;
+}
+
+.sm-menu a{
+    font-size: 2.4rem;
+    line-height: 3.6rem;
+    display: block;
+    margin-left: 19px;
+}
+
+.sm-menu li{
+    list-style: none;
+    display: flex;
+    align-items: center;
+    margin-bottom: 24px;
+}
+
+.sm-active a{
+    font-weight: 800;
+}
+
+.sm-nav-button{
+    margin-top: 50px;
+    display: flex;
+    flex-direction: column;
+}
+
+.sm-nav-button button{
+    margin-bottom:20px;
+}
+
+.nav-logo-sm img{
+    width: 80px;
+}
+
+.hamburger,
+.hamburger-close{
+    cursor: pointer;
+}
+
+
+/* ===================== */
+/* ==== HERO ========== */
+
+.section{
+    padding: 0 25px;
+    text-align: center;
+    margin: 48px 0;
+}
+
+.left-hero h2{
+    font-size: 2.4rem;
+    line-height: 2.7rem;
+    margin-bottom: 8px;
+}
+
+.hero-btn{
+    margin-top: 50px;
+}
+
+.hero-btn a{
+    margin-top: 50px;
+    width: 100%;
+    margin-top: -5px;
+}
+
+.right-hero{
+    margin-top: 60px;
+}
+
+
+/* ===== About ========= */
+.about-features{
+    margin-bottom: 68px;
+}
+
+.general-head{
+    font-size: 2.4rem;
+    line-height: 3rem;
+    margin-bottom: 24px;
+    text-align: center;
+}
+
+.about-icon{
+    width: 30%;
+    margin-bottom: 40px;
+}
+
+.about-title{
+    font-size: 1.6rem;
+    line-height: 1.6rem;
+    margin-bottom: 30px;
+}
+
+.about-txt{
+    margin-bottom: 68px;
+}
+
+
+/* ================= */
+/* ==== PARTNERS==== */
+
+.logo-section{
+    padding: 25px;
+    background-color: var(--grey);
+}
+
+.logos{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    align-items: center;
+}
+
+
+/* ==============================*/
+/* =========MetaData============ */
+.meta-section{
+    padding: 25px;
+    background-color: var(--grey);
+    text-align: center;
+    margin-top: 48px;
+}
+
+.meta-inner{
+    display: flex;
+    flex-direction: column-reverse;
+}
+
+.meta-head{
+    text-align: center;
+    font-size: 2.4rem;
+    line-height: 3rem;
+    margin-bottom: 10px;
+}
+
+/* ======================== */
+/* ========= FAQ ========= */
+
+.toggle{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px;
+    margin-bottom: 20px;
+    background: var(--grey);
+    color: var(--black);
+}
+
+.toggle-content{
+    display: none;
+}
+
+.faq-btn{
+    width: 100%;
+    margin-top: 30px;
+}
+
+/* ====================== */
+/* ===== FOOTER ==== */
+footer{
+    text-align: center;
+    background-color: var(--grey);
+    padding: 25px;
+   
+}
+.footer-img{
+    width: 40%;
+    margin-bottom: 32px;
+}
+
+.footer-txt{
+    margin-bottom: 32px;
+}
+
+.footer-title{
+    margin-bottom: 20px;
+    font-size: 1.8rem;
+    line-height: 3rem;
+}
+
+
+.social{
+    width: 40px;
+    margin: 20px 0;
+}
+
+.footer2, .footer3{
+    margin-bottom: 30px;
+}
+
+.footer-nav a{
+    display: block;
+    font-size: 1.6rem;
+    margin-bottom: 10px;
 }
 
 
 
+@media screen and (min-width:768px) {
 
-@media screen and (min-width:1024px) {
-    .section {
-        width: 1240px;
-        height: auto;
-        margin: 0 auto;
-        vertical-align: middle;
-        align-items: center;
-    }
+    .header-sm{
+        display: none;
+    }  
 
-
-
-
-    header {
-        width: 1240px;
-        height: auto;
-        margin: 10px auto;
-        padding: 10px auto;
-        vertical-align: middle;
+    .nav-head{
         display: flex;
         justify-content: space-between;
-        vertical-align: middle;
         align-items: center;
-        margin-top: 20px;
-    }
-
-    .nav-logo {
-        width: 20%;
-    }
-
-    .navigation {
-        width: 40%;
-        text-align: center;
-    }
-
-    .nav-button {
-        width: 30%;
-        text-align: end;
-        display: flex;
-        align-items: center;
-        justify-content: flex-end;
-        align-self: center;
+        padding: 25px;
     }
 
     .site-logo {
-        width: 130px;
+        width: 107px;
+    }
+
+    .nav-button button{
+        padding: 10px 20px;
+    }
+
+    .nav-button button:last-child {
+        margin-left: 10px;
     }
 
     .menu a {
         color: var(--black);
-        font-size: 17px;
-        margin: 20px;
-        border-bottom: 2px solid var(--white);
+        font-size: 1.6rem;
+        margin-right: 23px;
+        position: relative;
+
     }
 
-    .menu a:hover {
-        border-bottom: 2px solid;
-        border-color: var(--blue);
-        padding-bottom: 5px;
+    .menu a:last-child {
+        margin-right: 0;
     }
 
-    .menu a.active {
-        border-bottom: 2px solid;
-        border-color: var(--blue);
-        padding-bottom: 5px;
+    .menu a::before{
+        content: "";
+        width: 0;
+        height: 3px;
+        background-color: var(--blue);
+        position: absolute;
+        top: 30px;
+        left: 0;
+        border-radius: 10px;
+        transition: 0.5s ease-in-out;
     }
+
+    .menu a:hover::before {
+        width: 100%;
+    }
+
+    .menu .active::before {
+        content: "";
+        width: 100%;
+        height: 3px;
+        background-color: var(--blue);
+        position: absolute;
+        top: 30px;
+        left: 0;
+        border-radius: 10px;
+        transition: 0.5s ease-in-out;
+    }
+
+
+
+    /* ================================ */
+    /* ======== Hero ================== */
+
+    .hero{
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        text-align: left;
+    }
+
+    .left-hero h2{
+        font-size: 5rem;
+        line-height: 6.5rem;
+    }
+
+    .left-hero{
+        width: 50%;
+        margin: 0;
+    }
+
+    .right-hero{
+        width: 40%;
+        margin: 0;
+    }
+
+
+    /* ======================= */
+    /* ===== About =========== */
+
+    .section{
+        margin-bottom: 100px;
+
+    }
+
+    .general-head{
+        margin-bottom: 80px;
+        font-size: 3rem;
+        line-height: 5rem;
+    }
+    .about-features{
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 50px;
+        width: 80%;
+        margin: auto;
+    }
+
+
+    /* ================================ */
+    /* ========== PARTNERS============ */
+
+    .logo-gallery{
+        width: 80%;
+        margin: auto;
+    }
+
+    .logos {
+        gap: 50px;
+    }
+
+
+
+    /* ==============================*/
+    /* =========MetaData============ */
+    .meta-section {
+        text-align: left;
+        background: url("img/Frame\ 293.jpg");
+        background-size: 100%;
+        background-position: center;
+        background-repeat: no-repeat;
+    }
+
+    .meta-inner {
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    .left-meta{
+        margin-right: 60px;
+    }
+
+    .meta-head {
+        text-align: left;
+        font-size: 4rem;
+        line-height: 7rem;
+    }
+
+
+    /* ======================== */
+    /* ========= FAQ ========= */
+
+    .toggle {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 20px;
+        margin-bottom: 20px;
+        width: 100%;
+        font-size: ;
+    }
+
+ 
+
+    .toggle-content {
+        display: none;
+    }
+
+    .faq-btn {
+        width: 100%;
+        margin-top: 50px;
+    }
+
+
+    /* ========================== */
+    /* ======== FOOTER ========== */
+    
+    
+    
+        .social {
+            width: 30px;
+            margin: 20px 5px 20px 0;
+        }
+    
+
+        footer {
+            background-color: var(--grey);
+            padding: 86px 25px;
+            text-align: left;
+        }
+    
+        .footer {
+            display: flex;
+            justify-content: space-between;
+        }
+    
+        .footer1 {
+            width: 45%;
+            padding-right: 140px;
+        }
+        .footer2,
+        .footer3 {
+            width: 25%;
+        }
+    
+    
+        .footer-img {
+            width: 103px;
+            margin-bottom: 30px;
+        }
+
+    
+        .footer-nav {
+            display: flex;
+            flex-direction: column;
+        }
+    
+        .footer-nav a {
+            padding: 5px 0;
+            color: var(--black);
+            opacity: 80%;
+            font-size: 1.8rem;
+        }
+
+        .footer-txt{
+            font-size: 1.8rem;
+            line-height: 2.4rem;
+            width: 65%;
+        }
+}
+
+
+/* ====================================== */
+/* ============ Desktop ================= */
+
+
+@media screen and (min-width:1280px) {
+
+
+    button {
+        padding: 13px 37px;
+        background-color: var(--blue);
+        border: 0;
+        border-radius: 5px;
+        color: var(--white);
+        border: 1px solid var(--blue);
+    }
+
+    /* ============================= */
+    /* ===== HEADER / NAV ========== */
+    .nav-head{
+        padding: 24px 72px;
+        max-width: 1440px;
+        margin: auto;
+    }
+    .nav-logo{
+        width: 20%;
+    }
+
+    .navigation{
+        width: 50%;
+    }
+
+    .menu{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-right: auto;
+    }
+
+    .menu a{
+        font-size: 2rem;
+        line-height: 2.4rem;
+    }
+
+
+    /* ============================== */
+    /* ======= HERO ================ */
+
+    .section{
+        padding: 0 72px;
+        max-width: 1440px;
+        margin: auto;
+    }
+
+    .left-hero h2 {
+        font-size: 7.2rem;
+        line-height: 8.8rem;
+    }
+
+    .hero-text{
+        font-size: 3.2rem;
+        line-height: 4.8rem;
+    }
+
+
+    .navigation {
+        /* width: 40%; */
+        text-align: center;
+    }
+
+
+    .left-hero,
+    .right-hero {
+        width: 50%;
+    }
+
+
+    /* =========================== */
+    /* =========== About ========== */
+
+    .about-features{
+        width: 100%;
+        grid-template-columns: repeat(4, 1fr);
+    }
+
+    /* ============================== */
+    /* ====== PARTNERS ============== */
+    .general-head{
+        font-size: 4.8rem;
+    }
+
+    .logo-section{
+        padding-top: 86px;
+        padding-bottom: 86px;
+        max-width: 1440px;
+        margin: auto;
+    }
+
+    .logos{
+        grid-template-columns: repeat(5, 1fr);
+    }
+
+    .logo:nth-child(3){
+        grid-column: span 2;
+        width: 40%;
+        text-align: center;
+        margin: auto;
+    }
+
+    .logo:nth-child(1) , .logo:nth-child(2){
+        margin-left: 70px;
+    }
+    .logo:nth-child(4) {
+        margin-left: -70px;
+    }
+
+
+
+    /* =========================================== */
+    /* ============META SECTION ================== */
+
+    .meta-section{
+        padding: 50px 75px;
+        max-width: 1440px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .left-meta{
+        width: 43%;
+        margin-bottom: 20px;
+    }
+
+
+    .right-meta{
+        width: 50%;
+        margin-right: auto;
+    }
+
+    .meta-head{
+        font-size: 4.8rem;
+        line-height: 7.2rem;
+    }
+
+
+    .meta-text{
+        font-size: 2rem;
+        line-height: 2.8rem;
+    }
+
+    footer{
+        padding: 86px 75px;
+        max-width: 1440px;
+        margin: auto;
+    }
+
+
+   
+
+    
 
     .nav-btn-outline {
         background-color: var(--white);
@@ -170,10 +739,7 @@ button a {
 
 
 
-    .left-hero,
-    .right-hero {
-        width: 50%;
-    }
+   
 
     .right-hero {
         text-align: end;
@@ -211,147 +777,27 @@ button a {
     }
 
 
-    /* About/Features */
-
-    .general-head {
-        font-size: 50px;
-        text-align: center;
-        padding-bottom: 40px;
-        padding-top: 110px;
-    }
-
-    .about-features {
-        display: flex;
-    }
-
-    .about-items {
-        text-align: center;
-        padding: 10px;
-        width: 25%;
-    }
-
-    .about-icon {
-        width: 110px;
-    }
-
-    .about-title {
-        font-size: 22px;
-        padding: 10px 0;
-    }
-
-    .about-txt {
-        font-size: 17px;
-        color: var(--black);
-        opacity: 50%;
-    }
-
-
-    /* logos */
-
-    .logo-section {
-        padding: 70px 0;
-        min-width: 1240px;
-    }
-
-    .logo-gallery {
-        background-color: var(--grey);
-    }
-
-    .logos {
-        display: flex;
-        flex-wrap: wrap;
-        vertical-align: middle;
-        align-items: center;
-        justify-content: center;
-        padding: 30px 0;
-        margin: 0 auto;
-        width: 1240px;
-    }
-
-    .logo {
-        width: 240px;
-        height: auto;
-        padding: 30px;
-
-    }
-
-    /* Why Meta Data */
-
-    .meta-section {
-        background: url("img/Frame\ 293.jpg");
-        background-size: calc(100%);
-        /* background-position: center; */
-        padding: 50px 0;
-        margin: 50px 0;
-    }
-
-    .meta-inner {
-        display: flex;
-        width: 1240px;
-        height: auto;
-        margin: 0 auto;
-        vertical-align: middle;
-        align-items: center;
-    }
-
-    .left-meta {
-        width: 40%;
-    }
-
-    .right-meta {
-        width: 60%;
-        padding-left: 50px;
-    }
-
-    .meta-img {
-        width: 80%;
-    }
-
-    .meta-head {
-        font-size: 50px;
-        text-align: left;
-        padding-bottom: 40px;
-        padding-top: 0px;
-    }
-
-    .meta-text {
-        font-size: 18px;
-        color: var(--black);
-    }
-
     /* Accordion - Toggle */
 
-    #faq {
-        padding: 100px 0;
-    }
 
     .faq-btn {
-        align-items: center;
-        justify-content: center;
         margin: 70px auto;
-        text-align: center;
-    }
-
-    #faqbtn {
-        text-align: center;
     }
 
     .toggle-wrapper {
-        background-color: var(--grey);
-        margin-bottom: 20px;
-        padding: 30px 30px 30px 80px;
         border-radius: 10px;
+        width: 70%;
+        margin: auto;
+        margin-bottom: 30px;
+
     }
 
     .toggle {
         background-color: var(--grey);
         width: 100%;
-        display: flex;
-        justify-content: space-between;
         font-size: 19px;
-        color: var(--black);
         border: none;
-        padding: 15px 0;
+        padding: 30px 40px;
         cursor: pointer;
     }
 
@@ -363,68 +809,6 @@ button a {
         transition: all 1s;
     }
 
-    /* Footer */
-
-    footer {
-        background-color: var(--grey);
-        padding: 120px 0 150px 0;
-        margin-top: 100px;
-    }
-
-    .footer {
-        display: flex;
-        width: 1140px;
-        height: auto;
-        margin: 0 auto;
-        vertical-align: top;
-    }
-
-    .footer1 {
-        width: 35%;
-        padding-right: 140px;
-    }
-
-    .footer2 {
-        width: 18%;
-    }
-
-    .footer3 {
-        width: 17%;
-    }
-
-    .footer4 {
-        width: 30%;
-    }
-
-    .footer-img {
-        width: 100px;
-    }
-
-    .footer-title {
-        padding-bottom: 20px;
-        font-size: 20px;
-    }
-
-    .footer-txt {
-        font-size: 18px;
-        padding: 50px 0;
-    }
-
-    .social {
-        width: 30px;
-        margin-right: 10px;
-    }
-
-    .footer-nav {
-        display: flex;
-        flex-direction: column;
-    }
-
-    .footer-nav a {
-        padding: 5px 0;
-        color: var(--black);
-        opacity: 90%;
-        font-size: 18px;
-    }
+ 
 
 }

@@ -43,7 +43,7 @@
         </div>
         <div class="profile-link">
             <img src="../../static/images/archive-tick.svg" alt="">
-            <a href="/save">Saved Metadata</a>
+            <a href="{% url 'metadata:history' user.id %}">Saved Metadata</a>
         </div>
         <div class="profile-link link-active">
             <img src="../../static/images/archive-tick.svg" alt="">
