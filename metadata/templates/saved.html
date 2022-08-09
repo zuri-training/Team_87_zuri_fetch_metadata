@@ -1,7 +1,6 @@
 {% extends "base.html" %}
 
 {% load static %}
-
 {% block styles %}
 <link rel="stylesheet" href="../../static/css/profile.css" />
 {% endblock %}
@@ -127,8 +126,9 @@
                     <td><a href="{% url 'metadata:download_meta' i.id %}">Download</a></td>
                     <td><a href="{% url 'metadata:delete_meta' i.id %}">Delete</a></td>
                     <td><a href="{% url 'metadata:review' i.id %}">View</a></td>
-                    <td> <input type="text" value="{{i.name}}" id="{{ i.id }}"/>
-<button onclick="Hello({{ i.id }})"> Copy share address to clipboard </button></td>
+                    <td> <input type="text" value="Generate share URL" id="{{ i.id }}"/>
+                      
+<button onclick="Hello({{i.id}},{{user.id}})"> Copy share address to clipboard </button></td>
                 </tr>
                 {% endif %}
                 {% endfor %}
@@ -137,20 +137,21 @@
     </div>
 
 </div>
-
 {% endblock %}
 
 {% block jsScript %}
 <script src="../../static/javascript/savedFiles.js"></script>
 <script>
 
-  function Hello(a) {
+  function Hello(a,b) {
   var copyText = document.getElementById(a)
+  var d="http://127.0.0.1:8000/referral/"
+  var c = "/"
+  copyText.value = d + a +c+b
   copyText.select();
   document.execCommand('copy')
   console.log('Copied Text')
 }
-
 
 $(document).ready(function(){
 	$("#ewefmwefmp").click(function(){
@@ -167,4 +168,3 @@ $(document).ready(function(){
 
 <script src="/static/javascript/savedFiles.js"></script>
 {% endblock %}
-

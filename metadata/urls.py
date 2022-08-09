@@ -34,6 +34,6 @@ urlpatterns = [
     path("delete/<int:pk>", views.delete),
     path("delete_meta/<int:pk>", views.delete_meta, name="delete_meta"),
     path("dashboard", views.dashboard, name="dashboard"),
-    path("referral/<int:pk>", views.referral, name="referral"),
+    path("referral/<int:pk>/<int:ak>", views.referral, name="referral"),
     path("download_meta/<int:pk>", views.download_meta, name="download_meta")
 ]

@@ -420,8 +420,8 @@ def accountSettings(request):
     return render(request, 'update_picture.html', context)
 
     
-def referral(request,pk):
-    data = History.objects.get(id=pk)
+def referral(request,pk,ak):
+    data = History.objects.get(id=pk,owner=ak)
     metadata = json.loads(data.data)
     context = metadata
     request.session["metadata"] = context
