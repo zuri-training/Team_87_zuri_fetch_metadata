@@ -607,6 +607,45 @@ footer {
     /* ===== Testimonial ========== */
     
 
+
+.card-wrapper{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap:20px;
+}
+
+
+.testimonial-heading {
+    text-align: center;
+    margin: 50px 0;
+}
+
+.testimonial-heading h2 {
+    font-size: 4rem;
+    line-height: 6rem;
+    margin-bottom: 30px;
+}
+
+.testimonial-heading p {
+    font-size: 1.8rem;
+    line-height: 2.7rem;
+}
+
+
+
+.testimonial-card p {
+    margin-bottom: 30px;
+}
+
+
+
+.profile-img {
+    position: relative;
+}
+
+.profile-img img {
+    position: static;
+}
                  
 
     /* ======================== */
@@ -690,6 +729,24 @@ footer {
         line-height: 2.4rem;
         width: 65%;
     }
+}
+
+/*================================= */
+/* ======= Mini Laptop 1024px ===== */
+
+@media screen and (min-width:1024px) {
+.card-wrapper {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+    
+    }
+
+    .testimonial-card:nth-child(1),
+    .testimonial-card:nth-child(4),
+    .testimonial-card:nth-child(5){
+        grid-column: span 2;
+    }
+
 }
 
 
