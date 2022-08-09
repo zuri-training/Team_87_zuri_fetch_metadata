@@ -1,10 +1,39 @@
-{% extends "base.html" %} {% block content %} {% if user.is_authenticated %}
+{% extends "base.html" %}
 
-<div style="width: 80%; margin: auto; border: 1px solid black">
-	<h1 style="text-align: center">Metadata Result</h1>
-	<p style="text-align: center">(Files less than 20mb will be stored in your file history)</p>
+{% block styles %}
+<link rel="stylesheet" href="static/css/result.css" />
+{% endblock %}
 
-	<table border="1" style="width: 50%; margin: auto">
+
+{% block nav %}
+
+<div class="navigation">
+	<nav class="menu">
+		<a href="/">Home</a>
+		<a href="/about">About Us</a>
+		<a href="/viewMetadata" class="active">Extract Metadata</a>
+		<a href="/dashboard">Dashboard</a>
+	</nav>
+</div>
+
+{% endblock %}
+
+
+ {% block content %} 
+ 
+ 
+ 
+ {% if user.is_authenticated %}
+
+<div class="metadata-wrapper">
+	<div class="metadata-heading">
+<h1>Metadata Result</h1>
+<p>(Files less than 20mb will be stored in your file history)</p>
+	</div>
+	
+	
+
+	<table>
 		<thead>
 			<tr>
 				<th colspan="2">MetaData</th>
@@ -13,44 +42,16 @@
 		<tbody>
 			{% for data in metadata %}
 			<tr>
-				<td style="padding: 0.3rem 1rem">{{data.tag_name}}</td>
-				<td style="padding: 0.3rem 1rem">{{data.tag_value}}</td>
+				<td>{{data.tag_name}}</td>
+				<td>{{data.tag_value}}</td>
 			</tr>
 			{% endfor %}
 		</tbody>
 	</table>
-	<a
-		style="
-			display: block;
-			width: 20%;
-			text-align: center;
-			font-size: 1rem;
-			font-weight: bold;
-			background-color: black;
-			margin: 1rem auto 2rem;
-			padding: 1rem 4.7rem;
-			text-decoration: none;
-			color: white;
-		"
-		href="/download"
-		>Download Metadata</a
-	>
-	<a
-		style="
-			display: block;
-			width: 20%;
-			text-align: center;
-			font-size: 1rem;
-			font-weight: bold;
-			background-color: black;
-			margin: 1rem auto 2rem;
-			padding: 1rem 4.7rem;
-			text-decoration: none;
-			color: white;
-		"
-		href="/save"
-		>Save Meta Result</a
-	>
+	<div class="btn">
+		<a href="/download">Download</a>
+		<a href="/save">Save</a>
+	</div>
 </div>
 {% else %}
 <h2>You must be logged in to access this page</h2>

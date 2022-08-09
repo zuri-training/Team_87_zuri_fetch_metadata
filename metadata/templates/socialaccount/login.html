@@ -16,28 +16,30 @@
 </head>
 
 <body>
-  <section class="autentication-form">
+	<section class="autentication-form">
 		<div class="left-column" id="login-left">
 			<img src="{% static 'images/login-bg.png' %}" alt="" />
 		</div>
 		<div class="right-column">
-			<div class="form-header">
+			<div class="form-header social-auth">
 				<h1>{% block head_title %}{% trans "Sign In" %}{% endblock %}</h1>
-        {% block content %}
-{% if process == "connect" %}
-<h1>{% blocktrans with provider.name as provider %}Connect {{ provider }}{% endblocktrans %}</h1>
+				{% block content %}
+				{% if process == "connect" %}
+				<h1>{% blocktrans with provider.name as provider %}Connect {{ provider }}{% endblocktrans %}</h1>
 
-<p>{% blocktrans with provider.name as provider %}You are about to connect a new third party account from {{ provider }}.{% endblocktrans %}</p>
-{% else %}
-<h2>{% blocktrans with provider.name as provider %}Sign In Via {{ provider }}{% endblocktrans %}</h2>
+				<p>{% blocktrans with provider.name as provider %}You are about to connect a new third party account
+					from {{ provider }}.{% endblocktrans %}</p>
+				{% else %}
+				<h2>{% blocktrans with provider.name as provider %}Sign In Via {{ provider}}{% endblocktrans %}</h2>
 
-<h3>{% blocktrans with provider.name as provider %}You are about to sign in using a third party account from {{ provider }}.{% endblocktrans %}</h3>
-{% endif %}
+				<h3>{% blocktrans with provider.name as provider %}You are about to sign in using a third party account
+					from {{ provider }}.{% endblocktrans %}</h3>
+				{% endif %}
 
-<form method="post">
-  {% csrf_token %}
-  <button type="submit">{% trans "Continue" %}</button>
-</form>
+				<form method="post">
+					{% csrf_token %}
+					<button class="social-auth-btn" type="submit">{% trans "Continue" %}</button>
+				</form>
 			</div>
 		</div>
 	</section>

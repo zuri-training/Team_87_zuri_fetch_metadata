@@ -1,22 +1,14 @@
 @import url("../css/main.css");
 @import url("../css/font.css");
 
-/* @media screen and (max-width: 768px) {
-  .left-column {
-    display: none;
-  }
 
-} */
 
 .left-column {
   display: none;
 }
 
-/* .form-field{
-  display: flex;
-} */
 
-.line{
+.line {
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -25,30 +17,21 @@
   font-size: 1.6rem;
 }
 
-.line hr{
+.line hr {
   width: 50%;
   height: 1px;
 }
-hr:first-child{
+
+hr:first-child {
   margin-right: 10px;
 }
-hr:last-child{
+
+hr:last-child {
   margin-left: 10px;
 }
 
-/* 
-.line hr:not(:first-child{
-  width: 100%;
-  height: 1px;
-  margin-left: 10px;
-}
-.ine hr:not(:last-child){
-  margin-right: 10px;
-} */
 
-
-
-.right-column{
+.right-column {
   padding: 50px 25px;
 }
 
@@ -87,7 +70,7 @@ input {
   vertical-align: middle;
 }
 
-.form-field{
+.form-field {
   position: relative;
 }
 
@@ -198,26 +181,26 @@ input[type="button"]:hover {
 }
 
 
-  .login-password {
-    margin: 10px 0 20px;
-    color: var(--blue);
-    text-align: end;
-  }
+.login-password {
+  margin: 10px 0 20px;
+  color: var(--blue);
+  text-align: end;
+}
 
-  .login-password a {
-    color: var(--blue);
-    font-size: 1.8rem;
-  }
+.login-password a {
+  color: var(--blue);
+  font-size: 1.8rem;
+}
 
-  .login-text {
-    margin-top: 40px;
-    text-align: center;
-    font-size: 1.5rem;
-  }
+.login-text {
+  margin-top: 40px;
+  text-align: center;
+  font-size: 1.5rem;
+}
 
-  .login-text a {
-    color: var(--blue);
-  }
+.login-text a {
+  color: var(--blue);
+}
 
 
 
@@ -227,12 +210,12 @@ input[type="button"]:hover {
     overflow: hidden;
   }
 
-    .left-column img {
-      object-fit: cover;
-    }
+  .left-column img {
+    object-fit: cover;
+  }
 
 
-  .left-column{
+  .left-column {
     width: 45%;
     display: block;
     background-image: url("../images/login-bg.png");
@@ -241,7 +224,7 @@ input[type="button"]:hover {
     min-height: 100vh;
   }
 
-  .right-column{
+  .right-column {
     width: 50%;
     padding-top: 60px;
     margin-left: auto;
@@ -253,20 +236,20 @@ input[type="button"]:hover {
 @media screen and (min-width:1024px) {
 
   /* Main Section */
-  
+
 
   /* Sections */
   .left-column {
     width: 45%;
   }
 
-  
+
 
   .right-column {
     background-color: white;
     width: 40%;
     padding-top: 100px;
-   
+
 
   }
 
@@ -332,9 +315,11 @@ input[type="button"]:hover {
   #hide3,
   #hide5 {
     display: none;
-  }  #signup-right-column {
-      /* margin-top: 500px; */
-    }
+  }
+
+  #signup-right-column {
+    /* margin-top: 500px; */
+  }
 
 
   /* Sign up */
@@ -347,4 +332,18 @@ input[type="button"]:hover {
 
 
 
+}
+
+
+/* === Social media authentication === */
+
+
+.social-auth-btn {
+
+  padding: 13px 37px;
+  background-color: var(--blue);
+  border: 0;
+  border-radius: 5px;
+  color: var(--white);
+  border: 1px solid var(--blue);
 }
