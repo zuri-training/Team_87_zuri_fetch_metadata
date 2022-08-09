@@ -17,9 +17,54 @@
 
 {% endblock %}
 
-
-
 {% load static %}
+
+{% block mobilenav %}
+
+<ul class="sm-menu">
+    <li>
+        <img src="/static/images/home-2.svg" alt="">
+        <a href="/">Home</a>
+        <img id="arrow" src="/static/images/arrow-right-light.svg" alt="">
+    </li>
+
+    {% if user.is_authenticated %}
+    <li>
+        <img src="/static/images/data.svg" alt="">
+        <a href="/viewMetadata" class="active">Extract Metadata</a>
+        <img id="arrow" src="/static/images/arrow-right-light.svg" alt="">
+    </li>
+    <li class="sm-active">
+        <img src="/static/images/user-dark.png" alt="">
+        <a href="/dashboard">Dashboard</a>
+        <img id="arrow" class="dashboard-arrow" src="/static/images/arrow-right.svg" alt="">
+    </li>
+    <ul class="sm-profile-link-wrapper">
+
+        <li class="sm-profile-link">
+            <img src="/static/images/user.png" alt="">
+            <a href="/dashboard">Account</a>
+        </li>
+        <li class="sm-profile-link ">
+            <img src="../../static/images/data.svg" alt="">
+            <a href="{% url 'metadata:history' user.id %}">Saved Metadata</a>
+        </li>
+        <li class="sm-profile-link sm-link-active">
+            <img src="../../static/images/archive-tick.svg" alt="">
+            <a href="{% url 'metadata:saved_files' %}">Saved Files</a>
+        </li>
+    </ul>
+    {% endif %}
+    <li>
+        <img src="/static/images/people.svg" alt="">
+        <a href="/about">About Us</a>
+        <img id="arrow" src="/static/images/arrow-right-light.svg" alt="">
+    </li>
+</ul>
+
+{% endblock %}
+
+
 
 
 
@@ -42,7 +87,7 @@
             <a href="/dashboard">Account</a>
         </div>
         <div class="profile-link">
-            <img src="../../static/images/archive-tick.svg" alt="">
+            <img src="../../static/images/data.svg" alt="">
             <a href="{% url 'metadata:history' user.id %}">Saved Metadata</a>
         </div>
         <div class="profile-link link-active">
@@ -51,41 +96,39 @@
         </div>
     </div>
 
-
     <div class="form-wrapper" id="file-content_content">
-
-        <div class="file-heading">
-            <h2>Date Added</h2>
-            <h2>File Name</h2>
-            <h2>Download/Delete File</h2>
+        <div class="head">
+            <h1>Saved Files</h1>
         </div>
+        <table>
+            <thead>
+                <tr>
+                    <th>Date Added</th>
+                    <th>File Name</th>
+                    <th>Download</th>
+                    <th>Delete</th>
+                </tr>
+            </thead>
 
-        <div class="file-content">
-            {% for i in files %}
-
+            <tbody>
+                {% for i in files %}
                 {% if i.owner == user%}
-                    <p>{{ i.created_at }}</p>
-                    <p>{{ i.file_name }} </p>
-                    <div class="img">
-                        <img id="eye" src="../../static/images/eye.svg" alt="" data-id="btn-{{i.id}}">
-                        <div class="hide-download-btn" id="btn-{{i.id}}">
-                            <a href="{{i.uploaded_file.url}}" download="{{i.uploaded_file.url}}">Download</a>
-                            <a href="delete/{{i.id}}">Delete file</a>
-                        </div>
-                    </div>
+                <tr>
+                    <td>{{i.created_at}}</td>
+                    <td>{{i.file_name}}</td>
+                    <td><a href="{{i.uploaded_file.url}}" download="{{i.uploaded_file.url}}">Download</a></td>
+                    <td><a href="delete/{{i.id}}">Delete</a></td>
+                </tr>
                 {% endif %}
-            {% endfor %}
-        </div>
-
-
-
-
+                {% endfor %}
+            </tbody>
+        </table>
     </div>
 </div>
 
 {% endblock %}
 
 
-{% block jsScript %} 
-    <script src="../../static/javascript/savedFiles.js"></script>
+{% block jsScript %}
+<script src="../../static/javascript/savedFiles.js"></script>
 {% endblock %}

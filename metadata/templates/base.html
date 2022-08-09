@@ -1,4 +1,5 @@
 {% load static %}
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -64,38 +65,22 @@
 
                 <img src="{% static 'images/close-circle.svg' %}" alt="" class="hamburger-close">
             </div>
-
-
+      
+          
             <div class="sm-nav-links">
-                <ul class="sm-menu">
-                    <li class="sm-active">
-                        <img src="{% static 'images/home-2.svg' %}" alt="">
-                        <a href="/">Home</a>
-                    </li>
-                  
-                    {% if user.is_authenticated %}
-                    <li>
-                        <img src="{% static 'images/data.svg' %}" alt="">
-                        <a href="/viewMetadata" class="active">Extract Metadata</a>
-                    </li>
-                    <li>
-                        <img src="{% static 'images/user-dark.png' %}" alt="">
-                        <a href="/dashboard">Dashboard</a>
-                    </li>
-                    {% endif %}
-                    <li>
-                        <img src="{% static 'images/people.svg' %}" alt="">
-                        <a href="/about">About Us</a>
-                    </li>
-                </ul>
 
+
+                {% block mobilenav %}
+                
+                
+                {% endblock %}
+
+
+                {% if not user.is_authenticated %}
                 <!-- nav buttons -->
                 <div class="sm-nav-button">
-                    {% if user.is_authenticated %}
-                    <button class="nav-btn-solid">
-                        <a href="/logout">Sign Out</a>
-                    </button>
-                    {% else %}
+
+                 
                     <button class="nav-btn-outline">
                         <a href="/login">Login</a>
                     </button>
@@ -103,9 +88,26 @@
                     <button class="nav-btn-solid">
                         <a href="/signup">Get Started</a>
                     </button>
-                    {% endif %}
+                
+                </div>
+                {% endif %}
+            </div>
+
+
+            {% if user.is_authenticated %}
+
+            <div class="media">
+                {% if user.profile.profile_pic %}
+                <img  src="{{ user.profile.profile_pic.url }}" height="80" width="80" style="border-radius: 100%;"/>
+                {% else %}
+                <img src="{% static 'metadata/images/default.jpg'%}" height="80" width="80" style="border-radius: 100%; border:1px solid gray;"/>
+                {% endif %}
+                <div class="sign-out">
+                    <img src="/static/images/logout.svg" alt="">
+                    <a href="/logout">Sign Out</a>
                 </div>
             </div>
+            {% endif %}
         </nav>
         <div class="hamburger">
             <img src="{% static 'images/menu.svg' %}" alt="" class="hambuger-menu">
@@ -182,6 +184,7 @@
         </div>
 
     </footer>
+
 
     <script src="{% static 'javascript/navBar.js' %}"></script>
 

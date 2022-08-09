@@ -318,7 +318,16 @@ class history(LoginRequiredMixin, View):
     def get(self, request, pk):
         user = request.user
         history = History.objects.all()
-        context = {"history": history, "user": user}
+        # print(history)
+        # user = request.user
+        # no = 1
+        # for i in history:
+        #      if i.owner == user:
+        #         user_history[no] = {"name":i.name,"data":i.data,"time":i.created_at}
+        #         no +=1
+        # print(user_history)
+
+        context = {"user": user, "history": history, }
         return render(request, self.template_name, context)
 
 
@@ -331,7 +340,7 @@ def download_csv_data(request):
 
     response = HttpResponse(content_type='text/csv')
     # decide the file name
-    response['Content-Disposition'] = 'attachment; filename="ThePythonDjango.csv"'
+    response['Content-Disposition'] = 'attachment; filename="metadata.csv"'
 
     writer = csv.writer(response, csv.excel)
     response.write(u'\ufeff'.encode('utf8'))
@@ -367,7 +376,7 @@ class change_email(LoginRequiredMixin, View):
         confirm_email = request.POST['email2']
         confirm_email = confirm_email.lower()
 
-        if len(email) < 1 or len(confirm_email) <1 :
+        if len(email) < 1 or len(confirm_email) < 1:
             messages.info(request, "Field cannot be empty")
             return redirect('metadata:change_email', pk=pk)
         if email != confirm_email:

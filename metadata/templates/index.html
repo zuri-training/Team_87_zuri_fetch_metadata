@@ -1,4 +1,8 @@
 {% extends "base.html" %}
+
+{% block styles %}
+<link rel="stylesheet" href="../../static/css/profile.css" />
+{% endblock %}
 {% load static %}
 
 {% block nav %}
@@ -13,6 +17,51 @@
         {% endif %}
     </nav>
 </div>
+
+{% endblock %}
+
+{% block mobilenav %}
+
+<ul class="sm-menu">
+    <li class="sm-active">
+        <img src="/static/images/home.svg" alt="">
+        <a href="/">Home</a>
+        <img id="arrow" src="/static/images/arrow-right.svg" alt="">
+    </li>
+
+    {% if user.is_authenticated %}
+    <li>
+        <img src="/static/images/data.svg" alt="">
+        <a href="/viewMetadata" class="active">Extract Metadata</a>
+        <img id="arrow" src="/static/images/arrow-right-light.svg" alt="">
+    </li>
+    <li>
+        <img src="/static/images/user-light.png" alt="">
+        <a href="/dashboard">Dashboard</a>
+        <img id="arrow" class="dashboard-arrow" src="/static/images/arrow-right-light.svg" alt="">
+    </li>
+    <ul class="sm-profile-link-wrapper">
+
+        <li class="sm-profile-link sm-link-active">
+            <img src="../../static/images/user.png" alt="">
+            <a href="/dashboard">Account</a>
+        </li>
+        <li class="sm-profile-link">
+            <img src="../../static/images/data-black.svg" alt="">
+            <a href="{% url 'metadata:history' user.id %}">Saved Metadata</a>
+        </li>
+        <li class="sm-profile-link">
+            <img src="../../static/images/archive-tick.svg" alt="">
+            <a href="{% url 'metadata:saved_files' %}">Saved Files</a>
+        </li>
+    </ul>
+    {% endif %}
+    <li>
+        <img src="/static/images/people.svg" alt="">
+        <a href="/about">About Us</a>
+        <img id="arrow" src="/static/images/arrow-right-light.svg" alt="">
+    </li>
+</ul>
 
 {% endblock %}
 
