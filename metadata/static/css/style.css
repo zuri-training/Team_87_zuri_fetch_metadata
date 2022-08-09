@@ -1,5 +1,6 @@
 @import url("font.css");
 @import url('fonts/cabinetgrotesk-bold.woff2');
+{% load static %}
 
 /* Global styling */
 
@@ -396,6 +397,8 @@ footer{
         margin-left: 10px;
     }
 
+    
+
     .menu a {
         color: var(--black);
         font-size: 1.5rem;
@@ -504,7 +507,7 @@ footer{
     /* =========MetaData============ */
     .meta-section {
         text-align: left;
-        background: url("img/Frame\ 293.jpg");
+        background: url("../images/Frame\ 293.jpg");
         background-size: 100%;
         background-position: center;
         background-repeat: no-repeat;
@@ -675,7 +678,7 @@ footer{
 
 
     .navigation {
-        /* width: 40%; */
+        margin-left: auto;
         text-align: center;
     }
 
@@ -863,16 +866,24 @@ footer{
         font-size: 19px;
         border: none;
         padding: 30px 40px;
+        margin-top: 50px;
+        margin-bottom: 50px;
         cursor: pointer;
+        text-align: left;
     }
 
-    .toggle-content {
-        font-size: 18px;
-        position: relative;
-        height: 0;
-        overflow: hidden;
-        transition: all 1s;
+
+    .show-faq{
+        display: block;
+        width: 90%;
+        margin: 30px auto;
     }
+
+    .show-faq p{
+        font-size: 2rem;
+    }
+
+   
 
  
 

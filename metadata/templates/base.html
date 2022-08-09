@@ -32,11 +32,7 @@
 
         <!-- nav buttons -->
         <div class="nav-button">
-            {% if user.is_authenticated %}
-            <button class="nav-btn-solid">
-                <a href="/logout">Sign Out</a>
-            </button>
-            {% else %}
+            {% if not user.is_authenticated %}
             <button class="nav-btn-outline">
                 <a href="/login">Login</a>
             </button>
