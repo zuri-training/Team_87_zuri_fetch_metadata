@@ -5,7 +5,9 @@
 
 
 {% block styles %}
-<link rel="stylesheet" href="/static/css/profile.css" />
+<link rel="stylesheet" href="{% static 'css/profile.css' %}">
+<link rel="stylesheet" href="{% static 'notification.css' %}">
+<title>Change Email Address</title>
 {% endblock %}
 
 {% block nav %}
@@ -67,7 +69,7 @@
 
 		<div class="sm-profile-link sm-link-active">
 			<a href="/dashboard">
-				<img src="/static/images/user.png" alt="">
+				<img src="{% static 'images/user.png'  %}" alt="">
 			</a>
 		</div>
 		<div class="sm-profile-link">
@@ -124,9 +126,7 @@
 					</button>
 	</div>
 	</div>
-</body>
 
-</html>
 
 
 <h2>Enter your new email below</h2>

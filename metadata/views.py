@@ -143,6 +143,9 @@ class profile(LoginRequiredMixin, View):
             username = request.POST['username']
             password1 = request.POST['pass1']
             password2 = request.POST['pass2']
+            if len(password1) < 1 or len(password2) < 1:
+                messages.info(request, "Field cannot be empty")
+                return redirect('metadata:profile', pk=pk)
             if password1 == password2:
                 u = User.objects.get(username=username)
                 u.set_password(password1)

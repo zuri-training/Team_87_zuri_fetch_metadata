@@ -3,6 +3,7 @@
 {% block styles %}
 <link rel="stylesheet" href="../../static/css/profile.css" />
 {% endblock %}
+{% load static %}
 
 {% block nav %}
 
@@ -82,13 +83,13 @@
                 </p>
 
                 <button class="hero-btn">
-                    <img src="../../static/images/cloud-plus-white.svg" alt="" class="icon-hero">
+                    <img src="{% static 'images/cloud-plus-white.svg' %}" alt="" class="icon-hero">
                     <a href="/viewMetadata">Upload File</a>
                 </button>
             </div>
 
             <div class="right-hero">
-                <img src="../../static/images/Image group1a.png" class="hero-img">
+                <img src="{% static 'images/Image group1a.png' %}" class="hero-img">
             </div>
         </div>
     </div>
@@ -101,25 +102,25 @@
 
         <div class="about-features">
             <div class="about-items">
-                <img src="../../static/images/Frame 62.png" alt="" class="about-icon">
+                <img src="{% static 'images/Frame 62.png' %}" alt="" class="about-icon">
                 <h2 class="about-title">Download</h2>
                 <p class="about-txt">Download all your metadata information to your computer/mobile device</p>
             </div>
 
             <div class="about-items">
-                <img src="../../static/images/Frame 63.png" alt="" class="about-icon">
+                <img src="{% static 'images/Frame 63.png' %}" alt="" class="about-icon">
                 <h2 class="about-title">Export</h2>
                 <p class="about-txt">Export your metadata information in any format of choice</p>
             </div>
 
             <div class="about-items">
-                <img src="../../static/images/Frame 64.png" alt="" class="about-icon">
+                <img src="{% static 'images/Frame 64.png' %}" alt="" class="about-icon">
                 <h2 class="about-title">Save</h2>
                 <p class="about-txt">Save all your metadata information to your dashboard</p>
             </div>
 
             <div class="about-items">
-                <img src="../../static/images/Frame 65.png" alt="" class="about-icon">
+                <img src="{% static 'images/Frame 65.png' %}" alt="" class="about-icon">
                 <h2 class="about-title">Embed</h2>
                 <p class="about-txt">Embed extracted metadata information to any site</p>
             </div>
@@ -134,15 +135,15 @@
         <div class="logo-gallery">
 
             <div class="logos">
-                <img src="../../static/images/logos_slack.png" alt="" class="logo">
-                <img src="../../static/images/Loom (logo — Colour).png" alt="" class="logo">
-                <img src="../../static/images/Asana (logo — Colour).png" alt="" class="logo">
-                <img src="../../static/images/Mosaic (logo — Colour).png" alt="" class="logo">
-                <img src="../../static/images/Vector (2).png" alt="" class="logo">
-                <img src="../../static/images/SpaceX (logo — Colour).png" alt="" class="logo">
-                <img src="../../static/images/Basecamp (logo — Colour).png" alt="" class="logo">
-                <img src="../../static/images/Microsoft (logo — Colour).png" alt="" class="logo">
-                <img src="../../static/images/Group 12.png" alt="" class="logo">
+                <img src="{% static 'images/logos_slack.png' %}" alt="" class="logo">
+                <img src="{% static 'images/Loom (logo — Colour).png' %}" alt="" class="logo">
+                <img src="{% static 'images/Asana (logo — Colour).png' %}" alt="" class="logo">
+                <img src="{% static 'images/Mosaic (logo — Colour).png' %}" alt="" class="logo">
+                <img src="{% static 'images/Vector (2).png' %}" alt="" class="logo">
+                <img src="{% static 'images/SpaceX (logo — Colour).png' %}" alt="" class="logo">
+                <img src="{% static 'images/Basecamp (logo — Colour).png' %}" alt="" class="logo">
+                <img src="{% static 'images/Microsoft (logo — Colour).png' %}" alt="" class="logo">
+                <img src="{% static 'images/Group 12.png' %}" alt="" class="logo">
             </div>
         </div>
 
@@ -155,7 +156,7 @@
         <div class="meta-inner">
 
             <div class="left-meta">
-                <img src="static/images/Image group2.png" alt="" class="meta-img">
+                <img src="{% static 'images/Image group2.png' %}" alt="" class="meta-img">
             </div>
 
             <div class="right-meta">
@@ -176,7 +177,7 @@
         <div class="toggle-wrapper">
             <button class="toggle">
                 What are metadata and why are they important?
-                <img src="../../static/images/add.svg" alt="" class="toggle-icon">
+                <img src="{% static 'images/add.svg' %}" alt="" class="toggle-icon">
             </button>
             <div class="toggle-content">
                 <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Molestias expedita itaque similique
@@ -188,7 +189,7 @@
         <div class="toggle-wrapper">
             <button class="toggle">
                 What is the kind of files are supported?
-                <img src="../../static/images/add.svg" alt="" class="toggle-icon">
+                <img src="{% static 'images/add.svg' %}" alt="" class="toggle-icon">
             </button>
             <div class="toggle-content">
                 <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Molestias expedita itaque similique
@@ -200,7 +201,7 @@
         <div class="toggle-wrapper">
             <button class="toggle">
                 How can the metadata be downloaded on my device?
-                <img src="../../static/images/add.svg" alt="" class="toggle-icon">
+                <img src="{% static 'images/add.svg' %}" alt="" class="toggle-icon">
             </button>
             <div class="toggle-content">
                 <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Molestias expedita itaque similique
@@ -212,7 +213,7 @@
         <div class="toggle-wrapper">
             <button class="toggle">
                 Can I access previous history of extracted metadata?
-                <img src="../../static/images/add.svg" alt="" class="toggle-icon">
+                <img src="{% static 'images/add.svg' %}" alt="" class="toggle-icon">
             </button>
             <div class="toggle-content">
                 <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Molestias expedita itaque similique
@@ -224,7 +225,7 @@
         <div class="toggle-wrapper">
             <button class="toggle">
                 What is the standard size of the uploaded files?
-                <img src="../../static/images/add.svg" alt="" class="toggle-icon">
+                <img src="{% static 'images/add.svg' %}" alt="" class="toggle-icon">
             </button>
             <div class="toggle-content">
                 <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Molestias expedita itaque similique

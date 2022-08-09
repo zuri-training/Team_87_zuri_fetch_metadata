@@ -19,7 +19,7 @@
         <!-- Site logo -->
         <div class="nav-logo">
             <a href="/">
-                <img src="/static/images/deevr 2.png" class="site-logo">
+                <img src="{% static 'images/deevr 2.png' %}" class="site-logo">
             </a>
         </div>
 
@@ -53,21 +53,22 @@
     <header class="header-sm">
         <div class="nav-logo-sm">
             <a href="/">
-                <img src="/static/images/deevr 2.png" class="site-logo">
+                <img src="{% static 'images/deevr 2.png' %}" class="site-logo">
             </a>
         </div>
 
         <nav class="sm-navigation">
             <div class="sm-hamburger">
                 <a href="/">
-                    <img src="/static/images/logo-mobile.svg">
+                    <img src="{% static 'images/logo-mobile.svg' %}">
                 </a>
 
-                <img src="/static/images/close-circle.svg" alt="" class="hamburger-close">
+                <img src="{% static 'images/close-circle.svg' %}" alt="" class="hamburger-close">
             </div>
       
           
             <div class="sm-nav-links">
+
 
                 {% block mobilenav %}
                 
@@ -109,7 +110,7 @@
             {% endif %}
         </nav>
         <div class="hamburger">
-            <img src="/static/images/menu.svg" alt="" class="hambuger-menu">
+            <img src="{% static 'images/menu.svg' %}" alt="" class="hambuger-menu">
         </div>
     </header>
 
@@ -132,7 +133,7 @@
 
                 <div class="footer1-top">
                     <a href="/">
-                        <img src="/static/images/deevr 2.png" alt="" class="footer-img">
+                        <img src="{% static 'images/deevr 2.png' %}" alt="" class="footer-img">
                     </a>
                     <p class="footer-txt">Subscribe to keep up with the
                         latest news</p>
@@ -142,9 +143,9 @@
                     <h2 class="footer-title">GET IN TOUCH</h2>
 
                     <div class="social-icons">
-                        <img src="/static/images/Facebook.png" alt="" class="social">
-                        <img src="/static/images/Twitter.png" alt="" class="social">
-                        <img src="/static/images/Linkedin.png" alt="" class="social">
+                        <img src="{% static 'images/Facebook.png' %}" alt="" class="social">
+                        <img src="{% static 'images/Twitter.png' %}" alt="" class="social">
+                        <img src="{% static 'images/Linkedin.png' %}" alt="" class="social">
                     </div>
                 </div>
 
@@ -184,7 +185,8 @@
 
     </footer>
 
-    <script src="/static/javascript/navBar.js"></script>
+
+    <script src="{% static 'javascript/navBar.js' %}"></script>
 
     {% block jsScript %} {% endblock %}
 

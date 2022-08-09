@@ -96,6 +96,9 @@
   <div class="form-wrapper">
     <div class="head">
       <h1>Account</h1>
+      {% for message in messages %}
+<h4>{{message}}</h4>
+{% endfor %}
       <h3>Email address</h3>
       <h4>{{user.email}}</h4>
       <a href="{% url 'metadata:change_email' user.id %}">Change Email</a>
