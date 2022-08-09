@@ -1,4 +1,4 @@
-
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 
@@ -6,10 +6,10 @@
 	<meta charset="UTF-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<link rel="stylesheet" href="notification.css">
-	<link rel="stylesheet" href="css/style.css">
-	<link rel="stylesheet" href="css\form.css">
-	<link rel="stylesheet" href="css/dashboard.css">
+	<link rel="stylesheet" href="{% static 'notification.css' %}" >
+	<link rel="stylesheet" href="{% static 'css/style.css' %}" >
+	<link rel="stylesheet" href="{% static 'css/form.css' %}" >
+	<link rel="stylesheet" href="{% static 'css/dashboard.css' %}" >
 	<title>Change Email Address</title>
 </head>
 
@@ -18,12 +18,12 @@
 
 	<h1 class="fp1">Change email address</h1>
 	{% for message in messages %}
-	<h5>{{message}}</h5>
+	<h3>{{message}}</h3>
 	{% endfor %}
 	<form action="{% url 'metadata:change_email' user.id %}" method="POST">
 		{% csrf_token %}
 		<label for="new_email">Enter your New email</label><br />
-		<input type="text" name="new_email" /><br />
+		<input type="text" name="new_email" id="" placeholder="Email"/><br />
 		<label for="email" class="field-label">Confirm New Email Address</label><br>
 		<input type="email" name="email2" id="" placeholder="Email"><br>
 

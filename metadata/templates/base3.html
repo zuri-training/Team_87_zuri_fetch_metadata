@@ -1,3 +1,4 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -5,9 +6,9 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>MetaData Extractor | Get detailed information on your files</title>
-    <link rel="stylesheet" href="../../static/css/main.css" />
-	<link rel="stylesheet" href="../../static/css/font.css">
-	<link rel="stylesheet" href="../../static/css/login.css">
+    <link rel="stylesheet" href="{% static 'css/main.css' %}" />
+	<link rel="stylesheet" href="{% static 'css/font.css' %}">
+	<link rel="stylesheet" href="{% static 'css/login.css' %}">
 		<link href="https://api.fontshare.com/v2/css?f[]=cabinet-grotesk@800,500,700,400,900&display=swap" rel="stylesheet">
     <!-- <link rel="stylesheet" href="../../static/css/extract.css"> -->
     <!-- <link rel="stylesheet" href="../../static/css/about.css"> -->
@@ -15,7 +16,7 @@
   <body>
     <header class="nav-head desktop-nav">
       <!-- Site logo -->
-      <img src="../../static/images/deevr.svg" class="site-logo logo" />
+      <img src="{% static 'images/deevr.svg' %}" class="site-logo logo" />
 
       <!-- Menu -->
       <div class="navigation">
@@ -43,32 +44,32 @@
     <header class="mobile-nav">
 	<div class="container">
 
-		<img src="../../static/images/Deevr-mobile.png" class="site-logo-sm logo" alt="site-logo" />
+		<img src="{% static 'images/Deevr-mobile.png' %}" class="site-logo-sm logo" alt="site-logo" />
 	</div>
       <!-- Menu -->
       <nav class="navigation container">
         <ul class="menu">
           <li>
-            <img src="../../static/images/School Building.png" alt="" />
+            <img src="{% static 'images/School Building.png' %}" alt="" />
             <a href="index.html" class="active">Home</a>
-            <img class="arrow-icon" src="../../static/images/arrow-right.svg" alt="" />
+            <img class="arrow-icon" src="{% static 'images/arrow-right.svg' %}" alt="" />
           </li>
           <li>
-            <img src="../../static/images/School Building.png" alt="" />
+            <img src="{% static 'images/School Building.png' %}" alt="" />
             <a href="/contact">Contact</a>
-            <img class="arrow-icon" src="../../static/images/arrow-right.svg" alt="" />
+            <img class="arrow-icon" src="{% static 'images/arrow-right.svg' %}" alt="" />
           </li>
           <li>
-            <img src="../../static/images/School Building.png" alt="" />
+            <img src="{% static 'images/School Building.png' %}" alt="" />
             <a href="about.html">About Us</a>
 
-            <img class="arrow-icon" src="../../static/images/arrow-right.svg" alt="" />
+            <img class="arrow-icon" src="{% static 'images/arrow-right.svg" alt="" />
           </li>
           {% if user.is_authenticated %}
           <li>
-            <img src="../../static/images/School Building.png" alt="" />
+            <img src="{% static 'images/School Building.png' %}" alt="" />
             <a href="dashboard.html">Dashboard</a>
-            <img class="arrow-icon" src="../../static/images/arrow-right.svg" alt="" />
+            <img class="arrow-icon" src="{% static 'images/arrow-right.svg' %}" alt="" />
           </li>
           <!-- <li>
             <img src="../../static/images/School Building.png" alt="" />
@@ -76,9 +77,9 @@
             <img class="arrow-icon" src="../../static/images/arrow-right.svg" alt="" />
           </li> -->
           <li>
-            <img src="../../static/images/School Building.png" alt="" />
+            <img src="{% static 'images/School Building.png' %}" alt="" />
             <a href="/viewMetadata">Extract MetaData</a>
-            <img class="arrow-icon" src="../../static/images/arrow-right.svg" alt="" />
+            <img class="arrow-icon" src="{% static 'images/arrow-right.svg' %}" alt="" />
           </li>
           <!-- <li>
             <img src="../../static/images/School Building.png" alt="" />
@@ -151,7 +152,7 @@
         </div>
       </div>
     </footer>
-    <script src="../../static/javascript/script.js"></script>
+    <script src="{% static 'javascript/script.js' %}"></script>
   </body>
 </html>
 
