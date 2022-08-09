@@ -1,16 +1,57 @@
-{% extends "base.html" %} {% block content %}
+{% load static %}
 
-<h1>Contact Page</h1>
+<!DOCTYPE html>
+<html lang="en">
 
-<form action="contact" , method="POST">
-	{% csrf_token %}
-	<label for="name">Name</label><br />
-	<input type="text" name="name" required /><br />
-	<label for="email">Email</label><br />
-	<input type="email" name="email" required /><br />
-	<label for="message">Message</label><br />
-	<input type="textarea" name="message" required /><br />
-	<input type="submit" />
-</form>
+<head>
+	<meta charset="UTF-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<title>MetaData Extractor | Get detailed information on your files</title>
+	<link rel="stylesheet" href="{% static 'css/main.css'%}" />
+	<link rel="stylesheet" href="{% static 'css/font.css'%}"/>
+	<link rel="stylesheet" href="{% static 'css/login.css'%}"/>
+	<link href="https://api.fontshare.com/v2/css?f[]=cabinet-grotesk@800,500,700,400,900&display=swap" rel="stylesheet">
+</head>
 
-{% endblock %}
+<body>
+	<section class="autentication-form">
+		<div class="left-column" id="login-left">
+			<img src="{% static 'images/login-bg.png' %}" alt="" />
+		</div>
+		<div class="right-column">
+			<div class="form-header">
+				<h1>Send Us a Message Today</h1>
+				<p>Email us at support@deevr.com or use the form below</p>
+				{% for message in messages %}
+				<h5>{{message}}</h5>
+				{% endfor %}
+			</div>
+
+			<form action="/contact" method="post">
+				{% csrf_token %}
+				<div class="form-field">
+					<label for="name" class="field-label">Full Name</label>
+					<input type="text" name="name" placeholder="Full Name" required />
+				</div>
+				<div class="form-field">
+					<label for="email" class="field-label">Email Address</label>
+					<input type="email" name="email" placeholder="Email Address" required />
+				</div>
+				<br>
+				<div class="form-field">
+					<label for="message" class="field-label">Leave Us a Message</label>
+					<input type="textarea" name="message" required  placeholder="Leave a Message"/><br />
+				</div>
+
+				<p class="login-password"><a href="{% url 'metadata:password_reset' %}"></a></p>
+
+				<input type="submit" value="Send Message" />
+				<input type="hidden" name="next" value="{{ next }}" />
+			</form>
+		</div>
+	</section>
+</body>
+
+</html>
+

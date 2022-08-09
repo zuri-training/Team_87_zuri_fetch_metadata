@@ -97,6 +97,13 @@ input {
   margin-bottom: 24px;
 }
 
+.form-header p{
+  font-size: 1.8rem;
+  line-height: 3.5rem;
+  margin-bottom: 70px;
+  margin-top: -20px;
+}
+
 .eye {
   position: absolute;
   top: 55%;
@@ -131,6 +138,15 @@ input[type="text"]::placeholder {
 
 
 input[type="email"] {
+  width: 100%;
+  font-size: 16px;
+  padding: 20px;
+  margin: 8px 0;
+  border-radius: 5px;
+  border: 1px solid #d3d1d2;
+}
+
+input[type="textarea"] {
   width: 100%;
   font-size: 16px;
   padding: 20px;
