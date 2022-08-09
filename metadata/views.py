@@ -285,6 +285,16 @@ def delete(request, pk):
 # ===============
 
 
+def delete_meta(request, pk):
+    file = History.objects.get(id=pk)
+    file.delete()
+    owner = request.user
+    pk= owner.id
+    messages.info(request, f"file deleted succesfully")
+    return redirect('metadata:history', pk=pk)
+
+#======
+
 def download(request, path):
     file_path = os.path.join(settings.MEDIA_ROOT, path)
     if os.path.exists(file_path):
@@ -408,3 +418,39 @@ def accountSettings(request):
             return redirect('metadata:index')
     context = {'form': form}
     return render(request, 'update_picture.html', context)
+
+    
+def referral(request,pk):
+    data = History.objects.get(id=pk)
+    metadata = json.loads(data.data)
+    context = metadata
+    request.session["metadata"] = context
+    return render(request, 'referal.html', context)
+
+
+#======
+def download_meta(request,pk):
+    data = History.objects.get(id=pk)
+    metadata = json.loads(data.data)
+    metadata_label = list(metadata.keys())[1:]
+
+    response = HttpResponse(content_type='text/csv')
+    # decide the file name
+    response['Content-Disposition'] = 'attachment; filename="metadata.csv"'
+
+    writer = csv.writer(response, csv.excel)
+    response.write(u'\ufeff'.encode('utf8'))
+
+    # writer.writerow(metadata_label)
+
+    metadata_label_name = []
+    metadata_label_value = []
+
+    for metadata_val in metadata["metadata"]:
+        metadata_label_name.append(smart_str(metadata_val["tag_name"]))
+        metadata_label_value.append(smart_str(metadata_val["tag_value"]))
+
+    writer.writerow(metadata_label_name)
+    writer.writerow(metadata_label_value)
+
+    return response

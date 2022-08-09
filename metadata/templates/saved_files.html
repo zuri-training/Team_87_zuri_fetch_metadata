@@ -99,6 +99,9 @@
     <div class="form-wrapper" id="file-content_content">
         <div class="head">
             <h1>Saved Files</h1>
+            {% for message in messages %}
+<h5>{{message}}</h5>
+{% endfor %}
         </div>
         <table>
             <thead>

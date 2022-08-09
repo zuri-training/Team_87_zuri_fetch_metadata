@@ -18,7 +18,6 @@
 			</tr>
 			{% endfor %}
 		</tbody>
-		{% if user.is_authenticated %}
 	</table>
 	<a
 		style="
@@ -36,23 +35,5 @@
 		href="/download"
 		>Download Metadata</a
 	>
-	<a
-		style="
-			display: block;
-			width: 20%;
-			text-align: center;
-			font-size: 1rem;
-			font-weight: bold;
-			background-color: black;
-			margin: 1rem auto 2rem;
-			padding: 1rem 4.7rem;
-			text-decoration: none;
-			color: white;
-		"
-		href="/save"
-		>Save Meta Result</a
-	>
 </div>
-
-
-{% endif %} {% endblock %}
+ {% endblock %}

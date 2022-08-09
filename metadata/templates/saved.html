@@ -103,6 +103,9 @@
     <div class="form-wrapper" id="file-content_content">
         <div class="head">
             <h1>Saved Metadata</h1>
+            {% for message in messages %}
+<h5>{{message}}</h5>
+{% endfor %}
         </div>
 
         <table>
@@ -121,8 +124,9 @@
                 <tr>
                     <td>{{i.created_at}}</td>
                     <td>{{i.name}}</td>
-                    <td><a href="{{i.uploaded_file.url}}" download="{{i.uploaded_file.url}}">Download</a></td>
-                    <td><a href="delete/{{i.id}}">Delete</a></td>
+                    <td><a href="{% url 'metadata:download_meta' i.id %}">Download</a></td>
+                    <td><a href="{% url 'metadata:delete_meta' i.id %}">Delete</a></td>
+                    <td><a href="{% url 'metadata:review' i.id %}">View</a></td>
                 </tr>
                 {% endif %}
                 {% endfor %}
