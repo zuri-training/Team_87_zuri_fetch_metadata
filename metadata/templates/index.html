@@ -163,7 +163,7 @@
                 <h2 class="meta-head">Why Metadata?</h2>
                 <p class="meta-text">Metadata has various purposes, it enables data sets designed for a single
                     purpose to be reused for other purposes and over the long term. With digital identification of
-                    files, you can find relevant resourcessuch as how and when a document was created. It is also an
+                    files, you can find relevant resources such as how and when a document was created. It is also an
                     effective means of organizing information.</p>
             </div>
 
@@ -180,9 +180,11 @@
                 <img src="{% static 'images/add.svg' %}" alt="" class="toggle-icon">
             </button>
             <div class="toggle-content">
-                <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Molestias expedita itaque similique
-                    molestiae, accusamus officiis, hic deserunt voluptas iure rerum pariatur ducimus ut eos error
-                    praesentium porro? Esse, natus. Dignissimos!</p>
+                <p>
+                    Metadata is the information about other data or file but not the content of the files.
+                    Metadata is the story behind a data. it tells you how how the image files were created, where
+                    and when and how it was edited.
+               </p>
             </div>
         </div>
 
@@ -192,9 +194,9 @@
                 <img src="{% static 'images/add.svg' %}" alt="" class="toggle-icon">
             </button>
             <div class="toggle-content">
-                <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Molestias expedita itaque similique
-                    molestiae, accusamus officiis, hic deserunt voluptas iure rerum pariatur ducimus ut eos error
-                    praesentium porro? Esse, natus. Dignissimos!</p>
+                <p>
+                    Supported files are Images, audio, video, json, csv and pdf files
+                </p>
             </div>
         </div>
 
@@ -204,9 +206,11 @@
                 <img src="{% static 'images/add.svg' %}" alt="" class="toggle-icon">
             </button>
             <div class="toggle-content">
-                <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Molestias expedita itaque similique
-                    molestiae, accusamus officiis, hic deserunt voluptas iure rerum pariatur ducimus ut eos error
-                    praesentium porro? Esse, natus. Dignissimos!</p>
+                <p>
+                    All your saved metadata and file are accessable for download on your dashboard, if your files are less
+                    than 20mb it is saved automatically and you can access it on your dashboard. it is required that you are a 
+                    registered user to use the platform.
+                </p>
             </div>
         </div>
 
@@ -216,9 +220,11 @@
                 <img src="{% static 'images/add.svg' %}" alt="" class="toggle-icon">
             </button>
             <div class="toggle-content">
-                <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Molestias expedita itaque similique
-                    molestiae, accusamus officiis, hic deserunt voluptas iure rerum pariatur ducimus ut eos error
-                    praesentium porro? Esse, natus. Dignissimos!</p>
+                <p>
+                    Yes you can. when the result of the metadata is displayed there is a save button below 
+                    the result where you can save the metadata. and you can access the history on the saved
+                    metadata link on your dashboard
+                </p>
             </div>
         </div>
 
@@ -228,9 +234,9 @@
                 <img src="{% static 'images/add.svg' %}" alt="" class="toggle-icon">
             </button>
             <div class="toggle-content">
-                <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Molestias expedita itaque similique
-                    molestiae, accusamus officiis, hic deserunt voluptas iure rerum pariatur ducimus ut eos error
-                    praesentium porro? Esse, natus. Dignissimos!</p>
+                <p>
+                    The maximum standard file upload is 50mb
+                </p>
             </div>
         </div>
 
@@ -247,7 +253,7 @@
 
 </main>
 
-<script src="javascript/script.js"></script>
+<script src="{% static 'javascript/script.js' %}"></script>
 
 
 {% endblock %}

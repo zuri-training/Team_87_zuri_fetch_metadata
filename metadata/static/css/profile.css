@@ -227,17 +227,28 @@ input {
     }
 
     .content-section {
-        min-height: 100vh;
+        min-height: 90vh;
         background-color: var(--grey);
         width: 277px;
         padding-top: 20px;
         margin-right: 20px;
         display: block;
+        position: relative;
     }
 
     .content-section-sm {
         display: none;
     }
+
+    .profile-sign-out{
+       margin-left: auto;
+       margin-right: auto;
+        position: absolute;
+        bottom: 55px;
+        padding-left: 55px;
+    }
+
+ 
 
 
 
@@ -259,9 +270,15 @@ input {
 
     .content-section a {
         display: block;
-        font-size: 1.5rem;
+        font-size: 2rem;
+        line-height: 3.6rem;
         margin-left: 8px;
         color: black;
+    }
+
+    .profile-sign-out a {
+        color: #E10909;
+
     }
 
     .profile-edit {
