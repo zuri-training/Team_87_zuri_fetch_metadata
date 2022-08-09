@@ -13,23 +13,11 @@ HamburgerClose.addEventListener("click", () => {
 /* ======================================= */
 /* ============= DASHBORD JAVASCRIPT ==== */
 
-const dashBoardHamburgerClose = document.querySelector("#sm-hamburger-close");
-const dashBoard = document.querySelector(".content-section-sm");
-const dashBoardHamburger = document.querySelector("#sm-hamburger");
+const profileLinkWrapper = document.querySelector(".sm-profile-link-wrapper");
+const dropDownArrow = document.querySelector(".dashboard-arrow");
 
-let navIsOpen = false;
-
-dashBoardHamburgerClose.addEventListener("click", () => {
-  dashBoard.classList.remove("show-content-section");
-  dashBoardHamburger.classList.remove("hide-sm-hamburger");
+dropDownArrow.addEventListener("click", () => {
+  dropDownArrow.classList.toggle("rotate-drop-down");
+  profileLinkWrapper.classList.toggle("show-profile-link");
 });
-dashBoardHamburger.addEventListener("click", () => {
-  navIsOpen = true;
-  dashBoard.classList.add("show-content-section");
-  dashBoardHamburger.classList.add("hide-sm-hamburger");
-});
-
-if (navIsOpen) {
-  console.log(dashBoardHamburger);
-}
 

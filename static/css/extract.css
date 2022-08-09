@@ -1,4 +1,4 @@
-@import url("../css/style.css");
+@import url("style.css");
 
 span {
     color: var(--blue);
@@ -46,9 +46,7 @@ img {
     font-weight: 500;
     cursor: pointer;
 }
- .hide-upload {
-     display: none;
- }
+
 
  .btn-wrapper{
     text-align: center;
@@ -70,10 +68,14 @@ img {
     cursor: pointer;
     border-radius: 5px;
     font-weight: bold;
-    display: flex;
     justify-content: center;
     align-items: center;
+    display: flex;
  }
+
+  .hide-upload {
+      display: none;
+  }
 
  .metadata-btn span{
     color: white;

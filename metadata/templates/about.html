@@ -22,6 +22,38 @@
 
 {% endblock %}
 
+{% block mobilenav %}
+
+<ul class="sm-menu">
+    <li>
+        <img src="/static/images/home-2.svg" alt="">
+        <a href="/">Home</a>
+        <img id="arrow" src="/static/images/arrow-right-light.svg" alt="">
+    </li>
+
+    {% if user.is_authenticated %}
+    <li>
+        <img src="/static/images/data.svg" alt="">
+        <a href="/viewMetadata" class="active">Extract Metadata</a>
+        <img id="arrow" src="/static/images/arrow-right-light.svg" alt="">
+    </li>
+    <li>
+        <img src="/static/images/user-light.png" alt="">
+        <a href="/dashboard">Dashboard</a>
+        <img id="arrow" src="/static/images/arrow-right-light.svg" alt="">
+    </li>
+    {% endif %}
+    <li class="sm-active">
+        <img src="/static/images/people-dark.svg" alt="">
+        <a href="/about">About Us</a>
+        <img id="arrow" src="/static/images/arrow-right.svg" alt="">
+    </li>
+</ul>
+
+{% endblock %}
+
+
+
 {% block content %}
 
 <main class="about container">

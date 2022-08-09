@@ -24,7 +24,7 @@ urlpatterns = [
     path('accounts/', include('allauth.urls')),
     path('', include('metadata.urls')),
     path('', include('django.contrib.auth.urls')),
-    path(r'^download/(?P<path>.*)$', serve,
+    path('download/<path>', serve,
          {"document_root": settings.MEDIA_ROOT})
 ]
 

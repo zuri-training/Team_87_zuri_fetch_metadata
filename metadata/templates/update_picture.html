@@ -1,5 +1,7 @@
 <form action="" method="POST" enctype="multipart/form-data">
     {% csrf_token %}
-    {{form.as_p}}
+    <div>
+        {{form}}
+    </div>
     <input type="submit" name="Change Picture">
-	  </form>
+</form>

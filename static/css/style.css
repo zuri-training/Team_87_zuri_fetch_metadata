@@ -44,6 +44,10 @@ a {
     color: black;
 }
 
+input{
+    outline: none;
+}
+
   button {
       padding: 13px 37px;
       background-color: var(--blue);
@@ -51,6 +55,7 @@ a {
       border-radius: 5px;
       color: var(--white);
       text-align: center;
+      outline: none;
 
   }
 
@@ -88,7 +93,7 @@ img{
     left: 0;
     top: 0;
     background-color: white;
-    height: 80vh;
+    min-height: 100vh;
     width: 100%;
     padding: 20px 25px;
     transform: translateY(-100%);
@@ -112,7 +117,7 @@ img{
 }
 
 .sm-menu a{
-    font-size: 2.4rem;
+    font-size: 2rem;
     line-height: 3.6rem;
     display: block;
     margin-left: 19px;
@@ -123,6 +128,15 @@ img{
     display: flex;
     align-items: center;
     margin-bottom: 24px;
+    cursor: pointer;
+}
+
+#arrow{
+    margin-left: auto;
+    padding: 10px;
+    padding-right: 0;
+    transition: 0.1s ease-in;
+    cursor: pointer;
 }
 
 .sm-active a{
@@ -147,6 +161,56 @@ img{
 .hamburger-close{
     cursor: pointer;
 }
+
+.sm-navigation .media {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 150px;
+}
+
+.sign-out{
+    display: flex;
+    align-items: center;
+}
+
+.sign-out a{
+    color: #E10909;
+    font-size: 2.2rem;
+    line-height: 3.6rem;
+    margin-left: 10px;
+}
+
+.rotate-drop-down{
+    transform: rotate(90deg);
+    transition: 0.1s ease-in;
+}
+
+
+/* ====================== */
+/* ======== profile link == */
+
+.sm-profile-link img {
+    width: 22px;
+    height: 22px;
+}
+
+.sm-profile-link-wrapper {
+    display: none;
+    transform: translateX(-100%);
+    transition: 0.5s ease-in;
+}
+
+.sm-profile-link a{
+    font-size: 1.8rem;
+}
+
+.show-profile-link{
+    display: block;
+    transform: translateX(0);
+    transition:0.5s ease-out;
+}
+
 
 
 /* ===================== */

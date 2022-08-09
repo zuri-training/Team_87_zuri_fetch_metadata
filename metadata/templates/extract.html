@@ -1,8 +1,10 @@
 {% extends "base.html" %}
+{% load static %}
 
 {% block styles %}
-<link rel="stylesheet" href="../../static/css/extract.css">
+<link rel="stylesheet" href="/static/css/extract.css">
 {% endblock %}
+
 
 
 {% block nav %}
@@ -17,7 +19,40 @@
     </nav>
 </div>
 
+{% endblock %}{% block mobilenav %}
+
+<ul class="sm-menu">
+    <li>
+        <img src="/static/images/home-2.svg" alt="">
+        <a href="/">Home</a>
+        <img id="arrow" src="/static/images/arrow-right-light.svg" alt="">
+    </li>
+
+    {% if user.is_authenticated %}
+    <li class="sm-active">
+        <img src="/static/images/data-black.svg" alt="">
+        <a href="/viewMetadata" class="active">Extract Metadata</a>
+        <img id="arrow" src="/static/images/arrow-right.svg" alt="">
+    </li>
+    <li>
+        <img src="/static/images/user-light.png" alt="">
+        <a href="/dashboard">Dashboard</a>
+        <img id="arrow" src="/static/images/arrow-right-light.svg" alt="">
+    </li>
+    {% endif %}
+    <li>
+        <img src="/static/images/people.svg" alt="">
+        <a href="/about">About Us</a>
+        <img id="arrow" src="/static/images/arrow-right-light.svg" alt="">
+    </li>
+</ul>
+
 {% endblock %}
+
+
+
+
+
 
 {% block content %}
 <main>
@@ -32,14 +67,14 @@
             <div class="extract-right-hero">
                 <div class="extract">
                     <div class="up">
-                        <img src="static/css/img/document-upload.svg" class="img-svg upload">
-                        <img src="static/images/document-cloud.svg" alt="" class="cloud hide-upload">
+                        <img src="/static/images/document-upload.svg" class="img-svg upload">
+                        <img src="/static/images/document-cloud.svg" alt="" class="cloud hide-upload">
                         <p class="upload-text file-name"></p>
                     </div>
                     <form enctype="multipart/form-data" action="/viewMetadata" method="post">
                         {% csrf_token %}
                         <label for="id_upload_file" class="down" id="file-label">
-                            <img src="static/css/img/cloud-plus.svg" class="img-svg">
+                            <img src="static/images/cloud-plus.svg" class="img-svg">
                             <p><label for="id_upload_file" class="upload-txt">Choose a File</label></p>
                             <div class="extract-input">
                                 {{form}}
@@ -49,7 +84,7 @@
 
                             <button type="submit" class="metadata-btn hide-upload" id="metadata-btn">
                                 <span>Analyise file</span> 
-                                <img src="static/images/bx_analyse.svg" alt="">
+                                <img src="../../static/images/bx_analyse.svg" alt="">
                             </button>
                         </div>
                     </form>
@@ -68,7 +103,7 @@
         <div class="card">
             <div class="icon-card">
                 <h3><span>IMAGE</span> FILES</h3>
-                <img src="../../static/css/img/Frame 1156.png" class="card-png">
+                <img src="/static/images/Frame 1156.png" class="card-png">
             </div>
             <div class="text">
                 <p class="card-text">JPEG, PNG, GIF, PSD, EPS,<br>PDF, AI, INDD, RAW, BMP, <br>TIFF</p>
@@ -78,7 +113,7 @@
         <div class="card">
             <div class="icon-card">
                 <h3><span>PDF</span> FILES</h3>
-                <img src="../../static/css/img/Frame 1167.png" class="card-png">
+                <img src="/static/images/Frame 1167.png" class="card-png">
             </div>
             <div class="text">
                 <p class="card-text">XML, XFA, Static PDF, <br>Dynamic forms, Traditional, <br>PDF for Archive</p>
@@ -88,7 +123,7 @@
         <div class="card">
             <div class="icon-card">
                 <h3><span>JSON</span> FILES</h3>
-                <img src="../../static/css/img/Frame 1156-1.png" class="card-png">
+                <img src="/static/images/Frame 1156-1.png" class="card-png">
             </div>
             <div class="text">
                 <p class="card-text">Number, String, Boolean, <br>Array, Object, Value, <br>Whitespace</p>
@@ -101,5 +136,5 @@
 {% endblock %}
 
 {% block jsScript %} 
-    <script src="../../static/javascript/extract.js"></script>
+    <script src="/static/javascript/extract.js"></script>
 {% endblock %}

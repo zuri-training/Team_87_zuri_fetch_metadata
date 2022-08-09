@@ -1,3 +1,5 @@
+{% load static %}
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -6,7 +8,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Home</title>
-    <link rel="stylesheet" href="../../static/css/style.css">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
     {% block styles %}{% endblock styles %}
     <link href="https://api.fontshare.com/v2/css?f[]=cabinet-grotesk@800,500,700,400,900&display=swap" rel="stylesheet">
 </head>
@@ -17,7 +19,7 @@
         <!-- Site logo -->
         <div class="nav-logo">
             <a href="/">
-                <img src="../../static/images/deevr 2.png" class="site-logo">
+                <img src="/static/images/deevr 2.png" class="site-logo">
             </a>
         </div>
 
@@ -51,50 +53,33 @@
     <header class="header-sm">
         <div class="nav-logo-sm">
             <a href="/">
-                <img src="../../static/images/deevr 2.png" class="site-logo">
+                <img src="/static/images/deevr 2.png" class="site-logo">
             </a>
         </div>
 
         <nav class="sm-navigation">
             <div class="sm-hamburger">
                 <a href="/">
-                    <img src="../../static/images/logo-mobile.svg">
+                    <img src="/static/images/logo-mobile.svg">
                 </a>
 
-                <img src="../../static/images/close-circle.svg" alt="" class="hamburger-close">
+                <img src="/static/images/close-circle.svg" alt="" class="hamburger-close">
             </div>
-
-
+      
+          
             <div class="sm-nav-links">
-                <ul class="sm-menu">
-                    <li class="sm-active">
-                        <img src="static/images/home-2.svg" alt="">
-                        <a href="/">Home</a>
-                    </li>
-                  
-                    {% if user.is_authenticated %}
-                    <li>
-                        <img src="static/images/data.svg" alt="">
-                        <a href="/viewMetadata" class="active">Extract Metadata</a>
-                    </li>
-                    <li>
-                        <img src="static/images/user-dark.png" alt="">
-                        <a href="/dashboard">Dashboard</a>
-                    </li>
-                    {% endif %}
-                    <li>
-                        <img src="static/images/people.svg" alt="">
-                        <a href="/about">About Us</a>
-                    </li>
-                </ul>
 
+                {% block mobilenav %}
+                
+                
+                {% endblock %}
+
+
+                {% if not user.is_authenticated %}
                 <!-- nav buttons -->
                 <div class="sm-nav-button">
-                    {% if user.is_authenticated %}
-                    <button class="nav-btn-solid">
-                        <a href="/logout">Sign Out</a>
-                    </button>
-                    {% else %}
+
+                 
                     <button class="nav-btn-outline">
                         <a href="/login">Login</a>
                     </button>
@@ -102,12 +87,29 @@
                     <button class="nav-btn-solid">
                         <a href="/signup">Get Started</a>
                     </button>
-                    {% endif %}
+                
+                </div>
+                {% endif %}
+            </div>
+
+
+            {% if user.is_authenticated %}
+
+            <div class="media">
+                {% if user.profile.profile_pic %}
+                <img  src="{{ user.profile.profile_pic.url }}" height="80" width="80" style="border-radius: 100%;"/>
+                {% else %}
+                <img src="{% static 'metadata/images/default.jpg'%}" height="80" width="80" style="border-radius: 100%; border:1px solid gray;"/>
+                {% endif %}
+                <div class="sign-out">
+                    <img src="/static/images/logout.svg" alt="">
+                    <a href="/logout">Sign Out</a>
                 </div>
             </div>
+            {% endif %}
         </nav>
         <div class="hamburger">
-            <img src="static/images/menu.svg" alt="" class="hambuger-menu">
+            <img src="/static/images/menu.svg" alt="" class="hambuger-menu">
         </div>
     </header>
 
@@ -130,7 +132,7 @@
 
                 <div class="footer1-top">
                     <a href="/">
-                        <img src="../../static/images/deevr 2.png" alt="" class="footer-img">
+                        <img src="/static/images/deevr 2.png" alt="" class="footer-img">
                     </a>
                     <p class="footer-txt">Subscribe to keep up with the
                         latest news</p>
@@ -140,9 +142,9 @@
                     <h2 class="footer-title">GET IN TOUCH</h2>
 
                     <div class="social-icons">
-                        <img src="../../static/images/Facebook.png" alt="" class="social">
-                        <img src="../../static/images/Twitter.png" alt="" class="social">
-                        <img src="../../static/images/Linkedin.png" alt="" class="social">
+                        <img src="/static/images/Facebook.png" alt="" class="social">
+                        <img src="/static/images/Twitter.png" alt="" class="social">
+                        <img src="/static/images/Linkedin.png" alt="" class="social">
                     </div>
                 </div>
 
@@ -182,7 +184,7 @@
 
     </footer>
 
-    <script src="../../static/javascript/navBar.js"></script>
+    <script src="/static/javascript/navBar.js"></script>
 
     {% block jsScript %} {% endblock %}
 
