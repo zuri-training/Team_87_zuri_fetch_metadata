@@ -21,7 +21,13 @@ h1, h2, h3, h4 {
     display: flex; 
 }
 
+.password{
+    max-width: 500px;
+    margin-left: 450px;
+    margin-top: 20px;
+}
 
+.form
 /* Sections */
 .left-column {
     background-color: #3a86ff;
@@ -124,6 +130,7 @@ form {
 
 .meta-form-field {
     margin-bottom: 20px;
+    margin-top: 30px;
 }
 
 label {
@@ -200,6 +207,8 @@ input[type=button]:hover {
 
 #register {
     margin-top: 70px;
+    max-width: auto;
+    margin-left: 180px;
 }
 
 .login-text {
@@ -239,6 +248,13 @@ input[type=button]:hover {
 #hide1,#hide3, #hide5 {
     display: none;
 }
+.fp,.fp1{
+    text-align: center;
+}
+.fp{
+    padding-top: 50px;
+}
+
 
 
 

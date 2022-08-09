@@ -1,10 +1,204 @@
 {% extends "base.html" %}
+{% load static %}
+
+{% block nav %}
+
+<div class="navigation">
+    <nav class="menu">
+        <a href="/" class="active">Home</a>
+        <a href="/about">About Us</a>
+        {% if user.is_authenticated %}
+        <a href="/viewMetadata">Extract Metadata</a>
+        <a href="/dashboard">Dashboard</a>
+        {% endif %}
+    </nav>
+</div>
+
+{% endblock %}
+
 
 {% block content %}
 
-<h1>Home Page</h1>
-{% if user.is_authenticated %}
-<h4>Welcome {{user.username}}</h4>
-{% endif %}
-{% endblock %}
+<main>
 
+    <div class="section">
+        <div class="hero">
+            <div class="left-hero">
+                <h2 class="hero-head">Free Metadata Extraction Tool</h2>
+                <p class="hero-text">
+                    Easily fetch metadata information from all your favorite files with Deevr's metadata extraction
+                    tool.
+                    <br>
+                    <br>
+                    Download, share, export and embed.....
+                </p>
+
+                <button class="hero-btn">
+                    <img src="{% static 'images/cloud-plus-white.svg' %}" alt="" class="icon-hero">
+                    <a href="/viewMetadata">Upload File</a>
+                </button>
+            </div>
+
+            <div class="right-hero">
+                <img src="{% static 'images/Image group1a.png' %}" class="hero-img">
+            </div>
+        </div>
+    </div>
+
+    <!-- About/features -->
+
+    <div class="section">
+
+        <h2 class="general-head">Here's what you can do with Deevr</h2>
+
+        <div class="about-features">
+            <div class="about-items">
+                <img src="{% static 'images/Frame 62.png' %}" alt="" class="about-icon">
+                <h2 class="about-title">Download</h2>
+                <p class="about-txt">Download all your metadata information to your computer/mobile device</p>
+            </div>
+
+            <div class="about-items">
+                <img src="{% static 'images/Frame 63.png' %}" alt="" class="about-icon">
+                <h2 class="about-title">Export</h2>
+                <p class="about-txt">Export your metadata information in any format of choice</p>
+            </div>
+
+            <div class="about-items">
+                <img src="{% static 'images/Frame 64.png' %}" alt="" class="about-icon">
+                <h2 class="about-title">Save</h2>
+                <p class="about-txt">Save all your metadata information to your dashboard</p>
+            </div>
+
+            <div class="about-items">
+                <img src="{% static 'images/Frame 65.png' %}" alt="" class="about-icon">
+                <h2 class="about-title">Embed</h2>
+                <p class="about-txt">Embed extracted metadata information to any site</p>
+            </div>
+        </div>
+
+    </div>
+
+    <div class="logo-section">
+
+        <h2 class="general-head">Some Of Our Partners</h2>
+
+        <div class="logo-gallery">
+
+            <div class="logos">
+                <img src="{% static 'images/logos_slack.png' %}" alt="" class="logo">
+                <img src="{% static 'images/Loom (logo — Colour).png' %}" alt="" class="logo">
+                <img src="{% static 'images/Asana (logo — Colour).png' %}" alt="" class="logo">
+                <img src="{% static 'images/Mosaic (logo — Colour).png' %}" alt="" class="logo">
+                <img src="{% static 'images/Vector (2).png' %}" alt="" class="logo">
+                <img src="{% static 'images/SpaceX (logo — Colour).png' %}" alt="" class="logo">
+                <img src="{% static 'images/Basecamp (logo — Colour).png' %}" alt="" class="logo">
+                <img src="{% static 'images/Microsoft (logo — Colour).png' %}" alt="" class="logo">
+                <img src="{% static 'images/Group 12.png' %}" alt="" class="logo">
+            </div>
+        </div>
+
+    </div>
+
+    <!-- Why Metadata -->
+
+    <div class="meta-section">
+
+        <div class="meta-inner">
+
+            <div class="left-meta">
+                <img src="{% static 'images/Image group2.png' %}" alt="" class="meta-img">
+            </div>
+
+            <div class="right-meta">
+                <h2 class="meta-head">Why Metadata?</h2>
+                <p class="meta-text">Metadata has various purposes, it enables data sets designed for a single
+                    purpose to be reused for other purposes and over the long term. With digital identification of
+                    files, you can find relevant resourcessuch as how and when a document was created. It is also an
+                    effective means of organizing information.</p>
+            </div>
+
+        </div>
+
+    </div>
+
+    <div class="section">
+        <h2 class="general-head" id="faq">FAQs</h2>
+
+        <div class="toggle-wrapper">
+            <button class="toggle">
+                What are metadata and why are they important?
+                <img src="{% static 'images/add.svg' %}" alt="" class="toggle-icon">
+            </button>
+            <div class="toggle-content">
+                <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Molestias expedita itaque similique
+                    molestiae, accusamus officiis, hic deserunt voluptas iure rerum pariatur ducimus ut eos error
+                    praesentium porro? Esse, natus. Dignissimos!</p>
+            </div>
+        </div>
+
+        <div class="toggle-wrapper">
+            <button class="toggle">
+                What is the kind of files are supported?
+                <img src="{% static 'images/add.svg' %}" alt="" class="toggle-icon">
+            </button>
+            <div class="toggle-content">
+                <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Molestias expedita itaque similique
+                    molestiae, accusamus officiis, hic deserunt voluptas iure rerum pariatur ducimus ut eos error
+                    praesentium porro? Esse, natus. Dignissimos!</p>
+            </div>
+        </div>
+
+        <div class="toggle-wrapper">
+            <button class="toggle">
+                How can the metadata be downloaded on my device?
+                <img src="{% static 'images/add.svg' %}" alt="" class="toggle-icon">
+            </button>
+            <div class="toggle-content">
+                <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Molestias expedita itaque similique
+                    molestiae, accusamus officiis, hic deserunt voluptas iure rerum pariatur ducimus ut eos error
+                    praesentium porro? Esse, natus. Dignissimos!</p>
+            </div>
+        </div>
+
+        <div class="toggle-wrapper">
+            <button class="toggle">
+                Can I access previous history of extracted metadata?
+                <img src="{% static 'images/add.svg' %}" alt="" class="toggle-icon">
+            </button>
+            <div class="toggle-content">
+                <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Molestias expedita itaque similique
+                    molestiae, accusamus officiis, hic deserunt voluptas iure rerum pariatur ducimus ut eos error
+                    praesentium porro? Esse, natus. Dignissimos!</p>
+            </div>
+        </div>
+
+        <div class="toggle-wrapper">
+            <button class="toggle">
+                What is the standard size of the uploaded files?
+                <img src="{% static 'images/add.svg' %}" alt="" class="toggle-icon">
+            </button>
+            <div class="toggle-content">
+                <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Molestias expedita itaque similique
+                    molestiae, accusamus officiis, hic deserunt voluptas iure rerum pariatur ducimus ut eos error
+                    praesentium porro? Esse, natus. Dignissimos!</p>
+            </div>
+        </div>
+
+        <div class="faq-btn">
+            <button class="nav-btn-solid" id="faqbtn">
+                {% if user.is_authenticated %}
+                <a href="/viewMetadata">Get Started</a>
+                {% else %}
+                <a href="/signup">Get Started</a>
+                {% endif %}
+            </button>
+        </div>
+    </div>
+
+</main>
+
+<script src="javascript/script.js"></script>
+
+
+{% endblock %}

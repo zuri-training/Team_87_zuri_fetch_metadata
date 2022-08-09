@@ -1,0 +1,252 @@
+@import url("style.css");
+@import url("font.css");
+
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0; 
+    font-family: 'Cabinet Grotesk', sans-serif;
+}
+
+/* Main Section */
+.autentication-form{
+    display: flex;
+    width: 100%;
+    height: auto;
+    display: flex; 
+}
+
+
+/* Sections */
+.left-column {
+    background-color: #3a86ff;
+    width: 40%;
+    height: 100vh;
+    position: fixed;
+}
+
+.right-column {
+    background-color: white;
+    width: 60%;
+    padding: 150px 150px 50px 80px;
+    font-family: sans-serif;
+    position: relative;
+    left: 40%;
+    bottom: 50px;
+}
+
+#login-left {
+    background-image: url('img/Frame\ 1177.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+#register-left {
+    background-image: url('img/Frame\ 24.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+/* Other Sign up */
+h1 {
+    font-size: 45px;
+    padding-bottom: 1.5rem;
+    font-weight: 900;
+}
+
+.other-sign-up button {
+    width: 100%;
+    padding: 18px 40px;
+    margin-bottom: 20px;
+    color: var(--black);
+    font-size: 19px;
+    background-color: var(--white);
+    border:  1px solid  var(--blue);
+    border-radius: 4px;
+    vertical-align: middle;
+}
+
+.google {
+    width: 20px;
+    margin-right: 10px;
+    vertical-align: middle;
+}
+
+.fb {
+    width: 20px;
+    margin-right: 10px;
+    vertical-align: middle;
+    margin-bottom: 5px;
+}
+
+/* Line Separator */
+#line{
+    padding: 20px 10px 30px 10px;
+    overflow: hidden;
+    text-align: center;
+}
+
+#line::before, 
+#line::after{
+    text-decoration: line-through;
+    margin: auto 0.5em;
+    background-color: #D3D1D2;
+    content: "";
+    display: inline-block;
+    height: 1px;
+    position: relative;
+    vertical-align: middle;
+    width: 50%;
+}
+
+#line::before {
+    right: 0.5rem;
+    margin-left: -50%;
+}
+
+#line::after {
+    left: 0.5rem;
+    margin-right: -50%;
+}
+
+
+/* Form */
+
+form {
+    position: relative;
+}
+
+.meta-form-field {
+    margin-bottom: 20px;
+}
+
+label {
+    font-size: 18px;
+}
+
+input[type=text] {
+    width: 100%;
+    font-size: 16px;
+    padding: 20px;
+    margin: 8px 0;
+    box-sizing: border-box;
+    border-radius: 5px;
+    border: 1px solid #D3D1D2;
+}
+  
+input[type=text]::placeholder {
+    font-size: 16px;
+    padding-left: 30px;
+    background-image: url('img/user.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
+input[type=email] {
+    width: 100%;
+    font-size: 16px;
+    padding: 20px;
+    margin: 8px 0;
+    box-sizing: border-box;
+    border-radius: 5px;
+    border: 1px solid #D3D1D2;
+}
+
+input[type=email]::placeholder {
+    font-size: 16px;
+    padding-left: 30px;
+    background-image: url('img/sms.svg');
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+  
+input[type=password] {
+    width: 100%;
+    font-size: 16px;
+    padding: 20px;
+    margin: 8px 0;
+    box-sizing: border-box;
+    border-radius: 5px;
+    border: 1px solid #D3D1D2;
+}
+
+input[type=password]::placeholder {
+    font-size: 16px;
+}
+
+
+input[type=button], input[type=submit], input[type=reset] {
+    background-color: var(--blue);
+    width: 100%;
+    border: none;
+    color: white;
+    padding: 20px 40px;
+    font-size: 20px;
+    text-decoration: none;
+    cursor: pointer;
+    border-radius: 5px;
+}
+  
+input[type=button]:hover {
+    background-color: var(--blue);
+}
+
+
+#register {
+    margin-top: 70px;
+}
+
+.login-text {
+    margin-top: 40px;
+    text-align: center;
+}
+
+.login-text a  {
+    color: var(--blue);
+}
+
+.login-password {
+    margin: 25px 0;
+    color: var(--blue);
+    text-align: end;
+}
+
+.login-password a {
+    color: var(--blue);
+    font-size: 20px;
+}
+
+/* Icons */
+
+.eye {
+    position: absolute;
+    top: 20;
+    right: 30;
+}
+
+.psw-icon {
+    width: 20px;
+    margin-top: 27px;
+    margin-left: -50px;
+}
+
+#hide1,#hide3, #hide5 {
+    display: none;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

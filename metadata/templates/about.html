@@ -1,0 +1,171 @@
+{% extends "base.html" %}
+{% load static %}
+{% block styles %}
+<link rel="stylesheet" href="{% static 'css/about.css' %}">
+{% endblock %}
+
+
+{% block nav %}
+
+<div class="navigation">
+    <nav class="menu">
+        <a href="/">Home</a>
+        <a href="/about" class="active">About Us</a>
+        {% if user.is_authenticated %}
+        <a href="/viewMetadata">Extract Metadata</a>
+        <a href="/dashboard">Dashboard</a>
+        {% endif %}
+    </nav>
+</div>
+
+
+
+{% endblock %}
+
+{% block content %}
+
+<main class="about container">
+    <!-- Intro -->
+    <div class="top-about">
+        <h1 class="head-about">Who we are</h1>
+        <p class="txt-about">With Deevr’s metadata extraction tool, you can easily fetch metadata information from all
+            your favorite files. Download, share, export and embed..... our website is user friendly and secure. We keep
+            the code, style sheets and servers behind the scenes and that is how it should be.</p>
+    </div>
+
+    <!-- Meet the team -->
+    <h2 class="subhead-about">Meet the Team:</h2>
+
+    <div id="parent">
+        <div class="child">
+            <img src="{% static 'images/Mask group.png' %}" alt="Victor modupe">
+            <div class="namefocus">
+                <h5><span>Victor Modupe</span><br> Team Lead </h5>
+            </div>
+        </div>
+
+        <div class="child">
+            <img src="{% static 'images/20201126_171021.jpg' %}" alt="Philip Aipoh">
+            <div class="namefocus">
+                <h5><span>Phlip Aipoh</span><br> Ass. Team Lead</h5>
+            </div>
+        </div>
+        <div class="child">
+            <img src="{% static 'images/Mask group (1).png' %}" alt="Tayyib Zubair">
+            <div class="namefocus">
+                <h5><span>Tayyib Zubair</span><br> Product Design</h5>
+            </div>
+        </div>
+        <div class="child">
+            <img src="{% static 'images/Rectangle 859.png' %}" alt="Charity Okeodo-Enodiana">
+            <div class="namefocus">
+                <h5><span>Charity Okeodo-Enodiana</span><br> Product Design</h5>
+            </div>
+        </div>
+        <div class="child">
+            <img src="{% static 'images/Frame 334.png' %}" alt="Paulette Isiekwene">
+            <div class="namefocus">
+                <h5><span>Paulette Isiekwene</span><br> Product Design</h5>
+            </div>
+        </div>
+        <div class="child">
+            <img src="{% static 'images/Frame 335.png' %}" alt="Francis Edu">
+            <div class="namefocus">
+                <h5><span>Francis Edu</span><br> Product Design</h5>
+            </div>
+        </div>
+        <div class="child">
+            <img src="{% static 'images/Frame 336.png' %}" alt="Chidinma Nwajagu">
+            <div class="namefocus">
+                <h5><span>Chidinma Nwajagu</span><br> Product Design</h5>
+            </div>
+        </div>
+        <div class="child">
+            <img src="{% static 'images/Frame 1149.png' %}" alt="Sokunbi Hikmat">
+            <div class="namefocus">
+                <h5><span>Sokunbi Hikmat</span><br> Product Design</h5>
+            </div>
+        </div>
+        <div class="child">
+            <img src="{% static 'images/default.jpg' %}" alt="Ankur Jain">
+            <div class="namefocus">
+                <h5><span>Ankur Jain</span><br> Full Stack</h5>
+            </div>
+        </div>
+        <div class="child">
+            <img src="{% static 'images/Frame 339.png' %}" alt="Olamide Ogunsakin">
+            <div class="namefocus">
+                <h5><span>Olamide Ogunsakin</span><br>Full Stack</h5>
+            </div>
+        </div>
+        <div class="child">
+            <img src="{% static 'images/Frame 340.png' %}" alt="Joshua Adams Ochotumabo">
+            <div class="namefocus">
+                <h5><span>Joshua Adams Ochotumabo</span><br> Product Design</h5>
+            </div>
+        </div>
+        <div class="child">
+            <img src="{% static 'images/default.jpg' %}" alt="Godwin Opara">
+            <div class="namefocus">
+                <h5><span>Godwin Opara</span><br>Full Stack</h5>
+            </div>
+        </div>
+        <div class="child">
+            <img src="{% static 'images/Frame 342.png' %}" alt="Alabi Temitope">
+            <div class="namefocus">
+                <h5><span>Alabi Temitope</span><br> Product Design</h5>
+            </div>
+        </div>
+        <div class="child">
+            <img src="{% static 'images/Frame 343.png' %}" alt="Eibo Samuel">
+            <div class="namefocus">
+                <h5><span>Eibo Samuel</span><br> Full Stack</h5>
+            </div>
+        </div>
+        <div class="child">
+            <img src="{% static 'images/default.jpg' %}" alt="Jeremiah Okoro">
+            <div class="namefocus">
+                <h5><span>Jeremiah Okoro</span><br> Product Design</h5>
+            </div>
+        </div>
+        <div class="child">
+            <img src="{% static 'images/Frame 341.png' %}" alt="Okafor Precious">
+            <div class="namefocus">
+                <h5><span>Okafor Precious</span><br> Full Stack</h5>
+            </div>
+        </div>
+        <div class="child">
+            <img src="{% static 'images/default.jpg' %}" alt="Emmanuel Abubasim">
+            <div class="namefocus">
+                <h5><span>Emmanuel Abubasim</span><br>Product Design</h5>
+            </div> 
+        </div>
+
+        <div class="child">
+            <img src="{% static 'images/default.jpg' %}" alt="Nebedum Oluebube">
+            <div class="namefocus">
+                <h5><span>Nebedum Oluebube</span><br> Product Design</h5>
+            </div>
+        </div>
+        <div class="child">
+            <img src="{% static 'images/Frame 348.png' %}" alt="Oyewale Oluwashogo Ayomide">
+            <div class="namefocus">
+                <h5><span>Oyewale Oluwashogo Ayomide</span><br> Product Design</h5>
+            </div>
+        </div>
+        <div class="child">
+            <img src="{% static 'images/Frame 1150.png' %}" alt="Akinola Samson">
+            <div class="namefocus">
+                <h5><span>Akinola Samson</span><br> Full Stack</h5>
+            </div>
+        </div>
+        <div class="child">
+            <img src="{% static 'images/Frame 1151.png' %}" alt="Joy Anih">
+            <div class="namefocus">
+                <h5><span>Joy Anih</span><br> Product Design</h5>
+            </div>
+        </div>
+    </div>
+</main>
+
+{% endblock %}

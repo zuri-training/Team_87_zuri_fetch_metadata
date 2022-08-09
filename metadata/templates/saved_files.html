@@ -1,24 +1,91 @@
-{% extends "base.html" %} {% block content %}
+{% extends "base.html" %}
+
+{% block styles %}
+<link rel="stylesheet" href="../../static/css/profile.css" />
+{% endblock %}
+
+{% block nav %}
+
+<div class="navigation">
+    <nav class="menu">
+        <a href="/">Home</a>
+        <a href="/about">About Us</a>
+        <a href="/viewMetadata">Extract Metadata</a>
+        <a href="/dashboard" class="active">Dashboard</a>
+    </nav>
+</div>
+
+{% endblock %}
 
 
-<h2>Files upload history</h2>
 
-<table>
-    <thead>
-        <th>Date</th>
-        <th>Filename</th>
-    </thead>
+{% load static %}
 
-{% for i in files %}
-<tr></tr>
-{% if i.owner == user%}
-<td>{{ i.created_at }}</td>
-<td>{{ i.file_name }} </td>
-<td><a href="{{i.uploaded_file.url}}" download="{{i.uploaded_file.url}}">Download</a></td>
-<td><a href="delete/{{i.id}}">Delete file</a></td>
-{% endif %}
-</tr>
-{% endfor %}
 
-</table>
+
+{% block content %}
+
+<div class="profile-wrapper">
+    <div class="content-section">
+        <div class="media">
+            {% if user.profile.profile_pic %}
+            <img class="rounded-circle account-img" src="{{ user.profile.profile_pic.url }}" width="200" height="200" />
+            {% else %}
+            <img class="rounded-circle account-img" src="{% static 'metadata/images/default.jpg'%}" width="200"
+                height="200" />
+            {% endif %}
+        </div>
+        <a class="profile-edit" href="/update_picture">Edit Profile Picture</a>
+
+        <div class="profile-link">
+            <img src="../../static/images/user.png" alt="">
+            <a href="/dashboard">Account</a>
+        </div>
+        <div class="profile-link">
+            <img src="../../static/images/archive-tick.svg" alt="">
+            <a href="{% url 'metadata:history' user.id %}">Saved Metadata</a>
+        </div>
+        <div class="profile-link link-active">
+            <img src="../../static/images/archive-tick.svg" alt="">
+            <a href="/saved_files">Saved Files</a>
+        </div>
+    </div>
+
+
+    <div class="form-wrapper" id="file-content_content">
+
+        <div class="file-heading">
+            <h2>Date Added</h2>
+            <h2>File Name</h2>
+            <h2>Download/Delete File</h2>
+        </div>
+
+        <div class="file-content">
+            {% for i in files %}
+
+                {% if i.owner == user%}
+                    <p>{{ i.created_at }}</p>
+                    <p>{{ i.file_name }} </p>
+                    <div class="img">
+                        <img id="eye" src="../../static/images/eye.svg" alt="" data-id="btn-{{i.id}}">
+                        <div class="hide-download-btn" id="btn-{{i.id}}">
+                            <a href="{{i.uploaded_file.url}}" download="{{i.uploaded_file.url}}">Download</a>
+                            <a href="delete/{{i.id}}">Delete file</a>
+                        </div>
+                    </div>
+                {% endif %}
+            {% endfor %}
+        </div>
+
+
+
+
+    </div>
+</div>
+
+{% endblock %}
+
+
+{% block jsScript %} 
+    <script src="../../static/javascript/savedFiles.js"></script>
 {% endblock %}

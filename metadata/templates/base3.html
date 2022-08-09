@@ -1,0 +1,158 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>MetaData Extractor | Get detailed information on your files</title>
+    <link rel="stylesheet" href="{% static 'css/main.css' %}" />
+	<link rel="stylesheet" href="{% static 'css/font.css' %}">
+	<link rel="stylesheet" href="{% static 'css/login.css' %}">
+		<link href="https://api.fontshare.com/v2/css?f[]=cabinet-grotesk@800,500,700,400,900&display=swap" rel="stylesheet">
+    <!-- <link rel="stylesheet" href="../../static/css/extract.css"> -->
+    <!-- <link rel="stylesheet" href="../../static/css/about.css"> -->
+  </head>
+  <body>
+    <header class="nav-head desktop-nav">
+      <!-- Site logo -->
+      <img src="{% static 'images/deevr.svg' %}" class="site-logo logo" />
+
+      <!-- Menu -->
+      <div class="navigation">
+        <nav class="menu">
+          <a href="index.html" class="active">Home</a>
+          <a href="/contact">Contact</a>
+          <a href="about">About Us</a>
+          {% if user.is_authenticated %}
+          <a href="dashboard.html">Dashboard</a>
+          <a href="{% url 'metadata:profile' user.id %}">Profile</a>
+          <a href="/logout">Logout</a>
+
+          <a href="/viewMetadata">Extract MetaData</a>
+          <a href="{% url 'metadata:history' user.id %}">Saved Metadatas</a>
+          <a href="{% url 'metadata:saved_files' %}">Saved Files</a>
+          {% else %}
+          <a href="/login">Log in</a>
+          <a href="/signup">Sign Up</a>
+          {% endif %}
+        </nav>
+      </div>
+    </header>
+
+    <!-- Mobile Nav for Desktop View -->
+    <header class="mobile-nav">
+	<div class="container">
+
+		<img src="{% static 'images/Deevr-mobile.png' %}" class="site-logo-sm logo" alt="site-logo" />
+	</div>
+      <!-- Menu -->
+      <nav class="navigation container">
+        <ul class="menu">
+          <li>
+            <img src="{% static 'images/School Building.png' %}" alt="" />
+            <a href="index.html" class="active">Home</a>
+            <img class="arrow-icon" src="{% static 'images/arrow-right.svg' %}" alt="" />
+          </li>
+          <li>
+            <img src="{% static 'images/School Building.png' %}" alt="" />
+            <a href="/contact">Contact</a>
+            <img class="arrow-icon" src="{% static 'images/arrow-right.svg' %}" alt="" />
+          </li>
+          <li>
+            <img src="{% static 'images/School Building.png' %}" alt="" />
+            <a href="about.html">About Us</a>
+
+            <img class="arrow-icon" src="{% static 'images/arrow-right.svg" alt="" />
+          </li>
+          {% if user.is_authenticated %}
+          <li>
+            <img src="{% static 'images/School Building.png' %}" alt="" />
+            <a href="dashboard.html">Dashboard</a>
+            <img class="arrow-icon" src="{% static 'images/arrow-right.svg' %}" alt="" />
+          </li>
+          <!-- <li>
+            <img src="../../static/images/School Building.png" alt="" />
+            <a href="{% url 'metadata:profile' user.id %}">Profile</a>
+            <img class="arrow-icon" src="../../static/images/arrow-right.svg" alt="" />
+          </li> -->
+          <li>
+            <img src="{% static 'images/School Building.png' %}" alt="" />
+            <a href="/viewMetadata">Extract MetaData</a>
+            <img class="arrow-icon" src="{% static 'images/arrow-right.svg' %}" alt="" />
+          </li>
+          <!-- <li>
+            <img src="../../static/images/School Building.png" alt="" />
+            <a href="{% url 'metadata:history' user.id %}">Saved Metadatas</a>
+            <img class="arrow-icon" src="../../static/images/arrow-right.svg" alt="" />
+          </li>
+
+          <li>
+            <img src="../../static/images/School Building.png" alt="" />
+            <a href="{% url 'metadata:saved_files' %}">Saved Files</a>
+            <img class="arrow-icon" src="../../static/images/arrow-right.svg" alt="" />
+          </li> -->
+		  
+			  <a href="/logout">Logout</a>
+			  {% else %}
+			  <a href="/login">Log in</a>
+			  <a href="/signup">Sign Up</a>
+			  {% endif %}
+
+			<!-- nav buttons -->
+			<div class="nav-button">
+				<button class="nav-btn-outline">
+					<a href="login.html">Login</a>
+				</button>
+			
+				<button class="nav-btn-solid">
+					<a href="register.html">Get Started</a>
+				</button>
+			</div>
+        </ul>
+      </nav>
+
+     
+    </header>
+
+    {% block content %} {% endblock %}
+
+    <footer class="container">
+      <div>
+        <div>
+          <img src="css/img/deevr.svg" />
+          <p>Subscribe to keep up with the<br />latest news</p>
+        </div>
+        <!--Social media handles-->
+        <div>
+          <h4><b>GET IN TOUCH</b></h4>
+          <div class="media logos">
+            <img src="" />
+            <img src="" />
+            <img src="" />
+          </div>
+        </div>
+      </div>
+      <div class="learn">
+        <p><b>Learn</b></p>
+        <div>
+          <p>Our Product</p>
+          <p>Tutorials</p>
+          <p>Our Service</p>
+          <p>Best Features</p>
+        </div>
+      </div>
+      <div class="company">
+        <p><b>Company</b></p>
+        <div>
+          <p>About Us</p>
+          <p>Careers</p>
+          <p>Contact Us</p>
+          <p>News & Blog</p>
+        </div>
+      </div>
+    </footer>
+    <script src="{% static 'javascript/script.js' %}"></script>
+  </body>
+</html>
+

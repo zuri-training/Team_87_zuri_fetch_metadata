@@ -3,12 +3,15 @@
 
 /* Global styling */
 
-* {
+*, 
+*::before,
+ *::after {
     padding: 0;
     margin: 0;
     box-sizing: border-box;
-    font-family: 'Cabinet Grotesk', sans-serif;
 }
+
+
 
 :root {
     --blue: #3a86ff;
@@ -16,6 +19,10 @@
     --black: #000000;
     --grey: #EEF1F4;
     /* --darkgrey: ; */
+}
+
+html{
+    font-size: 62.5%;
 }
 
 body {
@@ -44,6 +51,15 @@ button a {
     color: var(--white);
     font-size: 16px;
 }
+
+.hero-head{
+    
+}
+
+
+
+@media screen and (min-width:1024px) {
+
 
 .section {
     width: 1240px;
@@ -132,6 +148,8 @@ header {
 }
 
 /* Hero Section */
+
+
 .hero {
     display: flex;
     padding: 70px 0;
@@ -139,6 +157,8 @@ header {
     vertical-align: middle;
     align-items: center;
 }
+
+
 
 .left-hero, .right-hero {
     width: 50%;
@@ -270,6 +290,21 @@ header {
 .right-meta {
     width: 60%;
     padding-left: 50px;
+}
+
+.User-Testimonals{
+    width: 1400px;
+}
+
+.User{
+    width: 1400px;
+    margin-top: -285px;
+}
+.Users{
+    width: 800px;
+}
+.hold-body .User-Testimonals img{
+    margin-top: 150px;
 }
 
 .meta-img {
