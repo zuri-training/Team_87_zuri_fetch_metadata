@@ -336,6 +336,15 @@ input[type="button"]:hover {
 
 
 /* === Social media authentication === */
+.social-auth{
+  margin-top: 80px;
+}
+
+.social-auth p{
+  margin: 20px 0;
+  font-size: 1.8rem;
+
+}
 
 
 .social-auth-btn {
@@ -343,6 +352,8 @@ input[type="button"]:hover {
   padding: 13px 37px;
   background-color: var(--blue);
   border: 0;
+  font-size: 2rem;
+  line-height: 3rem;
   border-radius: 5px;
   color: var(--white);
   border: 1px solid var(--blue);
