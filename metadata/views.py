@@ -318,15 +318,6 @@ class history(LoginRequiredMixin, View):
     def get(self, request, pk):
         user = request.user
         history = History.objects.all()
-        # print(history)
-        # user = request.user
-        # no = 1
-        # for i in history:
-        #      if i.owner == user:
-        #         user_history[no] = {"name":i.name,"data":i.data,"time":i.created_at}
-        #         no +=1
-        # print(user_history)
-
         context = {"history": history, "user": user}
         return render(request, self.template_name, context)
 

@@ -1,4 +1,4 @@
-{% extends "base.html" %} {% block content %} {% if user.is_authenticated %}
+{% extends "base.html" %} {% block content %} 
 
 <div style="width: 80%; margin: auto; border: 1px solid black">
 	<h1 style="text-align: center">Metadata Result</h1>
@@ -52,8 +52,5 @@
 		>Save Meta Result</a
 	>
 </div>
-{% else %}
-<h2>You must be logged in to access this page</h2>
-<p><a href="/login">Login</a> to continue</p>
 
-{% endif %} {% endblock %}
+{% endblock %}
