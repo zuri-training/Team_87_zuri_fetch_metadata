@@ -1,7 +1,6 @@
 {% extends "base.html" %}
 
 {% load static %}
-
 {% block styles %}
 <link rel="stylesheet" href="../../static/css/profile.css" />
 {% endblock %}
@@ -103,6 +102,9 @@
     <div class="form-wrapper" id="file-content_content">
         <div class="head">
             <h1>Saved Metadata</h1>
+            {% for message in messages %}
+<h5>{{message}}</h5>
+{% endfor %}
         </div>
 
         <table>
@@ -121,8 +123,12 @@
                 <tr>
                     <td>{{i.created_at}}</td>
                     <td>{{i.name}}</td>
-                    <td><a href="{{i.uploaded_file.url}}" download="{{i.uploaded_file.url}}">Download</a></td>
-                    <td><a href="delete/{{i.id}}">Delete</a></td>
+                    <td><a href="{% url 'metadata:download_meta' i.id %}">Download</a></td>
+                    <td><a href="{% url 'metadata:delete_meta' i.id %}">Delete</a></td>
+                    <td><a href="{% url 'metadata:review' i.id %}">View</a></td>
+                    <td> <input type="text" value="Generate share URL" id="{{ i.id }}"/>
+                      
+<button onclick="Hello({{i.id}},{{user.id}})"> Copy share address to clipboard </button></td>
                 </tr>
                 {% endif %}
                 {% endfor %}
@@ -131,11 +137,34 @@
     </div>
 
 </div>
-
-
-
 {% endblock %}
 
 {% block jsScript %}
+<script src="../../static/javascript/savedFiles.js"></script>
+<script>
+
+  function Hello(a,b) {
+  var copyText = document.getElementById(a)
+  var d="http://127.0.0.1:8000/referral/"
+  var c = "/"
+  copyText.value = d + a +c+b
+  copyText.select();
+  document.execCommand('copy')
+  console.log('Copied Text')
+}
+
+$(document).ready(function(){
+	$("#ewefmwefmp").click(function(){
+    //alert()
+      var copyText =document.getElementById("myInput");
+      copyText.select();
+      copyText.setSelectionRange(0, 99999)
+      document.execCommand("copy");
+      alert("Copied the text: " + copyText.value);
+    
+    });
+});
+</script>
+
 <script src="/static/javascript/savedFiles.js"></script>
 {% endblock %}
