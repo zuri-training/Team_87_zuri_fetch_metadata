@@ -1,0 +1,61 @@
+*{ 
+    padding: 0;
+    margin: 0;
+}
+body{
+    padding: 25px 50px;
+    
+}
+    header{
+    display: flex;
+}
+header .logo{
+    margin-right: 350px;
+    font-size: 30px;
+}
+.nav-items{
+    margin-right: 30px;
+    font-size: 20px;
+}
+ 
+main{
+    
+    margin: 40px 0 40px 420px;
+}
+.message{
+    margin-top: 12px;
+    padding: 0 450px  0 10px;
+    font-size: 18px;
+}
+.below{
+    padding-left: 120px;
+    margin-top: 6px;
+}
+.form-items{
+    margin-top: 12px;
+    display: flex;
+    flex-direction: column;
+}
+.label{
+    margin-bottom: 5px;
+}
+
+.icon-input img{
+    width: 15px;
+    height: 15px;
+    align-items: center;
+}
+.icon-input input{
+    padding: 3px 160px 3px 3px;
+}
+.input input{
+    padding: 3px 180px 3px 3px;
+}
+.send-button button{
+    background-color: rgb(27, 27, 143);
+    color: white;
+    padding: 7px 160px;
+    margin-top: 15px;
+    border-color: rgb(27, 27, 143);
+    border-radius: 5px;
+}
