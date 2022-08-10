@@ -80,6 +80,13 @@
                 height="200" />
             {% endif %}
         </div>
+        <input id="edit-profile" type="button" value="Edit Profile Picture">
+        <script>
+            const btn = document.querySelector("#edit-profile")
+            btn.addEventListener("click", () => {
+                console.log("clicked")
+            })
+        </script>
         <a class="profile-edit" href="/update_picture">Edit Profile Picture</a>
 
         <div class="profile-link">
@@ -112,6 +119,7 @@
                 <tr>
                     <th colspan="">Date</th>
                     <th colspan="2">File Name</th>
+                    <th colspan="5"></th>
                 </tr>
 
     
@@ -124,22 +132,25 @@
                     <td><a href="{% url 'metadata:delete_meta' i.id %}">Delete</a></td>
                     <td><a href="{% url 'metadata:review' i.id %}">View</a></td>
                     <td> 
-                        <button onclick="Hello({{i.id}},{{user.id}})">Share </button>
+                        <a onclick="Hello({{i.id}},{{user.id}})">Share</a>
                     </td>
                 </tr>
                 {% endif %}
                 {% endfor %}
             
         </table>
+   
     </div>
 
 </div>
+
 {% endblock %}
 
-{% block jsScript %}
-<script src="../../static/javascript/savedFiles.js"></script>
-<script>
 
+
+
+{% block jsScript %}
+<script>
     function Hello(a, b) {
         var copyText = document.getElementById(a)
         var d = "http://127.0.0.1:8000/referral/"

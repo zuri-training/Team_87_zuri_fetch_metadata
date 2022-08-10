@@ -1,4 +1,4 @@
-const file = document.querySelector("#id_upload_file");
+const file = document.querySelector("#id_profile_pic");
 const fileLabel = document.querySelector("#file-label");
 const upload = document.querySelector(".upload");
 const cloud = document.querySelector(".cloud");

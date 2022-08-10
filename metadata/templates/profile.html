@@ -37,7 +37,7 @@
     <img id="arrow" class="dashboard-arrow" src="/static/images/arrow-right.svg" alt="">
   </li>
   <ul class="sm-profile-link-wrapper">
-  
+
     <li class="sm-profile-link sm-link-active">
       <img src="../../static/images/user-dark.png" alt="">
       <a href="/dashboard">Account</a>
@@ -91,15 +91,15 @@
     </div>
   </div>
 
- 
+
 
   <div class="form-wrapper">
     <div class="head">
       <h1>Account</h1>
       {{user.name}}
       {% for message in messages %}
-<h4>{{message}}</h4>
-{% endfor %}
+      <h4>{{message}}</h4>
+      {% endfor %}
       <h3>Email address</h3>
       <h4>{{user.email}}</h4>
       <a href="{% url 'metadata:change_email' user.id %}">Change Email</a>

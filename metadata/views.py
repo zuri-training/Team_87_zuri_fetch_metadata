@@ -410,7 +410,7 @@ def accountSettings(request):
         if form.is_valid():
             form.save()
             messages.info(request, "Picture Updated succesfully!")
-            return redirect('metadata:index')
+            return redirect('metadata:dashboard')
     context = {'form': form}
     return render(request, 'update_picture.html', context)
 
