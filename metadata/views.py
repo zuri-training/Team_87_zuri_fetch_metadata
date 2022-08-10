@@ -161,12 +161,6 @@ class profile(LoginRequiredMixin, View):
                 return redirect('metadata:profile', pk=pk)
 
 
-def handle_uploaded_file(f):
-    with open('metadata / upload/'+f.name, 'wb+') as destination:
-        for chunk in f.chunks():
-            destination.write(chunk)
-
-
 # ===========================================
 # ==========================================
 
@@ -289,11 +283,12 @@ def delete_meta(request, pk):
     file = History.objects.get(id=pk)
     file.delete()
     owner = request.user
-    pk= owner.id
+    pk = owner.id
     messages.info(request, f"file deleted succesfully")
     return redirect('metadata:history', pk=pk)
 
-#======
+# ======
+
 
 def download(request, path):
     file_path = os.path.join(settings.MEDIA_ROOT, path)
@@ -419,17 +414,17 @@ def accountSettings(request):
     context = {'form': form}
     return render(request, 'update_picture.html', context)
 
-    
-def referral(request,pk,ak):
-    data = History.objects.get(id=pk,owner=ak)
+
+def referral(request, pk, ak):
+    data = History.objects.get(id=pk, owner=ak)
     metadata = json.loads(data.data)
     context = metadata
     request.session["metadata"] = context
     return render(request, 'referal.html', context)
 
 
-#======
-def download_meta(request,pk):
+# ======
+def download_meta(request, pk):
     data = History.objects.get(id=pk)
     metadata = json.loads(data.data)
     metadata_label = list(metadata.keys())[1:]

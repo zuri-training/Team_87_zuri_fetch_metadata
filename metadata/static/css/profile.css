@@ -5,45 +5,6 @@ input{
 }
 
 
-
-
-
-
-/* .update-img-model{
-    position: fixed;
-    inset: 0;
-
-    z-index: 10;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.update-img-model form{
-    background-color: white;
-    z-index: 10;
-    height: 220px;
-    width: 250px;
-    color: black;
-} */
-/* 
-input {
-    border: 5px solid black;
-} */
-
-/* 
-.update-img-model::before{
-    content: "";
-    height: 100%;
-    width: 100%;
-    background-color: black;
-    opacity: 0.5;
-    position: absolute;
-    inset: 0;
-    z-index: -1;
-} */
-
-
 .content-section {
     display: none;
 }
@@ -341,7 +302,7 @@ input {
         background-color: var(--grey);
         width: 277px;
         padding-top: 20px;
-        margin-right: 100px;
+        margin-right: 130px;
         display: block;
     }
 
@@ -557,8 +518,8 @@ input {
 
 table{
     border-spacing: 10px;
-    overflow: auto;
     width: 100%;
+    border-collapse: collapse;
 }
 
 th{
@@ -567,20 +528,21 @@ th{
     background-color: var(--grey);
     color: rgb(60, 60, 60);
     text-align: center;
-    padding:15px;
+    padding:10px;
 }
 
 td{
-    padding: 20px 15px 15px;
+    padding: 15px 15px 10px;
     font-size: 1.3rem;
     border: none;
+    border-spacing: 5px;
 }
 
 td a{
     background: var(--blue);
     color: white;
     font-weight: 500;
-    padding: 10px 30px;
+    padding: 10px 20px;
     border-radius: 2px;
 }
 
@@ -588,17 +550,11 @@ tr:nth-child(even){
     background-color: var(--grey);
 }
 
-
-
-
-
 td:nth-child(3) {
-    width: 15%;
     text-align: center;
 }
 
 td:nth-child(4) {
-    width: 15%;
     text-align: center;
 
 }

@@ -6,8 +6,9 @@
 
 ### Install Dependencies
 
-1. **Python 3.10** - Follow instructions to install the latest version of python for your platform in the [python docs](https://docs.python.org/3/using/unix.html#getting-and-installing-the-latest-version-of-python) 
- - Python 3.10 upward is required
+1. **Python 3.10** - Follow instructions to install the latest version of python for your platform in the [python docs](https://docs.python.org/3/using/unix.html#getting-and-installing-the-latest-version-of-python)
+
+- Python 3.10 upward is required
 
 2. **Virtual Environment** - We recommend working within a virtual environment whenever using Python for projects. This keeps your dependencies for each project separate and organized. Instructions for setting up a virual environment for your platform can be found in the [python docs](https://packaging.python.org/guides/installing-using-pip-and-virtual-environments/)
 
@@ -44,6 +45,7 @@ pip install -r requirements.txt
 
 ```bash
 python manage.py migrate
+python makemigrations metadata
 ```
 
 ### Run the Server
