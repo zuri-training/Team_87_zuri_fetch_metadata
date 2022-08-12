@@ -64,7 +64,7 @@ def login(request):
             auth.login(request, user)
             return redirect('/dashboard')
         else:
-            messages.info(request, 'Invalid email or password')
+            messages.info(request, 'error')
             return redirect('metadata:login')
     return render(request, "login.html")
 

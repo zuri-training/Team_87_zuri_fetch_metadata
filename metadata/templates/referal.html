@@ -55,14 +55,11 @@
 			</tr>
 			{% endfor %}
 		</tbody>
-		{% if user.is_authenticated %}
 	</table>
 	<div class="btn">
 
 		<a href="/download">Download Metadata</a>
-		<a href="/save">Save Meta Result</a>
+		<a href="/login">Save Meta Result</a>
 	</div>
 </div>
-
-
-{% endif %} {% endblock %}
+{% endblock %}

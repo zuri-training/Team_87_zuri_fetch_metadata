@@ -1,6 +1,6 @@
 @import url("../css/style.css");
 
-input{
+input {
     outline: none;
 }
 
@@ -96,7 +96,7 @@ input{
     font-weight: 800;
 }
 
-.sm-link-active img{
+.sm-link-active img {
     margin-left: 15px;
 }
 
@@ -142,6 +142,7 @@ input{
     cursor: pointer;
 }
 
+
 .head h1 {
     font-size: 2.4rem;
     font-weight: 800;
@@ -172,7 +173,7 @@ input{
 }
 
 
-.sign-up-model{
+.sign-up-model {
     position: fixed;
     top: 0;
     height: 100vh;
@@ -186,11 +187,11 @@ input{
     z-index: 5000;
 }
 
-.show-model{
+.show-model {
     display: flex;
 }
 
-.sign-up-wrapper{
+.sign-up-wrapper {
     background-color: white;
     text-align: center;
     padding: 40px 36.5px;
@@ -201,36 +202,40 @@ input{
     cursor: pointer;
 }
 
-.sign-up-wrapper::before{
-    content:"";
+.sign-up-wrapper::before {
+    content: "";
     background-color: white;
     width: 100%;
     height: 100%;
     position: absolute;
     inset: 0;
-    z-index:-1;
+    z-index: -1;
+    border-radius: 10px;
 }
-.sign-up-wrapper img{
+
+.sign-up-wrapper img {
     position: absolute;
-    top: 10px;
+    top: 15px;
     right: 10px;
 }
 
-.sign-up-wrapper h5{
+.sign-up-wrapper h5 {
     font-size: 2.4rem;
     line-height: 2.7rem;
     margin-bottom: 8px;
 }
 
-.sign-up-wrapper p{
+.sign-up-wrapper p {
     font-size: 1.7rem;
     line-height: 2.4rem;
     margin-bottom: 24px;
 }
-.signout-model-btn{
+
+.signout-model-btn {
     display: flex;
     align-items: center;
 }
+
 .signout-model-btn a {
     display: inline-block;
     height: 44px;
@@ -246,10 +251,53 @@ input{
     color: var(--blue);
 }
 
-.signout-model-btn a:last-child{
+.signout-model-btn a:last-child {
     margin-right: 0;
     background-color: var(--blue);
     color: white;
+}
+
+
+.url-model{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #CEEBCD;
+    width: 250px;
+    padding: 15px 15px;
+    border-radius: 5px;
+    position: relative;
+    margin-bottom: 20px;
+    display: none;
+}
+
+.url-model img{
+    height: 25px;
+    width: 25px;
+    cursor: pointer;
+}
+
+.url-model .model-txt{
+    display: flex;
+    align-items: center;
+}
+
+.url-model .model-txt h5{
+    font-size: 1.3rem;
+}
+
+.url-model .model-txt img{
+    margin-right: 10px;
+}
+
+.url-model .model-txt p{
+    font-size: 1.3rem;
+}
+
+
+#input{
+    position: absolute;
+    right: -100%;
 }
 
 @media screen and (min-width:768px) {
@@ -260,6 +308,9 @@ input{
     .profile-wrapper {
         display: flex;
         margin-left: 2px;
+        max-width: 1440px;
+        margin-left: auto;
+        margin-right: auto;
     }
 
     .head h1 {
@@ -281,9 +332,9 @@ input{
         display: none;
     }
 
-    .profile-sign-out{
-       margin-left: auto;
-       margin-right: auto;
+    .profile-sign-out {
+        margin-left: auto;
+        margin-right: auto;
         position: absolute;
         bottom: 0;
         padding-left: 55px;
@@ -291,7 +342,7 @@ input{
         align-items: center;
     }
 
- 
+
 
 
 
@@ -359,7 +410,7 @@ input{
         border-left: 14px solid var(--blue);
     }
 
-    .link-active a{
+    .link-active a {
         font-weight: 800;
     }
 
@@ -381,7 +432,7 @@ input{
     .profile-wrapper {
         display: flex;
         margin-top: 0;
-        margin-left: 2px;
+        /* margin-left: 2px; */
     }
 
 
@@ -604,37 +655,38 @@ input{
 
 
 
-table{
+table {
     border-spacing: 10px;
     width: 100%;
     border-collapse: collapse;
 }
 
-th{
+th {
     font-size: 1.5rem;
     line-height: 3.5rem;
     background-color: var(--grey);
     color: rgb(60, 60, 60);
     text-align: center;
-    padding:10px;
+    padding: 10px;
 }
 
-td{
+td {
     padding: 15px 15px 10px;
     font-size: 1.3rem;
     border: none;
     border-spacing: 5px;
 }
 
-td a{
+td a {
     background: var(--blue);
     color: white;
     font-weight: 500;
     padding: 10px 20px;
     border-radius: 2px;
+
 }
 
-tr:nth-child(odd){
+tr:nth-child(odd) {
     background-color: var(--grey);
 }
 
@@ -665,7 +717,7 @@ and also iPads specifically.
         display: block;
     }
 
-    th{
+    th {
         margin-top: 25px;
     }
 
@@ -692,18 +744,34 @@ and also iPads specifically.
         text-align: left;
     }
 
-        td:nth-child(3) {
-            text-align: left;
-        }
-    
-        td:nth-child(4) {
-            text-align: left;
-            /* padding: 15px 30px; */
-    
-        }
-        td:nth-child(4) a{
-            padding: 10px 40px;
-        }
+    td a{
+        padding: 10px 45px;
+        cursor: pointer;
+    }
+
+    td:nth-child(3) {
+        text-align: left;
+    }
+
+    td:nth-child(4) {
+        text-align: left;
+    }
+
+    td:nth-child(4) a {
+        padding: 10px 54px;
+        cursor: pointer;
+    }
+
+    td:nth-child(5) a {
+        padding: 10px 59px;
+        cursor: pointer;
+    }
+
+    td:nth-child(6) a {
+        padding: 10px 55px;
+        cursor: pointer;
+    }
+
     td:before {
         /* Now like a table header */
         position: absolute;

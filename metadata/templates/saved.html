@@ -96,7 +96,7 @@
         </div>
         <div class="profile-sign-out">
             <img src="/static/images/logout.svg" alt="">
-        <input id="signout-btn" type="button" value="SignOut">
+            <input id="signout-btn" type="button" value="SignOut">
         </div>
     </div>
 
@@ -109,17 +109,36 @@
             {% for message in messages %}
             <h5>{{message}}</h5>
             {% endfor %}
+            <!-- SHARE URL MODEL -->
+            
+            <div class="url-model">
+                <div class="model-txt">
+                    <img src="{% static 'images/tick-circle.png' %}" alt="">
+                    <div>
+                        <p>URL copied to clipboard</p>
+                    </div>
+                </div>
+                <img id="close-hamburger" src="{% static 'images/close-circle1.png' %}" alt="">
+            </div>
+
         </div>
 
+        <script>
+      
+        </script>
+
         <table>
-        
+            <thead>
                 <tr>
                     <th colspan="">Date</th>
                     <th colspan="3">File Name</th>
                     <th colspan="4"></th>
                 </tr>
 
-    
+            </thead>
+
+            <tbody>
+
                 {% for i in history %}
                 {% if i.owner == user%}
                 <tr>
@@ -129,15 +148,16 @@
                     <td><a href="{% url 'metadata:delete_meta' i.id %}">Delete</a></td>
                     <td><a href="{% url 'metadata:review' i.id %}">View</a></td>
                     <td>
-                        <a id="share" data-id="{{i.id}}" data-user="{{user.id}}">Share</a>
+                        <a id="share" data-id="{{i.id}}" data-user="{{user.id}}" data-value="{{i.name}}">Share</a>
+                        <input id="input" type="text">
                     </td>
-                    <td> <input type="text" value="{{i.name}}" id="{{ i.id }}" />
                 </tr>
                 {% endif %}
                 {% endfor %}
-            
+            </tbody>
+
         </table>
-   
+
     </div>
 
 </div>
@@ -148,63 +168,83 @@
         <h5>Sign Out</h5>
         <p>Are you sure you want to sign out?</p>
         <div class="signout-model-btn">
-            <a href="/dashboard">No</a>
+            <a href="{% url 'metadata:history' user.id %}">No</a>
             <a href="/logout">Yes</a>
         </div>
     </div>
 </div>
 
-{% endblock %}
 
-<!-- onclick="Hello({{i.id}},{{user.id}})" -->
+<!-- <div class="sign-up-model">
+    <div class="sign-up-wrapper">
+        <img src="{% static 'images/icon-close.svg' %}" alt="">
+        <h5>Sign Out</h5>
+        <p>Are you sure you want to sign out?</p>
+        <div class="signout-model-btn">
+            <a href="{% url 'metadata:history' user.id %}">No</a>
+            <a href="/logout">Yes</a>
+        </div>
+    </div>
+</div> -->
+
+<!-- <div class="url-model">
+    <div class="model-txt">
+        <img src="{% static 'images/tick-circle.png' %}" alt="">
+        <div>
+            <h5>Success</h5>
+            <p>URL copied to clipboard</p>
+        </div>
+    </div>
+    <img id="close-hamburger" src="{% static 'images/close-circle1.png' %}" alt="">
+</div> -->
+
+{% endblock %}
 
 
 
 {% block jsScript %}
 <script>
-       const signOutBtn = document.querySelector("#signout-btn")
-        const model = document.querySelector(".sign-up-model")
-        const closeIcon = document.querySelector(".sign-up-wrapper img")
-        signOutBtn.addEventListener("click", () => {
-            model.classList.toggle("show-model")
-        })
-        closeIcon.addEventListener("click", () => {
-            model.classList.remove("show-model")
-        })
+    const signOutBtn = document.querySelector("#signout-btn")
+    const model = document.querySelector(".sign-up-model")
+    const closeIcon = document.querySelector(".sign-up-wrapper img")
+    const closeShareNotificationIcon = document.querySelector("#close-hamburger");
+    const urlModel = document.querySelector(".url-model")
+
+
+    signOutBtn.addEventListener("click", () => {
+        model.classList.toggle("show-model")
+    })
+    closeIcon.addEventListener("click", () => {
+        model.classList.remove("show-model")
+    })
 
     const shareBtns = document.querySelectorAll("#share")
     shareBtns.forEach(btn => {
         btn.addEventListener("click", () => {
             const id = btn.dataset.id
             const user = btn.dataset.user
-            console.log(Hello(id, user))
+        console.log("click")
+
+        urlModel.style.display = "flex"
+            console.log(copy(id, user))
+
         })
     })
-    
 
-    function Hello(a, b) {
-        var copyText = document.getElementById(a)
-        var d = "http://127.0.0.1:8000/referral/"
-        var c = "/"
-        copyText.value = d + a + c + b
+    closeShareNotificationIcon.addEventListener("click", () => {
+        urlModel.style.display = "none"
+    }) 
+
+
+    function copy(a, b) {
+        let copyText = document.querySelector("#input")
+        copyText.value = `http://127.0.0.1:8000/referral/${a}/${b}`
         copyText.select();
         document.execCommand('copy')
         console.log('Copied Text')
+        return copyText
     }
 
-
-
-    $(document).ready(function () {
-        $("#ewefmwefmp").click(function () {
-            //alert()
-            var copyText = document.getElementById("myInput");
-            copyText.select();
-            copyText.setSelectionRange(0, 99999)
-            document.execCommand("copy");
-            alert("Copied the text: " + copyText.value);
-
-        });
-    });
 </script>
 
 <script src="/static/javascript/savedFiles.js"></script>

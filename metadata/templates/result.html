@@ -3,7 +3,7 @@
 <link rel="stylesheet" href="../../static/css/result.css" />
 {% endblock %}
 
-% block nav %}
+{% block nav %}
 
 <div class="navigation">
 	<nav class="menu">
@@ -63,7 +63,7 @@
 
 
 
-{% block content %} 
+{% block content %}
 
 <div style="">
 	<div class="metadata-heading">
@@ -85,14 +85,13 @@
 			</tr>
 			{% endfor %}
 		</tbody>
-		{% if user.is_authenticated %}
 	</table>
-	<div class="btn">
+		<div class="btn">
 
-		<a href="/download">Download Metadata</a>
-		<a href="/save">Save Meta Result</a>
-	</div>
+			<a href="/download">Download Metadata</a>
+			<a href="/save">Save Meta Result</a>
+		</div>
 </div>
 
 
-{% endif %} {% endblock %}
+{% endblock %}
