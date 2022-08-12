@@ -20,10 +20,6 @@
 		<div class="right-column">
 			<div class="form-header">
 				<h1>Login</h1>
-				{% for message in messages %}
-				<h5>{{message}}</h5>
-				{% endfor %}
-
 				<a href="/accounts/google/login/?process=login">
 					<img src="../../static/images/google.png" alt="" class="google" />
 					Sign in with Google
@@ -38,6 +34,9 @@
 				<hr> Or
 				<hr>
 			</div>
+			{% for message in messages %}
+				<h2>{{message}}</h2>
+				{% endfor %}
 			<form action="login" method="post">
 				{% csrf_token %}
 				<div class="form-field">
