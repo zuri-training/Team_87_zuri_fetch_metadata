@@ -191,6 +191,6 @@ AUTHENTICATION_BACKENDS = [
 ]
 
 
-CSRF_TRUSTED_ORIGINS = ['https://8000-zuritrainin-team87zurif-92g6jpehggb.ws-eu59.gitpod.io']
+CSRF_TRUSTED_ORIGINS = ['https://8000-zuritrainin-team87zurif-spiu8vtol3t.ws-eu60.gitpod.io']
 #pls copy this on time, i  will soon remove it
 
