@@ -21,8 +21,8 @@
 			<div class="form-header">
 				<h1>Login</h1>
 				{% for message in messages %}
-<h5>{{message}}</h5>
-{% endfor %}
+				<h5>{{message}}</h5>
+				{% endfor %}
 
 				<a href="/accounts/google/login/?process=login">
 					<img src="../../static/images/google.png" alt="" class="google" />
@@ -35,7 +35,8 @@
 			</div>
 
 			<div class="line">
-				<hr> Or <hr>
+				<hr> Or
+				<hr>
 			</div>
 			<form action="login" method="post">
 				{% csrf_token %}
@@ -47,13 +48,13 @@
 					<label for="password" class="field-label">Password</label>
 					<input type="password" name="password" placeholder="Password" id="psw" />
 					<span class="eye" onclick="myFunction()">
-						<img src="../../static/images/eye.png" alt="" class="psw-icon" id="hide"/>
-						<img src="../../static/images/eye-slash.png" alt="" class="psw-icon"  />
+						<img src="../../static/images/eye.png" alt="" class="psw-icon" id="hide" />
+						<img src="../../static/images/eye-slash.png" alt="" class="psw-icon" />
 					</span>
 				</div>
 
 				<p class="login-password"><a href="{% url 'metadata:password_reset' %}"> Forgot Password</a></p>
-				
+
 				<input type="submit" value="Login" />
 				<input type="hidden" name="next" value="{{ next }}" />
 			</form>

@@ -1,22 +1,20 @@
 @import url("style.css");
 
+.metadata-heading {
+    text-align: center;
+    margin: 50px auto;
+    padding: 25px;
+}
 
+.metadata-heading h1 {
+    font-size: 2.5rem;
+    line-height: 2.8rem;
+    margin-bottom: 10px;
+}
 
-        .metadata-heading {
-            text-align: center;
-            margin: 50px auto;
-            padding: 25px;
-        }
-    
-        .metadata-heading h1 {
-            font-size: 2.5rem;
-            line-height: 2.8rem;
-            margin-bottom: 10px;
-        }
-    
-        .metadata-heading p {
-            font-size: 1.7rem;
-        }
+.metadata-heading p {
+    font-size: 1.7rem;
+}
 
 
 tr:nth-child(even) {
@@ -47,26 +45,28 @@ td {
 }
 
 
-        .btn {
-            text-align: center;
-            margin: 50px auto;
-        }
-    
-        .btn a {
-            padding: 16px 34px;
-            background-color: var(--blue);
-            border-radius: 5px;
-            outline: none;
-            cursor: pointer;
-            margin-right: 20px;
-            font-size: 2rem;
-            line-height: 3rem;
-            color: white;
-            text-align: center;
-        }
-        .btn a:last-child{
-            margin-right: 0;
-        }
+.btn {
+    text-align: center;
+    margin: 50px auto;
+}
+
+.btn a {
+    padding: 16px 34px;
+    background-color: var(--blue);
+    border-radius: 5px;
+    outline: none;
+    cursor: pointer;
+    margin-right: 20px;
+    font-size: 2rem;
+    line-height: 3rem;
+    color: white;
+    text-align: center;
+}
+
+.btn a:last-child {
+    margin-right: 0;
+}
+
 @media screen and (min-width:768px) {
 
     .metadata-wrapper {

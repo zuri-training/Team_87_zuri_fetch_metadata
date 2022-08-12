@@ -94,14 +94,18 @@
             <img src="../../static/images/archive-tick.svg" alt="">
             <a href="/saved_files">Saved Files</a>
         </div>
+        <div class="profile-sign-out">
+            <img src="/static/images/logout.svg" alt="sign out button">
+            <input id="signout-btn" type="button" value="SignOut">
+        </div>
     </div>
 
     <div class="form-wrapper" id="file-content_content">
         <div class="head">
             <h1>Saved Files</h1>
             {% for message in messages %}
-<h5>{{message}}</h5>
-{% endfor %}
+            <h5>{{message}}</h5>
+            {% endfor %}
         </div>
         <table>
             <thead>
@@ -129,9 +133,24 @@
     </div>
 </div>
 
+
+<!-- MODEL -->
+<div class="sign-up-model">
+    <div class="sign-up-wrapper">
+        <img src="{% static 'images/icon-close.svg' %}" alt="">
+        <h5>Sign Out</h5>
+        <p>Are you sure you want to sign out?</p>
+        <div class="signout-model-btn">
+            <a href="/dashboard">No</a>
+            <a href="/logout">Yes</a>
+        </div>
+    </div>
+</div>
 {% endblock %}
 
 
 {% block jsScript %}
 <script src="../../static/javascript/savedFiles.js"></script>
+
+
 {% endblock %}

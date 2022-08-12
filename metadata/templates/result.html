@@ -1,10 +1,77 @@
-{% extends "base.html" %} {% block content %} 
+{% extends "base.html" %}
+{% block styles %}
+<link rel="stylesheet" href="../../static/css/result.css" />
+{% endblock %}
 
-<div style="width: 80%; margin: auto; border: 1px solid black">
-	<h1 style="text-align: center">Metadata Result</h1>
-	<p style="text-align: center">(Files less than 20mb will be stored in your file history)</p>
+% block nav %}
 
-	<table border="1" style="width: 50%; margin: auto">
+<div class="navigation">
+	<nav class="menu">
+		<a href="/">Home</a>
+		<a href="/about">About Us</a>
+		<a href="/viewMetadata">Extract Metadata</a>
+		<a href="/dashboard" class="active">Dashboard</a>
+	</nav>
+</div>
+
+{% endblock %}
+
+{% block mobilenav %}
+
+<ul class="sm-menu">
+	<li>
+		<img src="/static/images/home-2.svg" alt="">
+		<a href="/">Home</a>
+		<img id="arrow" src="/static/images/arrow-right-light.svg" alt="">
+	</li>
+
+	{% if user.is_authenticated %}
+	<li>
+		<img src="/static/images/data.svg" alt="">
+		<a href="/viewMetadata" class="active">Extract Metadata</a>
+		<img id="arrow" src="/static/images/arrow-right-light.svg" alt="">
+	</li>
+	<li class="sm-active">
+		<img src="/static/images/user-dark.png" alt="">
+		<a href="/dashboard">Dashboard</a>
+		<img id="arrow" class="dashboard-arrow" src="/static/images/arrow-right.svg" alt="">
+	</li>
+	<ul class="sm-profile-link-wrapper">
+
+		<li class="sm-profile-link">
+			<img src="../../static/images/user.png" alt="">
+			<a href="/dashboard">Account</a>
+		</li>
+		<li class="sm-profile-link sm-link-active">
+			<img src="../../static/images/data-black.svg" alt="">
+			<a href="{% url 'metadata:history' user.id %}">Saved Metadata</a>
+		</li>
+		<li class="sm-profile-link">
+			<img src="../../static/images/archive-tick.svg" alt="">
+			<a href="{% url 'metadata:saved_files' %}">Saved Files</a>
+		</li>
+	</ul>
+	{% endif %}
+	<li>
+		<img src="/static/images/people.svg" alt="">
+		<a href="/about">About Us</a>
+		<img id="arrow" src="/static/images/arrow-right-light.svg" alt="">
+	</li>
+</ul>
+
+{% endblock %}
+
+
+
+{% block content %} 
+
+<div style="">
+	<div class="metadata-heading">
+		<h1>Metadata Result</h1>
+		<p>(Files less than 20mb will be stored in your file history)</p>
+	</div>
+
+	<table style="">
 		<thead>
 			<tr>
 				<th colspan="2">MetaData</th>
@@ -20,38 +87,11 @@
 		</tbody>
 		{% if user.is_authenticated %}
 	</table>
-	<a
-		style="
-			display: block;
-			width: 20%;
-			text-align: center;
-			font-size: 1rem;
-			font-weight: bold;
-			background-color: black;
-			margin: 1rem auto 2rem;
-			padding: 1rem 4.7rem;
-			text-decoration: none;
-			color: white;
-		"
-		href="/download"
-		>Download Metadata</a
-	>
-	<a
-		style="
-			display: block;
-			width: 20%;
-			text-align: center;
-			font-size: 1rem;
-			font-weight: bold;
-			background-color: black;
-			margin: 1rem auto 2rem;
-			padding: 1rem 4.7rem;
-			text-decoration: none;
-			color: white;
-		"
-		href="/save"
-		>Save Meta Result</a
-	>
+	<div class="btn">
+
+		<a href="/download">Download Metadata</a>
+		<a href="/save">Save Meta Result</a>
+	</div>
 </div>
 
 

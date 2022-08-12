@@ -172,6 +172,86 @@ input{
 }
 
 
+.sign-up-model{
+    position: fixed;
+    top: 0;
+    height: 100vh;
+    width: 100%;
+    background-color: black;
+    opacity: 0.95;
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    display: none;
+    z-index: 5000;
+}
+
+.show-model{
+    display: flex;
+}
+
+.sign-up-wrapper{
+    background-color: white;
+    text-align: center;
+    padding: 40px 36.5px;
+    margin-top: 200px;
+    border-radius: 10px;
+    position: relative;
+    z-index: 1000;
+    cursor: pointer;
+}
+
+.sign-up-wrapper::before{
+    content:"";
+    background-color: white;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    inset: 0;
+    z-index:-1;
+}
+.sign-up-wrapper img{
+    position: absolute;
+    top: 10px;
+    right: 10px;
+}
+
+.sign-up-wrapper h5{
+    font-size: 2.4rem;
+    line-height: 2.7rem;
+    margin-bottom: 8px;
+}
+
+.sign-up-wrapper p{
+    font-size: 1.7rem;
+    line-height: 2.4rem;
+    margin-bottom: 24px;
+}
+.signout-model-btn{
+    display: flex;
+    align-items: center;
+}
+.signout-model-btn a {
+    display: inline-block;
+    height: 44px;
+    width: 133.5px;
+    border: 1px solid var(--blue);
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 10px;
+    font-size: 1.8rem;
+    border-radius: 5px;
+    color: var(--blue);
+}
+
+.signout-model-btn a:last-child{
+    margin-right: 0;
+    background-color: var(--blue);
+    color: white;
+}
+
 @media screen and (min-width:768px) {
     #sm-hamburger {
         display: none;
@@ -205,8 +285,10 @@ input{
        margin-left: auto;
        margin-right: auto;
         position: absolute;
-        bottom: 55px;
+        bottom: 0;
         padding-left: 55px;
+        display: flex;
+        align-items: center;
     }
 
  
@@ -237,8 +319,14 @@ input{
         color: black;
     }
 
-    .profile-sign-out a {
+    .profile-sign-out input {
         color: #E10909;
+        background-color: var(--grey);
+        outline: none;
+        border: none;
+        font-size: 2rem;
+        font-weight: 100;
+        cursor: pointer;
 
     }
 

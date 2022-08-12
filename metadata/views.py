@@ -62,7 +62,7 @@ def login(request):
         user = auth.authenticate(username=username, password=password)
         if user is not None:
             auth.login(request, user)
-            return redirect('/')
+            return redirect('/dashboard')
         else:
             messages.info(request, 'Invalid email or password')
             return redirect('metadata:login')

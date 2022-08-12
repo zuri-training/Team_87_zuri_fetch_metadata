@@ -89,6 +89,11 @@
       <img src="../../static/images/archive-tick.svg" alt="">
       <a href="{% url 'metadata:saved_files' %}">Saved Files</a>
     </div>
+
+    <div class="profile-sign-out">
+      <img src="/static/images/logout.svg" alt="">
+      <input id="signout-btn" type="button" value="SignOut">
+    </div>
   </div>
 
 
@@ -136,5 +141,28 @@
 </div>
 
 
+<!-- MODEL -->
+<div class="sign-up-model">
+  <div class="sign-up-wrapper">
+    <img src="{% static 'images/icon-close.svg' %}" alt="">
+    <h5>Sign Out</h5>
+    <p>Are you sure you want to sign out?</p>
+    <div class="signout-model-btn">
+      <a href="/dashboard">No</a>
+      <a href="/logout">Yes</a>
+    </div>
+  </div>
+</div>
 
+<script>
+  const signOutBtn = document.querySelector("#signout-btn")
+  const model = document.querySelector(".sign-up-model")
+  const closeIcon = document.querySelector(".sign-up-wrapper img")
+  signOutBtn.addEventListener("click", () => {
+    model.classList.toggle("show-model")
+  })
+  closeIcon.addEventListener("click", () => {
+    model.classList.remove("show-model")
+  })
+</script>
 {% endblock %}
