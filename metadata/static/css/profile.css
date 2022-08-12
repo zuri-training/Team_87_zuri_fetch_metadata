@@ -332,19 +332,6 @@ input {
         display: none;
     }
 
-    .profile-sign-out {
-        margin-left: auto;
-        margin-right: auto;
-        position: absolute;
-        bottom: 0;
-        padding-left: 55px;
-        display: flex;
-        align-items: center;
-    }
-
-
-
-
 
     .content-section .media img {
         border-radius: 100%;
@@ -370,6 +357,18 @@ input {
         color: black;
     }
 
+        .profile-sign-out {
+            margin-left: auto;
+            margin-right: auto;
+            position: absolute;
+            bottom: 30px;
+            margin-top: 30px;
+            padding-left: 55px;
+            display: flex;
+            align-items: center;
+        }
+
+
     .profile-sign-out input {
         color: #E10909;
         background-color: var(--grey);
@@ -378,6 +377,7 @@ input {
         font-size: 2rem;
         font-weight: 100;
         cursor: pointer;
+        margin-left: 5px;
 
     }
 

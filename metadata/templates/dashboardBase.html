@@ -1,0 +1,126 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    {% block styles %}{% endblock styles %}
+    <link href="https://api.fontshare.com/v2/css?f[]=cabinet-grotesk@800,500,700,400,900&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+    <header class="nav-head">
+        <!-- Site logo -->
+        <div class="nav-logo">
+            <a href="/">
+                <img src="{% static 'images/deevr 2.png' %}" class="site-logo">
+            </a>
+        </div>
+
+
+
+        {% block nav %}
+        <!-- Menu -->
+
+        {% endblock %}
+
+        <!-- nav buttons -->
+        <div class="nav-button">
+            {% if not user.is_authenticated %}
+            <button class="nav-btn-outline">
+                <a href="/login">Login</a>
+            </button>
+
+            <button class="nav-btn-solid">
+                <a href="/signup">Get Started</a>
+            </button>
+            {% endif %}
+        </div>
+
+    </header>
+    <!-- ========================================================================= -->
+    <!--============================= MOBILE NAVIGATION=========================== -->
+    <header class="header-sm">
+        <div class="nav-logo-sm">
+            <a href="/">
+                <img src="{% static 'images/deevr 2.png' %}" class="site-logo">
+            </a>
+        </div>
+
+        <nav class="sm-navigation">
+            <div class="sm-hamburger">
+                <a href="/">
+                    <img src="{% static 'images/logo-mobile.svg' %}">
+                </a>
+
+                <img src="{% static 'images/close-circle.svg' %}" alt="" class="hamburger-close">
+            </div>
+
+
+            <div class="sm-nav-links">
+
+
+                {% block mobilenav %}
+
+
+                {% endblock %}
+
+
+                {% if not user.is_authenticated %}
+                <!-- nav buttons -->
+                <div class="sm-nav-button">
+
+
+                    <button class="nav-btn-outline">
+                        <a href="/login">Login</a>
+                    </button>
+
+                    <button class="nav-btn-solid">
+                        <a href="/signup">Get Started</a>
+                    </button>
+
+                </div>
+                {% endif %}
+            </div>
+
+
+            {% if user.is_authenticated %}
+
+            <div class="media">
+                {% if user.profile.profile_pic %}
+                <img src="{{ user.profile.profile_pic.url }}" height="80" width="80" style="border-radius: 100%;" />
+                {% else %}
+                <img src="{% static 'metadata/images/default.jpg'%}" height="80" width="80"
+                    style="border-radius: 100%; border:1px solid gray;" />
+                {% endif %}
+                <div class="sign-out">
+                    <img src="/static/images/logout.svg" alt="">
+                    <a href="/logout">Sign Out</a>
+                </div>
+            </div>
+            {% endif %}
+        </nav>
+        <div class="hamburger">
+            <img src="{% static 'images/menu.svg' %}" alt="" class="hambuger-menu">
+        </div>
+    </header>
+
+    <!-- ================================================================================== -->
+
+    {% block content %}
+
+    {% endblock %}
+
+    <script src="{% static 'javascript/navBar.js' %}"></script>
+
+    {% block jsScript %} {% endblock %}
+
+</body>
+
+</html>
