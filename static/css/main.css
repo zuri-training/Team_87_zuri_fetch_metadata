@@ -1,0 +1,122 @@
+@import url("font.css");
+@import url('fonts/cabinetgrotesk-bold.woff2');
+
+
+:root {
+    --blue: #3a86ff;
+    --white: #ffffff;
+    --black: #000000;
+    --grey: #EEF1F4;
+    /* --darkgrey: ; */
+}
+
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 10px;
+    overflow-x: hidden;
+}
+
+
+body {
+    font-family: 'Cabinet Grotesk', sans-serif;
+}
+
+img {
+    max-width: 100%;
+}
+
+a {
+    text-decoration: none;
+    color: black;
+}
+
+.container {
+    padding-left: 25px;
+    padding-right: 25px;
+}
+
+
+/* ================================== */
+/* ============ NAV BAR STYLES ====== */
+
+/* LOGO  */
+
+.site-logo {
+    display: none;
+}
+
+.nav-logo {
+    width: 50%;
+}
+
+.logo {
+    width: 30px;
+}
+
+
+/* == NAV WRAPPER == */
+
+.mobile-nav .navigation {
+    background-color: white;
+    position: fixed;
+    top: 48px;
+    height: 80vh;
+    width: 100%;
+}
+
+.mobile-nav {
+    padding-top: 16px;
+}
+
+.mobile-nav .navigation a {
+    display: block;
+    font-size: 1.8rem;
+    font-weight: 800;
+}
+
+
+
+/* == NAV MENU == */
+
+.menu a.active {
+    border-bottom: 2px solid;
+    border-color: var(--blue);
+    padding-bottom: 5px;
+}
+
+.mobile-nav .navigation li {
+    margin: 20px 0;
+}
+
+.mobile-nav .navigation li:first-child {
+    margin-top: 30px;
+
+}
+
+.mobile-nav .navigation li {
+    display: flex;
+    align-items: center;
+    border: 1px solid var(--black);
+    padding: 10px 0;
+
+}
+
+.mobile-nav .navigation img {
+    height: 20px;
+    width: 20px;
+    align-self: center;
+}
+
+.mobile-nav .navigation .arrow-icon {
+    height: 15px;
+    width: 15px;
+    margin-left: auto;
+}
+

@@ -52,7 +52,7 @@ INSTALLED_APPS = [
 
 SITE_ID = 1
 # 484561921057-e1a8tg8hpcvj4amp04vu2qjr58gqb43k.apps.googleusercontent.com
-#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
+# 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
 
 
 SOCIALACCOUNT_PROVIDERS = {
@@ -67,7 +67,7 @@ SOCIALACCOUNT_PROVIDERS = {
     },
     'facebook': {
         'METHOD': 'oauth2',
-        #AUTH_PARAMS': {'auth_type': 'reauthenticate'},
+        # AUTH_PARAMS': {'auth_type': 'reauthenticate'},
         'INIT_PARAMS': {'cookie': True},
         'FIELDS': [
             'id',
@@ -80,7 +80,7 @@ SOCIALACCOUNT_PROVIDERS = {
             'short_name'
         ],
         'EXCHANGE_TOKEN': True,
-        #'LOCALE_FUNC': 'path.to.callable',
+        # 'LOCALE_FUNC': 'path.to.callable',
         'VERIFIED_EMAIL': False,
         'VERSION': 'v13.0',
     }
@@ -163,10 +163,11 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/4.0/howto/static-files/
 
 STATIC_URL = '/static/'
+STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 MEDIA_URL = '/media/'
 STATICFILES_DIRS = [
-    os.path.join(BASE_DIR, 'static')
+    os.path.join(BASE_DIR, 'metadata/static')
 ]
 
 
@@ -191,6 +192,6 @@ AUTHENTICATION_BACKENDS = [
 ]
 
 
-CSRF_TRUSTED_ORIGINS = ['https://8000-zuritrainin-team87zurif-spiu8vtol3t.ws-eu60.gitpod.io']
-#pls copy this on time, i  will soon remove it
-
+CSRF_TRUSTED_ORIGINS = [
+    'https://8000-zuritrainin-team87zurif-spiu8vtol3t.ws-eu60.gitpod.io']
+# pls copy this on time, i  will soon remove it
