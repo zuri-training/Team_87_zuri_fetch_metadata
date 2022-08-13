@@ -449,3 +449,12 @@ def download_meta(request, pk):
     writer.writerow(metadata_label_value)
 
     return response
+
+#=============
+def error_404(request,exception):
+    return render(request, "404.html")
+#========
+
+
+def error_500(request):
+    return render(request, "500.html")
