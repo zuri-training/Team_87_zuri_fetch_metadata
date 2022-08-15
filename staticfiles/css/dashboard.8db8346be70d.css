@@ -1,0 +1,112 @@
+@import url("../css/style.1ca4af54b876.css");
+
+
+.user-dashboard{
+    display: flex;
+    /* max-width: 1240px; */
+    margin: auto;
+}
+
+.dash-nav {
+    width: 30%;
+    min-height: 90vh;
+    background-color: var(--grey);
+    padding-left: 52px;
+}
+
+
+/* .nav-head {
+    height: 10vh;
+}
+
+.nav-logo{
+    width: 20%;
+}
+
+.navigation{
+    width: 80%;
+}
+
+.nav-button {
+   display: none;
+}
+
+/* Dashboard */
+
+/* .user-dashboard {
+    width: 100%;
+    height: auto;
+    display: flex;
+    justify-content: space-between;
+    margin: 0 auto;
+} */
+
+/* Dashboard navigation */
+
+
+
+/* .profile-img {
+    text-align: center;
+    padding: 40px 50px 40px 20px;
+}
+
+/* .user-img {
+    width: 180px;
+    height: 180px;
+    border-radius: 50%;
+    text-align: center;
+} */
+/* 
+.img-txt {
+    font-size: 18px;
+    padding-top: 10px;
+}  */
+
+
+
+/* .account-nav a {
+    display: flex;
+    width: 100%;
+    background-color: var(--grey);
+    border: 0;
+    border-left: 10px solid;
+    border-color: var(--grey);
+    border-radius: 0;
+    cursor: pointer;
+    color: var(--black);
+    font-size: 18px;
+    padding: 17px 20px;
+}
+
+.account-nav a:hover, .account-nav a.active {
+    background-color: var(--white);
+    border: 0;
+    border-left: 10px solid;
+    border-color: var(--blue);
+}
+
+.nav-icon {
+    padding-right: 15px;
+}
+
+
+.log-out a {
+    display: flex;
+    width: 100%;
+    background-color: var(--grey);
+    border: 0;
+    border-left: 10px solid;
+    border-color: var(--grey);
+    border-radius: 0;
+    cursor: pointer;
+    color: red;
+    font-size: 18px;
+    padding: 20px;
+}  */
+
+
+/* Dashboard main */
+/* .dash-main {
+    width: 78%;
+    margin-left: 22%;
+} */

@@ -1,0 +1,131 @@
+/**
+ * @license
+ *
+ * Font Family: Cabinet Grotesk
+ * Designed by: ITF
+ * URL: https://www.fontshare.com/fonts/cabinet-grotesk
+ * © 2022 Indian Type Foundry
+ *
+ * Font Styles:
+ * Cabinet Grotesk Variable(Variable font)
+ * Cabinet Grotesk Thin
+ * Cabinet Grotesk Extralight
+ * Cabinet Grotesk Light
+ * Cabinet Grotesk Regular
+ * Cabinet Grotesk Medium
+ * Cabinet Grotesk Bold
+ * Cabinet Grotesk Extrabold         
+ * Cabinet Grotesk Black
+ *
+*/
+
+
+/**
+* This is a variable font
+* You can controll variable axes as shown below:
+* font-variation-settings: 'wght' 900.0;
+*
+* available axes:
+
+* 'wght' (range from 100.0 to 900.0)
+
+*/
+
+@font-face {
+  font-family: 'CabinetGrotesk-Variable';
+  src: url("../fonts/CabinetGrotesk-Variable.9e34728b050b.woff2") format('woff2'),
+       url("../fonts/CabinetGrotesk-Variable.8791fe3410b2.woff") format('woff'),
+       url("../fonts/CabinetGrotesk-Variable.63e7e31dbe7a.ttf") format('truetype');
+       font-weight: 100 900;
+       font-display: swap;
+       font-style: normal;
+}
+
+
+@font-face {
+  font-family: 'CabinetGrotesk-Thin';
+  src: url("../fonts/CabinetGrotesk-Thin.d91a90c57785.woff2") format('woff2'),
+       url("../fonts/CabinetGrotesk-Thin.bd8da4f2c849.woff") format('woff'),
+       url("../fonts/CabinetGrotesk-Thin.ec1a488b858a.ttf") format('truetype');
+       font-weight: 100;
+       font-display: swap;
+       font-style: normal;
+}
+
+
+@font-face {
+  font-family: 'CabinetGrotesk-Extralight';
+  src: url("../fonts/CabinetGrotesk-Extralight.a4abd52e9569.woff2") format('woff2'),
+       url("../fonts/CabinetGrotesk-Extralight.5a3599b762e4.woff") format('woff'),
+       url("../fonts/CabinetGrotesk-Extralight.0d446a02160d.ttf") format('truetype');
+       font-weight: 200;
+       font-display: swap;
+       font-style: normal;
+}
+
+
+@font-face {
+  font-family: 'CabinetGrotesk-Light';
+  src: url("../fonts/CabinetGrotesk-Light.075bba7146a0.woff2") format('woff2'),
+       url("../fonts/CabinetGrotesk-Light.68da71004eea.woff") format('woff'),
+       url("../fonts/CabinetGrotesk-Light.46ba2f9f15aa.ttf") format('truetype');
+       font-weight: 300;
+       font-display: swap;
+       font-style: normal;
+}
+
+
+@font-face {
+  font-family: 'CabinetGrotesk-Regular';
+  src: url("../fonts/CabinetGrotesk-Regular.119dd0961530.woff2") format('woff2'),
+       url("../fonts/CabinetGrotesk-Regular.9a70a675c4f8.woff") format('woff'),
+       url("../fonts/CabinetGrotesk-Regular.8fbcaa0b6af3.ttf") format('truetype');
+       font-weight: 400;
+       font-display: swap;
+       font-style: normal;
+}
+
+
+@font-face {
+  font-family: 'CabinetGrotesk-Medium';
+  src: url("../fonts/CabinetGrotesk-Medium.aece21a384a3.woff2") format('woff2'),
+       url("../fonts/CabinetGrotesk-Medium.cba8be79bf01.woff") format('woff'),
+       url("../fonts/CabinetGrotesk-Medium.b75ac497f818.ttf") format('truetype');
+       font-weight: 500;
+       font-display: swap;
+       font-style: normal;
+}
+
+
+@font-face {
+  font-family: 'CabinetGrotesk-Bold';
+  src: url("../fonts/CabinetGrotesk-Bold.859bd02cd6a8.woff2") format('woff2'),
+       url("../fonts/CabinetGrotesk-Bold.983a42022def.woff") format('woff'),
+       url("../fonts/CabinetGrotesk-Bold.bcd021f7bac5.ttf") format('truetype');
+       font-weight: 700;
+       font-display: swap;
+       font-style: normal;
+}
+
+
+@font-face {
+  font-family: 'CabinetGrotesk-Extrabold';
+  src: url("../fonts/CabinetGrotesk-Extrabold.191150578c85.woff2") format('woff2'),
+       url("../fonts/CabinetGrotesk-Extrabold.53f5a0b9c666.woff") format('woff'),
+       url("../fonts/CabinetGrotesk-Extrabold.fe03db967d0c.ttf") format('truetype');
+       font-weight: 800;
+       font-display: swap;
+       font-style: normal;
+}
+
+
+@font-face {
+  font-family: 'CabinetGrotesk-Black';
+  src: url("../fonts/CabinetGrotesk-Black.4a40323635fb.woff2") format('woff2'),
+       url("../fonts/CabinetGrotesk-Black.f8dd7ae29a83.woff") format('woff'),
+       url("../fonts/CabinetGrotesk-Black.7481ba621bb0.ttf") format('truetype');
+       font-weight: 900;
+       font-display: swap;
+       font-style: normal;
+}
+

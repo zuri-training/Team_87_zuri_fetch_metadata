@@ -1,0 +1,141 @@
+@import url("style.css");
+
+.metadata-heading {
+    text-align: center;
+    margin: 50px auto;
+    padding: 25px;
+}
+
+.metadata-heading h1 {
+    font-size: 2.5rem;
+    line-height: 2.8rem;
+    margin-bottom: 10px;
+}
+
+.metadata-heading p {
+    font-size: 1.7rem;
+}
+
+
+tr:nth-child(even) {
+    background-color: var(--grey);
+    border: none;
+}
+
+table {
+    margin: 40px 25px;
+}
+
+
+th {
+    font-size: 2rem;
+    line-height: 2.4rem;
+    text-align: center;
+    letter-spacing: 3px;
+    background-color: var(--blue);
+    padding: 15px;
+    color: white;
+}
+
+td {
+    font-size: 1.5rem;
+    border: none;
+    margin: 0;
+    padding: 10px;
+}
+
+
+.btn {
+    text-align: center;
+    margin: 50px auto;
+}
+
+.btn a {
+    padding: 16px 34px;
+    background-color: var(--blue);
+    border-radius: 5px;
+    outline: none;
+    cursor: pointer;
+    margin-right: 20px;
+    font-size: 2rem;
+    line-height: 3rem;
+    color: white;
+    text-align: center;
+}
+
+.btn a:last-child {
+    margin-right: 0;
+}
+
+@media screen and (min-width:768px) {
+
+    .metadata-wrapper {
+        max-width: 1280px;
+        margin: auto;
+    }
+
+    .metadata-heading {
+        text-align: center;
+        margin: 50px auto;
+    }
+
+    .metadata-heading h1 {
+        font-size: 4.5rem;
+        line-height: 5.8rem;
+        margin-bottom: 10px;
+    }
+
+    .metadata-heading p {
+        font-size: 1.7rem;
+    }
+
+
+    table {
+        width: 90%;
+        margin: auto;
+    }
+
+    th {
+        font-size: 2rem;
+        line-height: 2.4rem;
+        text-align: center;
+        letter-spacing: 3px;
+        background-color: var(--blue);
+        padding: 15px;
+        color: white;
+    }
+
+    td {
+        font-size: 2.4rem;
+        line-height: 3.6rem;
+        border: none;
+        margin: 0;
+        padding: 12px 30px;
+    }
+
+
+    .btn {
+        text-align: center;
+        margin: 50px auto;
+    }
+
+    .btn a {
+        padding: 16px 34px;
+        background-color: var(--blue);
+        border-radius: 5px;
+        outline: none;
+        cursor: pointer;
+        margin-right: 20px;
+        font-size: 2rem;
+        line-height: 3rem;
+        color: white;
+        text-align: center;
+    }
+
+}
+
+@media screen and (min-width:1200px) {
+    table {
+        width: 60%;
+    }
+}

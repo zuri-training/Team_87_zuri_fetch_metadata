@@ -1,0 +1,37 @@
+.login-model{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 350px;
+    box-shadow: 4px 4px 15px rgba(0, 0, 0, 0.25);
+    margin-bottom: 30px;
+    padding: 10px 5px;
+}
+
+
+.login-model-txt{
+    display: flex;
+    align-items: center;
+}
+
+.login-model-txt h5{
+    font-size: 1.6rem;
+    margin-bottom: 5px;
+}
+
+.login-model-txt p{
+    font-size: 1.3rem;
+}
+
+
+.login-model-txt img{
+    width: 30px;
+    height: 30px;
+    margin-right: 20px;
+}
+
+.login-model img:last-child{
+    width: 30px;
+    height: 30px;
+    cursor: pointer;
+}

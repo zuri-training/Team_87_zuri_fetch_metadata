@@ -1,0 +1,124 @@
+@import url("../css/style.1ca4af54b876.css");
+
+.container {
+    max-width: 1440px;
+    margin: auto;
+    padding-left: 25px;
+    padding-right: 25px;
+}
+
+img {
+    max-width: 100%;
+}
+
+.about{
+    margin-bottom: 150px;
+}
+
+.top-about{
+    text-align: center;
+    margin-bottom: 100px;
+}
+
+.top-about h1{
+    font-size: 2.4rem;
+    line-height: 3.6rem;
+    margin-bottom: 20px;
+    font-weight: 800;
+    text-align: center;
+}
+
+/*============================== */
+/* ====== About Images========= */
+
+.subhead-about{
+    font-size: 2.4rem;
+    line-height: 3.6rem;
+    text-align: center;
+    margin-bottom: 4.8rem;
+}
+
+  
+
+
+#parent{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 22px;
+}
+
+.namefocus h5 {
+    font-size: 1.5rem;
+    font-weight: 500;
+}
+
+.namefocus {
+    text-align: center;
+    margin-top: 1.6rem;
+}
+
+.namefocus span {
+    font-weight: 800;
+}
+
+
+@media screen and (min-width:768px) {
+    .top-about{
+        margin-bottom: 50px;
+    }
+
+    .top-about h1 {
+        padding-top: 80px;
+        font-size: 6rem;
+        margin-bottom: 50px;
+    }
+
+    .top-about p {
+        width: 75%;
+        margin: auto;
+        text-align: center;
+        font-size: 1.8rem;
+        font-weight: 200;
+    }
+
+    .subhead-about{
+        font-size: 3.2rem;
+        line-height: 3.84rem;
+    }
+
+    #parent{
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+
+@media screen and (min-width:1024px) {
+
+    #parent {
+        grid-template-columns: repeat(4, 1fr);
+        gap: 3px;
+    }
+
+    .child {
+        background-color: white;
+        padding: 10px;
+        display: grid;
+        padding-left: 70px;
+        padding-right: 10px;
+    }
+
+   
+    .child .namefocus {
+        display: grid;
+        font-size: small;
+        font-style: normal;
+    }
+
+    
+
+   
+
+    
+
+
+}
