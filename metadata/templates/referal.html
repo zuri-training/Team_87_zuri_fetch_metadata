@@ -1,6 +1,7 @@
 {% extends "base.html" %}
+{% load static %}
 {% block styles %}
-<link rel="stylesheet" href="../../static/css/result.css" />
+<link rel="stylesheet" href="../../static/css/result.css" />" />
 {% endblock %}
 
 {% block nav %}
@@ -18,14 +19,14 @@
 
 <ul class="sm-menu">
 	<li>
-		<img src="/static/images/home-2.svg" alt="">
+		<img src="{% static 'images/home-2.svg' %}" alt="">
 		<a href="/">Home</a>
-		<img id="arrow" src="/static/images/arrow-right-light.svg" alt="">
+		<img id="arrow" src="{% static 'images/arrow-right-light.svg' %}" alt="">
 	</li>
 	<li>
-		<img src="/static/images/people.svg" alt="">
+		<img src="{% static 'images/people.svg' %}" alt="">
 		<a href="/about">About Us</a>
-		<img id="arrow" src="/static/images/arrow-right-light.svg" alt="">
+		<img id="arrow" src="{% static 'images/arrow-right-light.svg' %}" alt="">
 	</li>
 </ul>
 
