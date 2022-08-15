@@ -135,6 +135,9 @@ class profile(LoginRequiredMixin, View):
         if request.POST['type'] == '1':
             first_name = request.POST['first_name']
             last_name = request.POST['last_name']
+            if len(first_name) < 1 or len(last_name) < 1:
+                messages.info(request, "Field cannot be empty")
+                return redirect('metadata:profile', pk=pk)
             User.objects.filter(id=pk).update(
                 first_name=first_name, last_name=last_name)
             messages.info(request, "Update Succcessful")
