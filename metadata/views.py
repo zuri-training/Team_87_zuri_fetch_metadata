@@ -170,7 +170,7 @@ def contact(request):
             name=request.POST['name'], email=request.POST['email'], message=request.POST['message'])
         contact.save()
         messages.info(request, "Message sent")
-        return redirect('metadata:contact')
+        return redirect('metadata:index')
     return render(request, "contact.html")
 
 # ==========================================
@@ -323,15 +323,6 @@ class history(LoginRequiredMixin, View):
     def get(self, request, pk):
         user = request.user
         history = History.objects.all()
-        # print(history)
-        # user = request.user
-        # no = 1
-        # for i in history:
-        #      if i.owner == user:
-        #         user_history[no] = {"name":i.name,"data":i.data,"time":i.created_at}
-        #         no +=1
-        # print(user_history)
-
         context = {"user": user, "history": history, }
         return render(request, self.template_name, context)
 
