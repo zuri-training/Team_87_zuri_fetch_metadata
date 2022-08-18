@@ -1,1 +1,1 @@
-web gunicorn extractMetadata.wsgi:application --log-file -
+web: gunicorn extractMetadata.wsgi:application --log-file -
